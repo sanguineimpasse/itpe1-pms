@@ -1,22 +1,59 @@
 .sidenav{
     display: flex;
     flex-direction: column;
+    position: relative;
     height: 100vh;
-    position: fixed;
     width: 15rem;
     background-color: rgb(206, 255, 220);
     padding: 2rem;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
 
     li{
         font-size: 1.3rem;
+        font-weight: 700;
         margin-bottom: 1rem;
+    }
+    a{
+        cursor: pointer;
     }
     .sidenav-subitems{
         margin-top: 1rem;
         margin-left: 1rem;
+        svg{
+            margin-right: 0.25rem;
+        }
         li{
             font-size: 1rem;
+            font-weight: 400;
             margin-bottom: 1rem;
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .sidenav{
+        flex-direction: row;
+        width: 100vw;
+        height: auto;
+        padding: 1.2rem;
+
+        li{
+            font-size: 1rem;
+        }
+        .sidenav-subitems{
+            display: none;
+            margin-top: 1rem;
+            margin-left: 0;
+            li{
+                display: block;
+            }
+        }
+        .sidenav-items{
+            width: 100vw;
+        }
+    }
+    li{
+        display: inline;
+        margin-left: 1rem;
+    }   
+  }
