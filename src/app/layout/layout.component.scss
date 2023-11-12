@@ -1,3 +1,31 @@
-.screen-container{
-    margin-left: 20rem;
+.vertical-container{
+    display:flex;
+    flex-direction: column;
+    overflow:hidden -moz-hidden-unscrollable;
+    .topnav-container{
+        height: 8vh;
+    }
+
+    .horizontal-container{
+        display: flex;
+        flex-direction: row;
+        height: 92vh;
+        .sidenav-container{
+            width: auto;
+        }
+        .screen-container{
+            width: auto;
+            overflow: scroll;
+                 /*top right bottom lef*/
+            padding: 0 2rem 0 2rem;
+        }
+    }
 }
+
+@media screen and (min-width: 600px) {
+    .horizontal-container{
+        flex-direction: column;
+        width: 100vw;
+        height: auto;
+    }
+  }
