@@ -1,0 +1,26 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ScreenComponent } from './screen/screen.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { RouterModule } from '@angular/router';
+import { TopnavComponent } from './topnav/topnav.component';
+
+
+
+@NgModule({
+  declarations: [
+    ScreenComponent,
+    SidenavComponent,
+    TopnavComponent   
+  ],
+  imports: [
+    CommonModule,
+    RouterModule
+  ],
+  exports:[
+    ScreenComponent,
+    SidenavComponent,
+    TopnavComponent
+  ]
+})
+export class SharedComponentModule { }
