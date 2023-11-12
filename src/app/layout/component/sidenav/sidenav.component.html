@@ -1,1 +1,71 @@
-<p>sidenav works!</p>
+<nav class="sidenav">
+    <ul>
+        <li>
+            <a [routerLink]="['dashboard']">
+                Home
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['profile']">
+                My Profile
+                <ul class="sidenav-subitems">
+                    <li>
+                        <a [routerLink]="['profile']">
+                            View my profile
+                        </a>
+                    </li>
+                    <li>
+                        <a >
+                            View as public
+                        </a>
+                    </li>
+                    <li>
+                        <a >
+                            View as other PatientManagement user
+                        </a>
+                    </li>
+                    <li>
+                        <a >
+                            View as Medical Practitioner
+                        </a>
+                    </li>
+                    <li>
+                        <a >
+
+                        </a>
+                    </li>
+                </ul>
+            </a>
+        </li>
+        <li>
+            <a >
+                Update my information
+            </a>
+        </li>
+        <li>
+            <a >
+                My QR
+            </a>
+        </li>
+        <li>
+            <a >
+                My Information Privacy
+            </a>
+        </li>
+        <li>
+            <a >
+                My Meds
+            </a>
+        </li>
+        <li>
+            <a >
+                Calendar
+            </a>
+        </li>
+        <li>
+            <a >
+                Log out
+            </a>
+        </li>
+    </ul>
+</nav>

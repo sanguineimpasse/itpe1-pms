@@ -1,0 +1,22 @@
+.sidenav{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    width: 15rem;
+    background-color: rgb(206, 255, 220);
+    padding: 2rem;
+
+    li{
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    .sidenav-subitems{
+        margin-top: 1rem;
+        margin-left: 1rem;
+        li{
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
