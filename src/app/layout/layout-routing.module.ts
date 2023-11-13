@@ -15,12 +15,25 @@ const routes: Routes = [
       },
       {
         path:'dashboard',
+        redirectTo: 'dashboard/user'
+      },
+      {
+        path: 'dashboard/user',
         loadChildren: () => import('./dashboard/dashboard.module').then(mod=>mod.DashboardModule)
+      },
+      {
+        path: 'admin',
+        redirectTo: 'dashboard/admin'
+      },
+      {
+        path:'dashboard/admin',
+        loadChildren: () => import('./dashboard/admin/admin.module').then(mod=>mod.AdminModule)
       },
       {
         path: 'profile',
         loadChildren: () => import('./profile/profile.module').then(mod=>mod.ProfileModule)
-      }
+      },
+      
     ]
   }
 ];
