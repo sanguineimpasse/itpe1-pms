@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    height: 100vh;
+    height: 100%;
     width: 15rem;
     background-color: rgb(206, 255, 220);
     padding: 2rem;
@@ -30,26 +30,40 @@
     }
 }
 
+/*tablet view*/
+@media screen and (max-width: 800px){
+
+}
+
+/*mobile view*/
 @media screen and (max-width: 600px) {
     .sidenav{
         flex-direction: row;
         width: 100vw;
         height: auto;
         padding: 1.2rem;
+        overflow: wrap;
 
         li{
             font-size: 1rem;
+            margin-top: 0.25rem;
+            margin-bottom: 0.25rem;
         }
         .sidenav-subitems{
             display: none;
             margin-top: 1rem;
             margin-left: 0;
+
             li{
-                display: block;
+                display: inline;
+                white-space: nowrap;
+                overflow-wrap: break-word;
             }
         }
         .sidenav-items{
             width: 100vw;
+            display: flex;
+            flex-wrap: wrap;
         }
     }
     li{
