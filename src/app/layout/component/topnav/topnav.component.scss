@@ -43,8 +43,9 @@ header {
   z-index: 1;
 }
 
-.user-profile button:hover + .dropdown-content {
+.user-profile button:hover + .dropdown-content, .dropdown-content:hover{
   display: block;
+  border-radius: 4px;
 }
 
 .dropdown-content a {
