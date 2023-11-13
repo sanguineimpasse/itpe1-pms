@@ -15,11 +15,7 @@ const routes: Routes = [
       },
       {
         path:'dashboard',
-        redirectTo: 'dashboard/user'
-      },
-      {
-        path: 'dashboard/user',
-        loadChildren: () => import('./dashboard/dashboard.module').then(mod=>mod.DashboardModule)
+        redirectTo: 'dashboard/admin'
       },
       {
         path: 'admin',
@@ -30,7 +26,19 @@ const routes: Routes = [
         loadChildren: () => import('./dashboard/admin/admin.module').then(mod=>mod.AdminModule)
       },
       {
+        path:'dashboard/doctor',
+        loadChildren: () => import('./dashboard/doctor/doctor.module').then(mod=>mod.DoctorModule)
+      },
+      {
+        path: 'dashboard/patient',
+        loadChildren: () => import('./dashboard/patient/patient.module').then(mod=>mod.PatientModule)
+      },
+      {
         path: 'profile',
+        redirectTo: 'profile/patient'
+      },
+      {
+        path: 'profile/patient',
         loadChildren: () => import('./profile/profile.module').then(mod=>mod.ProfileModule)
       },
       
