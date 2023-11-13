@@ -38,10 +38,16 @@
             flex-direction: column;
             width: 100vw;
             height: 92vh;
+
+            .sidenav-container{
+                height: auto;
+            }
+            .screen-container{
+                height: auto;
+                padding: 1rem 2rem 1rem 2rem;
+            }      
         }
     }
     
-    .sidenav-container{
-        height: 8vh;
-    }
+    
 }
