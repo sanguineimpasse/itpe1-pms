@@ -14,11 +14,13 @@
         flex-direction: row;
         height: 92vh;
         .sidenav-container{
+            display: flex;
             width: auto;
         }
         .screen-container{
-            width: auto;
-            overflow-y: scroll;
+            display: flex;
+            width:100%;
+            overflow-y: auto;
                  /*top right bottom left*/
             padding: 1.5rem;
         }
@@ -43,7 +45,7 @@
                 height: auto;
             }
             .screen-container{
-                height: auto;
+                height: 100%;
                 padding: 1rem 2rem 1rem 2rem;
             }      
         }
