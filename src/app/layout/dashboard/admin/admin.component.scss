@@ -1,0 +1,100 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    width: 1100px;
+    height: 600px;
+    background-color: aqua;
+    border: 1px solid black;
+}
+
+
+// FIRST BLOCK
+.firstBlock{
+    width: 70%;
+    height: 100%;
+    border: 1px solid black;
+    
+
+    .containerTop{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 50%;
+        background-color: aquamarine;
+        border: 1px solid black;
+
+        .right{
+            width: 50%;
+            height: 100%;
+            background-color: orange;
+        }
+        .left{
+            width: 50%;
+            height: 100%;
+            background-color: blue;
+        }
+    
+    }
+    
+    .containerBottom{
+        width: 100%;
+        height: 50%;
+        background-color: azure;
+        border: 1px solid black;
+        background-color: green;
+    }
+
+}
+
+.secondBlock{
+    width: 30%;
+    height: 100%;
+    background-color: antiquewhite;
+}
+
+@media only screen and (max-width: 750px){
+
+    .container{
+        width: 380px;
+        height: 1500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .firstBlock{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+
+        .containerTop{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+    
+            .right{
+    
+                height: 100%;
+                width: 100%;
+            }
+            .left{
+    
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+    }
+
+    .secondBlock{
+        width: 100%;
+    }
+
+}
+
+
