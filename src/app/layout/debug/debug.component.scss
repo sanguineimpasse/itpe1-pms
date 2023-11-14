@@ -2,9 +2,9 @@
     padding: 0rem 5rem 0rem 5rem;
 }
 img{
-    width: 70rem;
-    height: 20rem;
-    object-fit: none;
+    width: 75vw;
+    height: 30vh;
+    object-fit: cover;
     box-shadow: 2px 2px 8px black;
     margin: 1rem 0 1rem 0;
 }
@@ -51,5 +51,9 @@ ul{
     }
     h1, h2, p, ol, ul{
         margin: 0.5rem;
+    }
+    img{
+        width: 85vw;
+        margin-left: 1.5rem;
     }
 }

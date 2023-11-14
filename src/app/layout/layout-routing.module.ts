@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { LayoutComponent } from './layout.component';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -10,12 +9,8 @@ const routes: Routes = [
     children:[
       {
         path:'',
-        redirectTo: 'dashboard',
+        redirectTo: 'dashboard/admin', //path will redirect to admin for now while testing :)
         pathMatch:'prefix'
-      },
-      {
-        path:'dashboard',
-        redirectTo: 'dashboard/admin'
       },
       {
         path: 'admin',
@@ -41,7 +36,10 @@ const routes: Routes = [
         path: 'profile/patient',
         loadChildren: () => import('./profile/profile.module').then(mod=>mod.ProfileModule)
       },
-      
+      {
+        path: 'debug',
+        loadChildren: () => import('./debug/debug.module').then(mod=>mod.DebugModule)
+      }
     ]
   }
 ];
