@@ -1,6 +1,13 @@
 .para{
     padding: 0rem 5rem 0rem 5rem;
 }
+img{
+    width: 70rem;
+    height: 20rem;
+    object-fit: none;
+    box-shadow: 2px 2px 8px black;
+    margin: 1rem 0 1rem 0;
+}
 *{
     font-style: Inter, sans-serif;
     line-height: 1.8rem;
@@ -35,5 +42,14 @@ ul{
     list-style: disc;
     li{
         margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .para{
+        padding: 0rem 0.5rem 0rem 0.5rem;
+    }
+    h1, h2, p, ol, ul{
+        margin: 0.5rem;
     }
 }
