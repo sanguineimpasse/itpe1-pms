@@ -8,18 +8,17 @@
     padding: 2rem;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
 
-    li{
+    li, .dropdown-btn{
         font-size: 1.3rem;
         font-weight: 700;
-        margin-bottom: 1rem;
-        padding: 8px;
-    cursor: pointer;
+        cursor: pointer;
+    }
+    li{
+      padding: 8px;
+      margin-bottom: 1rem;
     }
     a{
         cursor: pointer;
-    }
-    span{
-        font-weight: 700;
     }
     .sidenav-subitems{
         margin-top: 1rem;
@@ -35,52 +34,8 @@
     }
 }
 
-/*.myProfile {
-    position: relative;
-  }
-  
-  .myProfile button {
-    background-color: transparent;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 8px;
-  }
-  
-  .myProfile button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #f9f9f9;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    z-index: 1;
-  }
-  
-  .myProfile button:hover + .dropdown-content, .dropdown-content:hover{
-    display: block;
-    border-radius: 4px;
-  }
-  
-  .dropdown-content a {
-    color: #333;
-    padding: 12px 16px;
-    display: block;
-    text-decoration: none;
-    transition: background-color 0.3s;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }*/
 
-  /* app.component.css */
+  /* app.component.css 
 .myProfile {
     position: relative;
     display: inline-block;
@@ -109,46 +64,132 @@
   
   li:hover {
     background-color: #f0f0f0;
+  }/
+
+  /* Style for the dropdown container */
+  .myProfile {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Style for the dropdown button */
+  .dropdown-btn {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(206, 255, 220);
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Style for the dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    li{
+      font-size: 1rem;
+      margin: 0;
+    }
+  }
+
+  /* Style for dropdown content links */
+  .dropdown-content a {
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+  }
+
+  /* Show the dropdown content when the dropdown button is focused */
+  .myProfile:focus-within .dropdown-content {
+    display: block;
   }
   
 /*tablet view*/
 @media screen and (max-width: 800px){
+  .sidenav{
+    flex-direction: row;
+    width: 100vw;
+    height: auto;
+    padding: 1.2rem;
+    overflow: wrap;
 
+    .dropdown-btn{
+        font-size: 1rem;
+        margin-top: 0.75rem;
+    }
+    .dropdown-content{
+      margin-top: 0.4rem;
+      position: absolute;
+    }
+    li{
+        font-size: 1rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0.2rem;
+    }
+    .sidenav-subitems{
+        display: none;
+        margin-top: 1rem;
+        margin-left: 0;
+
+        li{
+            display: inline;
+        }
+    }
+    .sidenav-items{
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+li{
+    display: inline;
+    margin-left: 1rem;
+}   
 }
 
 /*mobile view*/
 @media screen and (max-width: 600px) {
-    .sidenav{
-        flex-direction: row;
-        width: 100vw;
-        height: auto;
-        padding: 1.2rem;
-        overflow: wrap;
+  .sidenav{
+    flex-direction: row;
+    width: 100vw;
+    height: auto;
+    padding: 1.2rem;
+    overflow: wrap;
 
-        li{
-            font-size: 1rem;
-            margin-top: 0.25rem;
-            margin-bottom: 0.25rem;
-        }
-        .sidenav-subitems{
-            display: none;
-            margin-top: 1rem;
-            margin-left: 0;
-
-            li{
-                display: inline;
-                white-space: nowrap;
-                overflow-wrap: break-word;
-            }
-        }
-        .sidenav-items{
-            width: 100vw;
-            display: flex;
-            flex-wrap: wrap;
-        }
+    .dropdown-btn{
+        font-size: 1rem;
+        margin-top: 0.75rem;
+    }
+    .dropdown-content{
+      margin-top: 0.4rem;
+      position: absolute;
     }
     li{
-        display: inline;
-        margin-left: 1rem;
-    }   
-  }
+        font-size: 1rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0.2rem;
+    }
+    .sidenav-subitems{
+        display: none;
+        margin-top: 1rem;
+        margin-left: 0;
+
+        li{
+            display: inline;
+        }
+    }
+    .sidenav-items{
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+li{
+    display: inline;
+    margin-left: 1rem;
+}   
+}
