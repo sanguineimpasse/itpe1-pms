@@ -1,0 +1,39 @@
+.para{
+    padding: 0rem 5rem 0rem 5rem;
+}
+*{
+    font-style: Inter, sans-serif;
+    line-height: 1.8rem;
+}
+h1, h2, p, ol, ul{
+    margin: 1rem;
+}
+h1{
+    font-size: 2rem;
+    font-weight: 700;
+    
+}
+h2{
+    font-size: 1.5rem;
+    font-style: italic;
+}
+p{
+
+}
+ol, ul{
+    padding: 1rem;
+}
+ol{
+    list-style: decimal;
+    font-weight: 700;
+    li{
+        font-weight: 300;
+        margin-bottom: 1rem;
+    }
+}
+ul{
+    list-style: disc;
+    li{
+        margin-bottom: 1rem;
+    }
+}
