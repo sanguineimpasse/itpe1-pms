@@ -13,6 +13,10 @@ const routes: Routes = [
         pathMatch:'prefix'
       },
       {
+        path:'dashboard',
+        redirectTo: 'dashboard/admin'
+      },
+      {
         path: 'admin',
         redirectTo: 'dashboard/admin'
       },
