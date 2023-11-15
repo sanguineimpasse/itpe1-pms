@@ -8,8 +8,7 @@ import { ListDoctorComponent } from './account-management/list-doctor/list-docto
 
 @NgModule({
   declarations: [
-    LayoutComponent,
-    ListDoctorComponent
+    LayoutComponent
   ],
   imports: [
     CommonModule,
