@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent {
-
+  patients='20';
+  recentPatients='6';
+  doctors='5';
 }

@@ -17,6 +17,9 @@
       padding: 8px;
       margin-bottom: 1rem;
     }
+    li:hover{
+      background-color: rgb(1, 33, 1);
+    }
     a{
         cursor: pointer;
     }
@@ -93,6 +96,11 @@
       font-size: 1rem;
       margin: 0;
     }
+    
+    a:hover{
+      color: green;
+    }
+
   }
 
   /* Style for dropdown content links */

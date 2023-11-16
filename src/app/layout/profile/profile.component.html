@@ -70,3 +70,20 @@
 
 </div>
 
+<div class="container">
+    <div class="patient-profile">
+      <div class="header">
+        <button href="lol">Back</button>
+        <h2>{{ patient.name }}</h2>
+        <img [src]="patient.profilePicture" alt="Profile Picture" />
+      </div>
+  
+      <div class="profile-info">
+        <h3>Basic Information</h3>
+        <p><strong>Date of Birth:</strong> {{ patient.dateOfBirth }}</p>
+        <p><strong>Gender:</strong> {{ patient.gender }}</p>
+        <p><strong>Address:</strong> {{ patient.address }}</p>
+       
+      </div>
+    </div>
+  </div>
