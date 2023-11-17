@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ListPatientRoutingModule } from './list-patient-routing.module';
 import { ListPatientComponent } from './list-patient.component';
+import { SharedComponentModule } from '../../component/shared-component.module';
 
 
 
@@ -9,7 +10,8 @@ import { ListPatientComponent } from './list-patient.component';
     ListPatientComponent
   ],
   imports: [
-    ListPatientRoutingModule
+    ListPatientRoutingModule,
+    SharedComponentModule
   ]
 })
 export class ListPatientModule { }

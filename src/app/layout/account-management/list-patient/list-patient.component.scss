@@ -1,10 +1,118 @@
 .titlebar{
     display: flex;
     flex-direction: row;
-    background-color: blue;
-    padding: 1rem;
+    align-items: center;
     width: auto;
-    svg{
-        width: 2rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    .searchbar{
+        /*searchbar height follows the default height of h1 which is 2.2rem*/
+        height: 2.2rem; 
+        margin-left: auto;
+        border: 1px solid black;
     }
+    .search-button{
+        width: 2.2rem;
+        height: 2.2rem;
+        border: 1px solid black;
+        border-radius: 2px;
+        cursor: pointer;
+        svg{
+            padding: 0.3vw;
+        }
+    }
+    .search-button:hover{
+        background-color: rgb(199, 246, 177);
+    }
+    h1{
+        font-size: 2.2vw;
+    }
+    app-back-button{
+        width: 2.2rem;
+        margin-right: 0.8rem;
+    }
+}
+
+.list-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.column{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-radius: 4px;
+
+    .col1, .col2{
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        border: 1.5px solid black;
+        
+    }
+    
+    .col1{
+        width: 10rem;
+    }
+    
+    .col2{
+        width: 100%;
+        border-left: 0;
+
+        .options-container{
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            margin-left: auto;
+    
+            .icon-container{
+                width: 2.2rem;
+                svg{
+                    width: 100%;
+                }
+            }
+            button{
+                width: 5rem;
+            }
+        }
+    }
+
+    .table-header{
+        background-color: rgb(199, 246, 177);
+        height: 2rem;  
+    } 
+
+    .table-item{
+        height: 3.5rem;
+        border-top: 0px;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .titlebar{
+        h1{
+            font-size: 1.2rem;
+        }
+        .searchbar{
+            /*searchbar height follows resized h1*/
+            height: 1.2rem;
+        }
+        .search-button, app-back-button{
+            height: 1.2rem;
+            width: 1.2rem;
+        }
+    }
+
+    .col2{
+        .options-container{
+
+            .icon-container{
+                width: 20vw;
+            }
+        }
+    }
+    
 }
