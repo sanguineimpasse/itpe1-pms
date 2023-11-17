@@ -14,7 +14,5 @@ export class ProfileComponent {
     address: '123 haha, lol'
     
   };
-  
-
 
 }

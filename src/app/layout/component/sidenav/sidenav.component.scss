@@ -80,7 +80,7 @@
     padding: 10px;
     border: none;
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgb(206, 255, 220);
     margin: 0;
     padding: 0;
   }
@@ -96,9 +96,11 @@
       font-size: 1rem;
       margin: 0;
     }
+    
     a:hover{
       color: green;
     }
+
   }
 
   /* Style for dropdown content links */

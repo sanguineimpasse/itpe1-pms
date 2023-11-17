@@ -9,6 +9,4 @@ export class AdminComponent {
   patients='20';
   recentPatients='6';
   doctors='5';
-
-
 }
