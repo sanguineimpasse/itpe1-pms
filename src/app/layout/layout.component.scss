@@ -36,6 +36,7 @@
 @media screen and (max-width: 600px) {
     .vertical-container{
         flex-direction: column;
+        
         .horizontal-container{
             flex-direction: column;
             width: 100vw;
@@ -43,10 +44,12 @@
 
             .sidenav-container{
                 height: auto;
+                width: auto;
             }
             .screen-container{
                 height: 100%;
-                padding: 1rem 2rem 1rem 2rem;
+                width: auto;
+                padding: 1rem;
             }      
         }
     }
