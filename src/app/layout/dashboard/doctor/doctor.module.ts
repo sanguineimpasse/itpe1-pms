@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { DoctorComponent } from './doctor.component';
 import { DoctorRoutingModule } from './doctor-routing.module';
 
@@ -10,7 +9,6 @@ import { DoctorRoutingModule } from './doctor-routing.module';
     DoctorComponent
   ],
   imports: [
-    CommonModule,
     DoctorRoutingModule
   ]
 })
