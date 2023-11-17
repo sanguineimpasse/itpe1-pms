@@ -1,0 +1,10 @@
+.titlebar{
+    display: flex;
+    flex-direction: row;
+    background-color: blue;
+    padding: 1rem;
+    width: auto;
+    svg{
+        width: 2rem;
+    }
+}
