@@ -9,6 +9,9 @@ import { ListDoctorComponent } from './list-doctor.component';
   declarations: [
     ListDoctorComponent
   ],
-  imports: [ListDoctorRoutingModule]
+  imports: [
+    CommonModule,
+    ListDoctorRoutingModule
+  ]
 })
 export class ListDoctorModule { }
