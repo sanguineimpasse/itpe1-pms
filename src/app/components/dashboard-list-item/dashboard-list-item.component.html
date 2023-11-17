@@ -1,0 +1,18 @@
+<li *ngIf="isPatient">
+    <img src="assets/images/account.png" alt="account">
+    <p>
+        PATIENT: {{userName}}
+    </p>
+    <!--
+    <p>Date Created: {{dateCreated}} </p>
+    -->
+</li>
+<li *ngIf="isDoctor" class="doctor">
+    <img src="assets/images/account.png" alt="account">
+    <p>
+        DOCTOR: {{userName}}
+    </p>
+    <!--
+    <p>Date Created: {{dateCreated}} </p>
+    -->
+</li>
