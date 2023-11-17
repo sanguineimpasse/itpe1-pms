@@ -4,6 +4,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { RouterModule } from '@angular/router';
 import { TopnavComponent } from './topnav/topnav.component';
 import { LayoutRoutingModule } from '../layout-routing.module';
+import { SidenavDoctorComponent } from './sidenav-doctor/sidenav-doctor.component';
 
 
 
@@ -11,7 +12,8 @@ import { LayoutRoutingModule } from '../layout-routing.module';
   declarations: [
     ScreenComponent,
     SidenavComponent,
-    TopnavComponent   
+    TopnavComponent,
+    SidenavDoctorComponent   
   ],
   imports: [
     RouterModule,
@@ -20,7 +22,8 @@ import { LayoutRoutingModule } from '../layout-routing.module';
   exports:[
     ScreenComponent,
     SidenavComponent,
-    TopnavComponent
+    TopnavComponent,
+    SidenavDoctorComponent
   ]
 })
 export class SharedComponentModule { }
