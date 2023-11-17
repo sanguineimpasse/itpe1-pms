@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { doctor_list_data, patient_list_data } from 'src/data/testlistdata';
 
 @Component({
   selector: 'app-admin',
@@ -6,7 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent {
-  patients='20';
-  recentPatients='6';
-  doctors='5';
+  patientCount = patient_list_data.length;
+  doctorCount = doctor_list_data.length;
+   
+  patients= this.patientCount;
+  recentPatients='3';
+  doctors=this.doctorCount;
 }
