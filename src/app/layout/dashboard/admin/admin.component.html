@@ -29,6 +29,7 @@
 
     <div class="secondBlock">
         <h1>Recently Created Accounts</h1>
+        <!--
         <ul>
             <li>
                 <img src="assets/images/account.png" alt="account">
@@ -72,6 +73,11 @@
                 </p>
             </li>
         </ul>
+        -->
+        <app-dashboard-list-item *ngFor="let data of userListData"
+        userName="{{data.userName}}"
+        accountType="{{data.accountType}}"
+        ></app-dashboard-list-item>
 
     </div>
 
