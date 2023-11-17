@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListDoctorRoutingModule } from './list-doctor-routing.module';
 import { ListDoctorComponent } from './list-doctor.component';
-import { SharedComponentModule } from '../../component/shared-component.module';
+import { TableListModule } from 'src/app/components/table-list/table-list.module';
+import { BackButtonModule } from 'src/app/components/back-button/back-button.module';
 
 
 
@@ -13,7 +14,8 @@ import { SharedComponentModule } from '../../component/shared-component.module';
   imports: [
     CommonModule,
     ListDoctorRoutingModule,
-    SharedComponentModule
+    TableListModule,
+    BackButtonModule
   ]
 })
 export class ListDoctorModule { }

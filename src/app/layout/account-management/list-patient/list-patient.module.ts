@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { ListPatientRoutingModule } from './list-patient-routing.module';
 import { ListPatientComponent } from './list-patient.component';
-import { SharedComponentModule } from '../../component/shared-component.module';
 import { CommonModule } from '@angular/common';
+import { TableListModule } from 'src/app/components/table-list/table-list.module';
+import { BackButtonModule } from 'src/app/components/back-button/back-button.module';
 
 
 
@@ -13,7 +14,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     ListPatientRoutingModule,
-    SharedComponentModule
+    TableListModule,
+    BackButtonModule
   ]
 })
 export class ListPatientModule { }

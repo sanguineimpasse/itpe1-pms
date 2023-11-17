@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { patient_list_data } from 'src/data/testlistdata';
+import { user_list_data } from 'src/data/testlistdata';
 
 @Component({
   selector: 'app-list-patient',
@@ -7,7 +7,7 @@ import { patient_list_data } from 'src/data/testlistdata';
   styleUrls: ['./list-patient.component.scss']
 })
 export class ListPatientComponent implements OnInit {
-  tableData = patient_list_data;
+  tableData = user_list_data.filter(user => user.accountType === 'patient');
 
   ngOnInit(): void {
       console.log("these are the test input data:");
