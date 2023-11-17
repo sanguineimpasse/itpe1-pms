@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { TopnavComponent } from './topnav/topnav.component';
 import { LayoutRoutingModule } from '../layout-routing.module';
 import { BackButtonComponent } from './back-button/back-button.component';
+import { TableListComponent } from './table-list/table-list.component';
 
 
 
@@ -13,7 +14,8 @@ import { BackButtonComponent } from './back-button/back-button.component';
     ScreenComponent,
     SidenavComponent,
     TopnavComponent,
-    BackButtonComponent   
+    BackButtonComponent,
+    TableListComponent   
   ],
   imports: [
     RouterModule,
@@ -23,7 +25,8 @@ import { BackButtonComponent } from './back-button/back-button.component';
     ScreenComponent,
     SidenavComponent,
     TopnavComponent,
-    BackButtonComponent 
+    BackButtonComponent,
+    TableListComponent   
   ]
 })
 export class SharedComponentModule { }
