@@ -10,6 +10,6 @@ export class TableListComponent implements OnInit {
   @Input() userName: string = '';
 
   ngOnInit(): void {
-    console.log("data inputter working :D")
+    console.log("[table-list] data inputter working :D")
   }
 }

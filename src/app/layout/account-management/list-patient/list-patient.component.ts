@@ -10,6 +10,7 @@ export class ListPatientComponent implements OnInit {
   tableData = patient_list_data;
 
   ngOnInit(): void {
+      console.log("these are the test input data:");
       console.log(this.tableData);
   }
 }

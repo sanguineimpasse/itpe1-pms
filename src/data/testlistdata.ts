@@ -20,3 +20,14 @@ export const patient_list_data = [
         userName: "Iiwasu Isshu"
     }
 ]
+
+export const doctor_list_data = [
+    {
+        userCode:"ND93NM",
+        userName:"Dr. Beeda Lacson"
+    },
+    {
+        userCode:"2TXT7A",
+        userName:"Dr. Ratio Arnold Macapuno"
+    }
+]
