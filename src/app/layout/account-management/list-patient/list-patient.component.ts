@@ -7,10 +7,10 @@ import { user_list_data } from 'src/data/testlistdata';
   styleUrls: ['./list-patient.component.scss']
 })
 export class ListPatientComponent implements OnInit {
-  tableData = user_list_data.filter(user => user.accountType === 'patient');
+  userList = user_list_data.filter(user => user.accountType === 'patient'); //filter array to patient first
 
   ngOnInit(): void {
       console.log("these are the test input data:");
-      console.log(this.tableData);
+      console.log(this.userList);
   }
 }

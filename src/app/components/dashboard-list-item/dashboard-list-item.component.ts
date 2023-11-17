@@ -14,7 +14,6 @@ export class DashboardListItemComponent implements OnInit {
   isDoctor: boolean = false;
 
   ngOnInit(): void {
-    
     this.isPatient = false;
     this.isDoctor = false;
 
