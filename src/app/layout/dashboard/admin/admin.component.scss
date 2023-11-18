@@ -90,3 +90,20 @@
 }
 
 
+@media screen and (max-width:600px){
+    .main-container{
+        width: 100vw;
+        flex-direction: column;
+    }
+    .col1{
+        width: 100%;
+        .horizontal-container{
+            height: auto;
+            flex-direction: column;
+            .patient-list-container, .doctor-list-container{
+                width: 100%;
+            }
+        }
+    }
+    
+}
