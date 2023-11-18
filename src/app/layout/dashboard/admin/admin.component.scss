@@ -1,6 +1,88 @@
-.main-container{
-    background-color: rgb(137, 137, 204);
+.main-container, .patient-list-container, .doctor-list-container,
+.horizontal-container, .graph-container, .account-list-container, .col1, .col2{
     display: flex;
+}
+
+/*border-box prevents the elements from making the container grow*/
+.col1,.col2,.horizontal-container,
+.graph-container,.patient-list-container,.doctor-list-container,.graph{
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.main-container{
+    background-color: rgb(245, 245, 245);
     height: 100%;
     width: 100%;
+    gap: 0.5rem;
+    overflow-y: auto;
 }
+
+.col1{
+    width: 270rem;
+    flex-direction: column;
+
+    .horizontal-container{
+        flex-direction: row;
+        width: 100%;
+        height: 40rem;
+        gap: 1rem;
+
+        .patient-list-container,.doctor-list-container{
+            width: 50%;
+            border-radius: 8px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h2{
+                text-align: center;
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+            p{
+                font-weight: 700;
+                font-size: 3rem;
+                margin-bottom: 2rem;
+            }
+            .recent{
+                margin: 0;
+                font-size: 1rem;
+            }
+        }
+        .patient-list-container{
+            background-color: #61CD83;
+        }
+        .doctor-list-container{
+            background-color: #1986A0;
+        }
+    }
+    
+    .graph-container{
+        height: 100%;
+        .graph{
+            width: 100%;
+            background-color: #F9F9F9;
+            border-radius: 8px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+    }
+}
+
+.col2{
+    width:100%;
+    flex-direction: column;
+    padding-top: 2rem;
+    h2{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .account-list-container{
+        flex-direction: column;
+        align-items: center;
+
+    }
+}
+
+

@@ -1,18 +1,39 @@
 <div class="main-container">
+    <div class="col1">
+        <div class="horizontal-container">
+            <div class="patient-list-container">
+                <h2>TOTAL REGISTERED PATIENTS</h2>
+                <p>{{patients}}</p>
 
-</div>
-    
-    <!--
-    <div class="secondBlock">
-        <h1>Recently Created Accounts</h1>
-        <ul class="userList">
-            <app-dashboard-list-item *ngFor="let data of userListData"
-            userName="{{data.userName}}"
-            accountType="{{data.accountType}}"
-            dateCreated="{{data.dateCreated}}"
-            ></app-dashboard-list-item>
-        </ul>
+                <p class="recent">
+                    RECENT PATIENTS: {{recentPatients}}
+                </p>
+            </div>
+            <div class="doctor-list-container">
+                <h2>TOTAL REGISTERED DOCTORS</h2>
+                <p>{{doctors}}</p>
+            </div>
+        </div>
+        <div class="graph-container">
+            <div class="graph">
+                graph
+            </div>
+            
+        </div>
     </div>
-    -->
+    <div class="col2">
+        <h2>Recently Added Accounts</h2>
+        <div class="account-list-container">
+            <ul>
+                <app-dashboard-list-item *ngFor="let data of userListData"
+                userName="{{data.userName}}"
+                accountType="{{data.accountType}}"
+                dateCreated="{{data.dateCreated}}"
+                ></app-dashboard-list-item>
+            </ul>
+        </div>
+    </div>
+    
+</div>
 
 
