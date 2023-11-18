@@ -27,6 +27,6 @@ export class AdminComponent implements OnInit{
   doctors = user_list_data.filter(user => user.accountType === 'doctor').length; //filter the array with only the type of 'doctor', then measure length
 
   ngOnInit(): void {
-      console.log(this.userListData);
+      //console.log(this.userListData);
   }
 }
