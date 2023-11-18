@@ -1,66 +1,91 @@
-<div class="containerHead">
-    <div class="buttonContainer">
 
-        <app-back-button></app-back-button>
+
+    <div class="view">
+        <div class="main">
+            <div class="form-container">
+                
+                <div class="buttonContainer">
+                
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223z"/>
+                        </svg>
+                    </a>
     
-    </div>
-    <p>
-        PATIENT PROFILE
-    </p>
-
-
-</div>
-
-<div class="container">
-
-    <div class="containerProfile">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-        </svg>
-    </div>
-
-    <div class="containerInfo">
-
-        <div class="basicInfo">
-            <h2>
-                BASIC INFORMATION
-            </h2>
-
-            <ul>
-                <li>
-                    <p>First Name:</p>
-                </li>
-
-                <li>
-                    <p>Last Name:</p>
-                </li>
-
-                <li>
-                    <p>Birthdate:</p>
-                </li>
-            </ul>
+                </div>
+                <h2>Add Doctor</h2>
+                
+    
+                    <div class="image-upload">
+                        <label for="profile-image" class="image-preview">
+                            <img id="image-preview" src="image.jpg" alt="Profile Image">
+                        </label>
+                        <label for="profile-image" class="upload-icon">📷</label>
+                        <input type="file" id="profile-image" name="profile-image" accept="image/*" onchange="previewImage(event)">
+                    </div>
+    
+                    <label for="ai">Account ID:</label>
+                    <input type="ai" id="ai" name="ai" required>
+    
+                    <label for="fname">First Name:</label>
+                    <input type="fname" id="fname" name="fname" required>
+    
+                    <label for="lname">Last Name:</label>
+                    <input type="lname" id="lname" name="lname" required>
+    
+                    <label for="sp">Specialization</label>
+                    <input type="sp" id="sp" name="sp" required>
+    
+                    <label for="birthdate">Birthdate:</label>
+                    <div class="dropdown-container">
+                    <div class="grid">
+                        <select id="day" name="day">
+                            <option value="" disabled selected>Select Day</option>
+    
+                        </select>
+    
+                        <select id="month" name="month">
+                            <option value="" disabled selected>Select Month</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                            <!-- Add other months as needed -->
+                        </select>
+    
+                        <select id="year" name="year">
+                            <option value="" disabled selected>Select Year</option>
+                        </select>
+                    </div>
+    
+                    <div class="grid">
+                        <label for="pn">Phone Number:</label>
+                        <input type="pn" id="pn" name="pn">
+    
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+    
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password">
+    
+                        <label for="cpassword">Confirm Password:</label>
+                        <input type="cpassword" id="cpassword" name="cpassword">
+                    </div>
+    
+                    
+                    <button class="add">Add</button>
+                    
+    
+                
+            </div>
         </div>
-        
-        <div class="contactInfo">
-            <h2>
-                CONTACT INFORMATION
-            </h2>
-
-            <ul>
-                <li>
-                    <p>Phone Number:</p>
-                </li>
-
-                <li>
-                    <p>Email:</p>
-                </li>
-
-            </ul>
-
-        </div>
-
     </div>
-
-</div>
-
+    
