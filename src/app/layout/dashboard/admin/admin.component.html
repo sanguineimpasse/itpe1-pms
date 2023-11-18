@@ -28,8 +28,9 @@
     
 
     <div class="secondBlock">
-        
-        <ul>
+        <h1>Recently Created Accounts</h1>
+        <ul class="userList">
+            <!--
             <li>
                 <img src="assets/images/account.png" alt="account">
                 <p>
@@ -71,6 +72,12 @@
                     PATIENT: Beatriz Abarientos
                 </p>
             </li>
+            -->
+            <app-dashboard-list-item *ngFor="let data of userListData"
+            userName="{{data.userName}}"
+            accountType="{{data.accountType}}"
+            dateCreated="{{data.dateCreated}}"
+            ></app-dashboard-list-item>
         </ul>
 
     </div>
