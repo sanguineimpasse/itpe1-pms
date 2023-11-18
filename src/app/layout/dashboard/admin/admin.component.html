@@ -1,17 +1,19 @@
 <div class="main-container">
     <div class="col1">
         <div class="horizontal-container">
-            <div class="patient-list-container">
+            <div class="patient-list-container" [routerLink]="['accounts/management/patient']">
                 <h2>TOTAL REGISTERED PATIENTS</h2>
                 <p>{{patients}}</p>
-
                 <p class="recent">
-                    RECENT PATIENTS: {{recentPatients}}
+                    Recent Patients: {{recentPatients}}
                 </p>
             </div>
-            <div class="doctor-list-container">
+            <div class="doctor-list-container" [routerLink]="['accounts/management/doctor']">
                 <h2>TOTAL REGISTERED DOCTORS</h2>
                 <p>{{doctors}}</p>
+                <p class="recent">
+                    Recent Doctors: {{recentDoctors}}
+                </p>
             </div>
         </div>
         <div class="graph-container">

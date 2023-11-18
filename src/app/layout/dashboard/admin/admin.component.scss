@@ -28,6 +28,12 @@
         height: 40rem;
         gap: 1rem;
 
+        .patient-list-container{
+            background-color: #95eab0;
+        }
+        .doctor-list-container{
+            background-color: #59b5cc;
+        }
         .patient-list-container,.doctor-list-container{
             width: 50%;
             border-radius: 8px;
@@ -35,7 +41,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
+            cursor: pointer;
+            
             h2{
                 text-align: center;
                 font-size: 2.5rem;
@@ -51,12 +58,7 @@
                 font-size: 1rem;
             }
         }
-        .patient-list-container{
-            background-color: #61CD83;
-        }
-        .doctor-list-container{
-            background-color: #1986A0;
-        }
+        
     }
     
     .graph-container{
@@ -81,7 +83,9 @@
     .account-list-container{
         flex-direction: column;
         align-items: center;
-
+        ul{
+            width: 100%;
+        }
     }
 }
 
