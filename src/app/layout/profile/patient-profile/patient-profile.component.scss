@@ -1,28 +1,19 @@
 .buttonContainer{
-    display: flex;
-    justify-content: flex-start;
-
-    a{
-        cursor: pointer;
-
-        svg{
-            height: 40px;
-            width: 40px;
-        }
-
-    }
+    margin: 2rem;
+    width: 2vw;
 }
 
 .containerHead{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     margin-left: 30px;
     width: 1200px;
 
     p{
         font-size: 40px;
         margin: 15px;
-        margin-left: 50px;
+        
         font-weight: 700;
     }
     
