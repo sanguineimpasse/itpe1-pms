@@ -10,7 +10,7 @@ export class AdminComponent implements OnInit{
   //userListData = user_list_data;
 
   //sort the users by dateCreated
-  userListData = user_list_data.sort((a, b) => new Date(b.dateCreated).getTime() - new Date(a.dateCreated).getTime());
+  userListData = this.filterUsersByDate(user_list_data, 10);
   
   private filterUsersByDate(users: any[], weeksAgo: number): any[] {
     const currentDate = new Date();
@@ -20,13 +20,14 @@ export class AdminComponent implements OnInit{
       .filter(user => new Date(user.dateCreated) >= minDate)
       .sort((a, b) => new Date(b.dateCreated).getTime() - new Date(a.dateCreated).getTime());
   }
-  recentlyAddedUsers = this.filterUsersByDate(user_list_data, 4); // adjust the number of weeks here
+  recentlyAddedUsers = this.filterUsersByDate(user_list_data, 10); // adjust the number of weeks here
   
   patients  = user_list_data.filter(user => user.accountType === 'patient').length; //filter the array with only the type of 'patient', then measure length
-  recentPatients= this.recentlyAddedUsers.length;
+  recentPatients = this.recentlyAddedUsers.filter(user => user.accountType === 'patient').length;
+  recentDoctors = this.recentlyAddedUsers.filter(user => user.accountType === 'doctor').length;;
   doctors = user_list_data.filter(user => user.accountType === 'doctor').length; //filter the array with only the type of 'doctor', then measure length
 
   ngOnInit(): void {
-      console.log(this.userListData);
+      //console.log(this.userListData);
   }
 }

@@ -42,7 +42,7 @@ const routes: Routes = [
       },
       {
         path: 'profile/patient',
-        loadChildren: () => import('./profile/profile.module').then(mod=>mod.ProfileModule)
+        loadChildren: () => import('./profile/patient-profile/patient-profile.module').then(mod=>mod.PatientProfileModule)
       },
       //ACCOUNTS MANAGEMENT
       {

@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ScreenComponent } from './screen/screen.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { RouterModule } from '@angular/router';
 import { TopnavComponent } from './topnav/topnav.component';
 import { LayoutRoutingModule } from '../layout-routing.module';
-import { BackButtonComponent } from '../../components/back-button/back-button.component';
-
 
 
 @NgModule({
@@ -13,15 +12,18 @@ import { BackButtonComponent } from '../../components/back-button/back-button.co
     ScreenComponent,
     SidenavComponent,
     TopnavComponent,
+    SidenavComponent
   ],
   imports: [
+    CommonModule,
     RouterModule,
     LayoutRoutingModule
   ],
   exports:[
     ScreenComponent,
     SidenavComponent,
-    TopnavComponent
+    TopnavComponent,
+    SidenavComponent 
   ]
 })
 export class SharedComponentModule { }
