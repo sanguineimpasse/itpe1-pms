@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableListComponent } from './table-list.component';
+import { NavRoutingModule } from 'src/app/layout/nav-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { TableListComponent } from './table-list.component';
     TableListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NavRoutingModule
   ],
   exports:[
     TableListComponent

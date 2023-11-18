@@ -14,7 +14,16 @@ const routes: Routes = [
   {
     path:'accounts/management/doctor',
     loadChildren: () => import('./account-management/list-doctor/list-doctor.module').then(mod=>mod.ListDoctorModule)
+  },
+  {
+    path:'accounts/edit/doctor',
+    loadChildren: () => import('./account-management/edit/edit-doctor/edit-doctor.module').then(mod=>mod.EditDoctorModule)
+  },
+  {
+    path:'accounts/edit/patient',
+    loadChildren: () => import('./account-management/edit/edit-patient/edit-patient.module').then(mod=>mod.EditPatientModule)
   }
+
 ];
 
 @NgModule({
