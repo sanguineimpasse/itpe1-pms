@@ -4,7 +4,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { RouterModule } from '@angular/router';
 import { TopnavComponent } from './topnav/topnav.component';
 import { LayoutRoutingModule } from '../layout-routing.module';
-import { BackButtonComponent } from '../../components/back-button/back-button.component';
+import { SidenavDoctorComponent } from './sidenav-doctor/sidenav-doctor.component';
 
 
 
@@ -13,6 +13,7 @@ import { BackButtonComponent } from '../../components/back-button/back-button.co
     ScreenComponent,
     SidenavComponent,
     TopnavComponent,
+    SidenavDoctorComponent   
   ],
   imports: [
     RouterModule,
@@ -21,7 +22,8 @@ import { BackButtonComponent } from '../../components/back-button/back-button.co
   exports:[
     ScreenComponent,
     SidenavComponent,
-    TopnavComponent
+    TopnavComponent,
+    SidenavDoctorComponent
   ]
 })
 export class SharedComponentModule { }
