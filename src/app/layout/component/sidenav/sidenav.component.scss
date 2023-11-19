@@ -163,6 +163,9 @@
         width: 100vw;
         display: flex;
         justify-content: center;
+	overflow-x: auto;
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
 
         li{
           margin-top: 10px;
