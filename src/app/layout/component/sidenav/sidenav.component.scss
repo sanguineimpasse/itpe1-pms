@@ -3,11 +3,12 @@
   flex-direction: column;
   position: relative;
   height: 100%;
-  width: auto;
+  width: 15rem;
   padding: 1.5rem;
   background-color: whitesmoke;
   border-right: 1px solid black;
   box-sizing: border-box;
+  overflow-x: hidden;
 
   p{
     margin-top: 4.5px;
@@ -27,7 +28,9 @@
 
       svg{
         margin-right: 10px;
-        width: 1.4rem;
+        height: 1rem;
+        width: 1rem;
+        flex-shrink: 0;
       }
     }
 
@@ -40,7 +43,6 @@
   li a:hover{
     color: #2A7267;
   }
-
 }
 
 /*tablet*/

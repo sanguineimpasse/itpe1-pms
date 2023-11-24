@@ -50,7 +50,7 @@ export const user_list_data = [
     {   
         accountType:"doctor",
         userCode:"NFI9BN",
-        userName:"Dr. Baizhu Ying",
+        userName:"Dr. Bai Zhu",
         dateCreated:"2023-09-29"
     },
     {
