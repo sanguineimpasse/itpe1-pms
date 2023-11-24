@@ -44,6 +44,10 @@ const routes: Routes = [
         path: 'profile/patient',
         loadChildren: () => import('./profile/patient-profile/patient-profile.module').then(mod=>mod.PatientProfileModule)
       },
+      // {
+      //   path: 'profile/doctor',
+      //  
+      // },
       //ACCOUNTS MANAGEMENT
       {
         path:'accounts/management/patient',

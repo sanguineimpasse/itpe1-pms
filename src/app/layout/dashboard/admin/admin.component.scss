@@ -19,7 +19,7 @@
 }
 
 .col1{
-    width: 270rem;
+    width: 80%;
     flex-direction: column;
 
     .horizontal-container{
@@ -45,7 +45,7 @@
             
             h2{
                 text-align: center;
-                font-size: 2.5rem;
+                font-size: 2rem;
                 margin-bottom: 2rem;
             }
             p{
@@ -73,7 +73,7 @@
 }
 
 .col2{
-    width:100%;
+    width: auto;
     flex-direction: column;
     padding-top: 2rem;
     h2{
@@ -89,14 +89,14 @@
     }
 }
 
-
-@media screen and (max-width:600px){
+/*tablet*/
+@media screen and (max-width:800px){
     .main-container{
         width: 100vw;
         flex-direction: column;
     }
     .col1{
-        width: 100%;
+        width: auto;
         .horizontal-container{
             height: auto;
             flex-direction: column;
@@ -105,5 +105,9 @@
             }
         }
     }
+}
+
+/*mobile*/
+@media screen and (max-width:600px){
     
 }

@@ -1,3 +1,9 @@
+app-sidenav, app-screen{
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .vertical-container{
     display:flex;
     flex-direction: column;
@@ -5,7 +11,7 @@
     height: 100vh;
     
     .topnav-container{
-        height: 8vh;
+        height: 4rem;
         flex-shrink: 0;
     }
 
@@ -21,6 +27,7 @@
             display: flex;
             width:100%;
             overflow-y: auto;
+            box-sizing: border-box;
                  /*top right bottom left*/
         }
     }
@@ -28,18 +35,16 @@
 
 /*tablet size*/
 @media screen and (max-width: 800px) {
-
-}
-
-/*mobile size*/
-@media screen and (max-width: 600px) {
+    app-screen, app-sidenav{
+        width: 100vw;
+    }
     .vertical-container{
         flex-direction: column;
         
         .horizontal-container{
             flex-direction: column;
             width: 100vw;
-            height: 92vh;
+            height: 100%;
 
             .sidenav-container{
                 height: auto;
@@ -48,9 +53,20 @@
             .screen-container{
                 height: 100%;
                 width: auto;
+                flex-shrink: 0;
             }      
         }
     }
-    
-    
+}
+
+/*mobile size*/
+@media screen and (max-width: 600px) {
+    app-screen{
+        filter: blur(100px);
+    }
+    .screen-container{
+        height: 100%;
+        width: auto;
+        flex-shrink: 0;
+    }  
 }
