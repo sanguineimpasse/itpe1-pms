@@ -2,13 +2,13 @@ app-sidenav, app-screen{
     display: flex;
     box-sizing: border-box;
     width: auto;
+    height: auto;
 }
-
 .vertical-container{
     display:flex;
     flex-direction: column;
     overflow: hidden;
-    height: 100dvh;
+    height: 100vh;
     
     .topnav-container{
         height: 4rem;
@@ -19,6 +19,7 @@ app-sidenav, app-screen{
         display: flex;
         flex-direction: row;
         height: 100%;
+        overflow: none;
         .sidenav-container{
             display: flex;
             width: auto;
@@ -26,7 +27,7 @@ app-sidenav, app-screen{
         .screen-container{
             display: flex;
             width:auto;
-            overflow-y: auto;
+            overflow: auto;
             box-sizing: border-box;
         }
     }
@@ -34,11 +35,9 @@ app-sidenav, app-screen{
 
 /*tablet size*/
 @media screen and (max-width: 800px) {
-    app-screen, app-sidenav{
-        width: 100vw;
-    }
     .vertical-container{
         flex-direction: column;
+        height: auto;
         
         .horizontal-container{
             flex-direction: column;
@@ -53,8 +52,10 @@ app-sidenav, app-screen{
             .screen-container{
                 height: 100%;
                 width: auto;
-                flex-shrink: 0;
-                overflow: auto;
+                overflow-y: auto;
+                app-screen{
+                    height: 100vh;
+                }
             }      
         }
     }
@@ -62,9 +63,5 @@ app-sidenav, app-screen{
 
 /*mobile size*/
 @media screen and (max-width: 600px) {
-    .screen-container{
-        height: 100%;
-        width: auto;
-        flex-shrink: 0;
-    }  
+    
 }

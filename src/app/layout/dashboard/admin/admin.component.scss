@@ -18,12 +18,13 @@
 
 .col1{
     flex-direction: column;
-
+    width: 80%;
+    
     .horizontal-container{
         flex-direction: row;
         width: 100%;
         gap: 1rem;
-
+        justify-content: center;
         .patient-list-container{
             background-color: #95eab0;
         }
@@ -35,7 +36,7 @@
             align-items: center;
             justify-content: center;
             width: auto;
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 8px;
             box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
             cursor: pointer;
@@ -72,6 +73,7 @@
 .col2{
     flex-direction: column;
     padding-top: 2rem;
+    margin-left: auto;
     h2{
         text-align: center;
         margin-bottom: 2rem;
@@ -88,15 +90,12 @@
 /*tablet*/
 @media screen and (max-width:800px){
     .main-container{
-        width: 100vw;
         flex-direction: column;
         align-items: center;
     }
     .col1{
         width: auto;
         .horizontal-container{
-            height: auto;
-            
             align-items: center;
             .patient-list-container, .doctor-list-container{
                 width: 80%;
@@ -105,7 +104,7 @@
     }
     .col2{
         width: 90%;
-        
+        margin-left: 0;
     }
 }
 
