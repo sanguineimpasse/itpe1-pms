@@ -61,9 +61,6 @@ app-sidenav, app-screen{
 
 /*mobile size*/
 @media screen and (max-width: 600px) {
-    app-screen{
-        filter: blur(100px);
-    }
     .screen-container{
         height: 100%;
         width: auto;

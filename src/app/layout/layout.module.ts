@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { SharedComponentModule } from './component/shared-component.module';
-import { ScreenSizeModule } from '../components/debug/screen-size/screen-size.module';
 
 @NgModule({
   declarations: [
@@ -12,8 +11,7 @@ import { ScreenSizeModule } from '../components/debug/screen-size/screen-size.mo
   imports: [
     CommonModule,
     LayoutRoutingModule,
-    SharedComponentModule,
-    ScreenSizeModule
+    SharedComponentModule
   ]
 })
 export class LayoutModule { }
