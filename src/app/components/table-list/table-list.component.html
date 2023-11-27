@@ -5,10 +5,12 @@
     <div class="col2 table-item">
         {{userName}}
         <div class="options-container">
+            <!--Edit button for doctor-->
             <button type="button" [routerLink]="['accounts/edit/doctor']"
             *ngIf="isDoctor">
                 Edit
             </button>
+            <!--Edit button for patient-->
             <button type="button" [routerLink]="['accounts/edit/patient']"
             *ngIf="isPatient">
                 Edit
