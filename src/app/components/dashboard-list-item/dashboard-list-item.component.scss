@@ -21,18 +21,23 @@ li{
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
     margin-bottom: 10px;
     
-    
     cursor: pointer;
+}
+li:hover{
+    background-color: rgb(77, 199, 142);
 }
 .doctor{
     background-color: #90e0ef;
+}
+.doctor:hover{
+    background-color: #54b6c7;
 }
 p{
     margin-bottom: 0.2rem;
 }
 p.name{
     font-style: italic;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
 }
 p.creation-date{
 

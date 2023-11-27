@@ -1,6 +1,6 @@
 main{
     padding: 1.5rem;
-    width: 100%;
+    box-sizing: border-box;
 }
 .titlebar{
     display: flex;
@@ -15,12 +15,19 @@ main{
         margin-left: auto;
         margin-right: 1rem;
     }
+    .actions-container, .title-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .actions-container{
+        margin-left: auto;
+    }
     .searchbar{
         /*searchbar height follows the default height of h1 which is 2.2rem*/
         height: 2.2rem; 
         border: 1px solid black;
     }
-    
     .search-button{
         width: 2.2rem;
         height: 2.2rem;
@@ -100,19 +107,18 @@ main{
 
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:800px) {
     .titlebar{
-        h1{
-            font-size: 1.2rem;
+        app-back-button{
+            align-content: flex-start;
         }
-        .searchbar{
-            /*searchbar height follows resized h1*/
-            height: 1.2rem;
+        gap: 1.5rem;
+        flex-direction: column;
+
+        .actions-container{
+            margin-left: 0;
         }
-        .search-button, app-back-button{
-            height: 1.2rem;
-            width: 1.2rem;
-        }
+
     }
 
     .col2{
@@ -124,4 +130,12 @@ main{
         }
     }
     
+}
+
+@media screen and (max-width:600px) {
+    .titlebar{
+        h1{
+            font-size: 1.75rem;
+        }
+    }
 }

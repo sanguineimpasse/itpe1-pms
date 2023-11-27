@@ -28,8 +28,14 @@
         .patient-list-container{
             background-color: #95eab0;
         }
+        .patient-list-container:hover{
+            background-color: #79d296;
+        }
         .doctor-list-container{
             background-color: #59b5cc;
+        }
+        .doctor-list-container:hover{
+            background-color: #4eabc3;
         }
         .patient-list-container,.doctor-list-container{
             flex-direction: column;
