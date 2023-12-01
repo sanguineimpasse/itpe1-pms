@@ -3,11 +3,16 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login.component';
 import { RegistrationComponent } from '../registration/registration.component';
+import { QrloginComponent } from './qrlogin/qrlogin.component';
 
 const routes: Routes = [
   {
     path:'',
     component: LoginComponent
+  },
+  {
+    path:'qr',
+    component: QrloginComponent
   }
 ];
 

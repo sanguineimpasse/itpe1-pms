@@ -46,6 +46,7 @@ main{
     .form-container{
         width: 50%;
         padding: 9rem 2rem;
+        flex-direction: column;
         form{
             display: flex;
             flex-direction: column;
@@ -81,6 +82,11 @@ main{
             button:hover{
                 background-color: #60e189;               
             }
+        }
+        .footer{
+            flex-direction: column;
+            margin-top: 1rem;
+            gap: 1rem;
             .sign-up{
                 color: #60e189;
                 font-weight: 700;
@@ -89,7 +95,25 @@ main{
                 color: #28fa6b;
                 cursor: pointer;
             }
+            button{
+                cursor: pointer;
+                color: white;
+                background-color: #8faaea;
+                border: 0;
+                font-size: 1.1rem;
+                padding: 0.7rem;
+                border: 0;
+                border-radius: 4px;
+                
+            }
+            button:hover{
+                background-color: #6f9aff;               
+            }
+            #qrlogin{
+                display: none;
+            }
         }
+        
     }
 }
 
@@ -123,6 +147,11 @@ main{
                             width: auto;
                         }
                     }
+                }
+            }
+            .footer{
+                #qrlogin{
+                    display: block;
                 }
             }
         }

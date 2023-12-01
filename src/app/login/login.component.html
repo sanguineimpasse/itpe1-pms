@@ -10,23 +10,11 @@
                 <input type="text" name="email" class="box" placeholder="Enter Email">
                 <input type="password" name="password" class="box" placeholder="Enter Password">
                 <button type="submit">Login</button>
-                <p>Don't have an account? <span><a class="sign-up" [routerLink]="['register']">Sign up!</a></span></p>
             </form>
+            <div class="footer">
+                <button type="button" id="qrlogin" [routerLink]="['qr']">Login via QR Code</button>
+                <p>Don't have an account? <span><a class="sign-up" [routerLink]="['register']">Sign up!</a></span></p>
+            </div>
         </div>
     </div>
 </main>
-<!--
-<div class="container">
-    <form action="" method="post" class="form">
-        <h2>PATIENT MANAGEMENT</h2>
-        <input type="text" name="email" class="box" placeholder="Enter Email">
-        <input type="password" name="password" class="box" placeholder="Enter Password">
-        <input type="submit" id="submit" value="Login">
-        <p>Don't have an account? <span><a href="#">Sign up!</a></span></p>
-    </form>
-    
-    <div class="side">
-        <img src="assets/images/hospital.png">
-    </div>
-</div>
--->

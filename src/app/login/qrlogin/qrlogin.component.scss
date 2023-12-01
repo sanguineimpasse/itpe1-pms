@@ -1,0 +1,18 @@
+main{
+    display: flex;
+
+    justify-content: center;
+}
+app-back-button{
+    width: 2.2rem;
+}
+.container{
+    max-width: 800px;
+    padding: 2rem;
+    margin-top: 3.5rem;
+    .title-container{
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+}
