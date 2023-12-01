@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { current_account_credentials } from 'src/data/currentaccount';
 
 @Component({
   selector: 'app-sidenav',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class SidenavComponent implements OnInit{
-  accountLoggedIn: string = 'admin';//for now, we need to STRICTLY specify the account type in this variable
+  accountLoggedIn = current_account_credentials.accountType;
 
   isAdmin: boolean = false;
   isPatient: boolean = false;

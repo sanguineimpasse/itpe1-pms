@@ -7,7 +7,15 @@
             <form action="" method="">
                 <h1>MediWISE</h1>
         
-                <p>Please use your real name, account verification after creation will ask for your valid ID. </p>
+                <p class="message">Please use your real name, account verification after creation will ask for your valid ID. </p>
+
+                <div class="account-row">
+                    <label for="">I am a</label>
+                    <div class="buttons-container">
+                        <button>Doctor</button>
+                        <button>Patient</button>
+                    </div>
+                </div>
         
                 <div class="name-row">
                     <div class="first-name">
@@ -40,7 +48,10 @@
                 </div>
         
                 <button type="submit" form="form1" value="Submit">Submit</button>
+                <p>Already have an account? <span><a class="login" [routerLink]="['login']">Login.</a></span></p>
             </form>
         </div>
     </div>
+
+    
 </main>

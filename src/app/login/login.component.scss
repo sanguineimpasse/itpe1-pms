@@ -4,9 +4,8 @@ main{
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 2rem;
     background-color: black;
+    overflow-y: auto;
     .background{
         width: 100%;
         height: 100%;
@@ -29,12 +28,14 @@ main{
 
 .container{
     z-index: 10;
+    margin: 2rem;
     gap: 1rem;
     background-color: white;
     border-radius: 16px;
     box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.8);
     flex-direction: row;
     width: 60rem;
+    height: 40rem;
     overflow: hidden;
     .image{
         width: 50%;
@@ -86,6 +87,7 @@ main{
             }
             .sign-up:hover{
                 color: #28fa6b;
+                cursor: pointer;
             }
         }
     }
@@ -101,6 +103,7 @@ main{
         align-items: flex-start;
     }
     .container{
+        margin: 0;
         width: 100%;
         height: 100%;
         border-radius: 0px;
