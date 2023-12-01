@@ -44,6 +44,22 @@ main{
         background-image: url(../../assets/images/cdc-uN8TV9Pw2ik-unsplash.jpg);
         background-size: cover;
         background-position: 40% 50%;
+        #doctorAttribution{
+            display: none;
+        }
+        .attribution{
+            align-self: flex-end;
+            margin: 1rem;
+            padding: 0.3rem;
+            border-radius: 3px;
+            height: 1rem;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            gap: 0.2rem;
+            a{
+                color: rgb(162, 231, 162);
+            }
+        }
     }
     .form-container{
         width: 100%;
