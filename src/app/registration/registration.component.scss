@@ -27,7 +27,7 @@ main{
 
 
 .container{
-    margin: 3rem;
+    margin: 2rem;
     z-index: 10;
     gap: 1rem;
     background-color: white;
@@ -40,7 +40,7 @@ main{
     box-sizing: border-box;
 
     .image{
-        width: 45rem;
+        width: 60rem;
         background-image: url(../../assets/images/cdc-uN8TV9Pw2ik-unsplash.jpg);
         background-size: cover;
         background-position: 40% 50%;
@@ -48,7 +48,18 @@ main{
     .form-container{
         width: 100%;
         padding: 3rem;
-        
+        flex-direction: column;
+        overflow-y: auto;
+        #doctorForm{
+            display: none;
+        }
+        #patientForm{
+            display: flex;
+        }
+        h1{
+            font-size: 3rem;
+            text-align: center;
+        }
         form{
             display: flex;
             flex-direction: column;
@@ -65,10 +76,6 @@ main{
             input:focus{
                 border-color: #5ECD81;
                 outline: 3px solid #75ffa1;   
-            }
-            h1{
-                font-size: 3rem;
-                text-align: center;
             }
             .message{  
                 font-style: italic;
@@ -90,7 +97,32 @@ main{
                 flex-direction: column;
             }
             .account-row{
-
+                flex-direction: column;
+                button{
+                    color:black;
+                }
+                .buttons-container{
+                    flex-direction: row;
+                    gap: 0.5rem;
+                    .selector-patient{
+                        background-color: #5ECD81;
+                    }
+                    .selector-patient:hover{
+                        color: black;
+                        background-color: #63f591;
+                    }
+                    .selector-doctor{
+                        background-color: #86c8fb;
+                    }
+                    .selector-doctor:hover{
+                        color: black;
+                        background-color: #37a6fb;
+                    }
+                    .disabled{
+                        color: rgba(128, 128, 128, 0.5);
+                        background-color: rgba(224, 224, 224, 0.5);
+                    }
+                }
             }
             .name-row{
                 flex-direction: row;
@@ -101,8 +133,11 @@ main{
                     flex-direction: column;
                 }
             }
+            .specialization{
+                width: 100%;
+                flex-direction: column;
+            }
             .birthday-row{
-                
 
             }
             .contact-row{

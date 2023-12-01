@@ -4,16 +4,15 @@
     <div class="container">
         <div class="image"></div>
         <div class="form-container">
-            <form action="" method="">
+            <!--form for patient-->
+            <form action="" method="" id="patientForm">
                 <h1>MediWISE</h1>
-        
                 <p class="message">Please use your real name, account verification after creation will ask for your valid ID. </p>
-
                 <div class="account-row">
                     <label for="">I am a</label>
                     <div class="buttons-container">
-                        <button>Doctor</button>
-                        <button>Patient</button>
+                        <button type="button" class="selector-patient">Patient</button>
+                        <button type="button" class="selector-doctor disabled" (click)="selectDoctor()">Doctor</button>
                     </div>
                 </div>
         
@@ -26,6 +25,57 @@
                         <label for="lastname">Last Name</label>
                         <input type="text" name="lastname" required>
                     </div>
+                </div>
+
+                <div class="birthday-row" name="birthday">
+                    <label>Birth Date</label>
+                    <input type="date" name="" id="" required>
+                </div>
+
+                <div class="contact-row">
+                    <label for="">Contact Information:</label>
+                    <input type="text" class="box" placeholder="Phone Number (optional)">
+                    <input type="text" name="email" class="box" placeholder="Email" required>
+                </div>
+
+                <div class="password-row">
+                    <label for="">Password</label>
+                    <div class="password-input">
+                        <input type="password" name="password" placeholder="Enter Password" required>
+                        <input type="password" name="password" placeholder="Confirm Password" required>
+                    </div>
+                </div>
+        
+                <button type="submit" form="form1" value="Submit">Submit</button>
+                <p>Already have an account? <span><a class="login" [routerLink]="['login']">Login.</a></span></p>
+            </form>
+
+            <!--form for doctor-->
+            <form action="" method="" id="doctorForm">
+                <h1>MediWISE</h1>
+                <p class="message">Please use your real name, account verification after creation will ask for your valid ID. </p>
+                <div class="account-row">
+                    <label for="">I am a</label>
+                    <div class="buttons-container">
+                        <button type="button" class="selector-patient disabled" (click)="selectPatient()">Patient</button>
+                        <button type="button" class="selector-doctor">Doctor</button>
+                    </div>
+                </div>
+        
+                <div class="name-row">
+                    <div class="first-name">
+                        <label for="firstname">First Name</label>
+                        <input type="text" name="firstname" id="" required>
+                    </div>
+                    <div class="last-name">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" name="lastname" required>
+                    </div>
+                </div>
+
+                <div class="specialization">
+                    <label for="lastname">Specialization</label>
+                    <input type="text" name="specialization" required>
                 </div>
 
                 <div class="birthday-row" name="birthday">
