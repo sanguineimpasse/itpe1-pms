@@ -8,7 +8,7 @@ import { LoginRoutingModule } from './login-routing.module';
     LoginComponent
   ],
   imports: [
-    LoginRoutingModule
+    LoginRoutingModule,
   ]
 })
 export class LoginModule { }

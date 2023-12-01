@@ -3,6 +3,9 @@ app-sidenav, app-screen{
     width: 100%;
     height: auto;
 }
+app-topnav{
+    width: 100vw;
+}
 .vertical-container{
     display:flex;
     flex-direction: column;
