@@ -69,7 +69,7 @@
                 </div>
         
                 <button type="submit" form="form1" value="Submit">Submit</button>
-                <p>Already have an account? <span><a class="login" [routerLink]="['login']">Login.</a></span></p>
+                <p>Already have an account? <span><a class="login" (click)="goLogin()">Login.</a></span></p>
             </form>
 
             <!--form for doctor-->
@@ -120,7 +120,7 @@
                 </div>
         
                 <button type="submit" form="form1" value="Submit">Submit</button>
-                <p>Already have an account? <span><a class="login" [routerLink]="['login']">Login.</a></span></p>
+                <p>Already have an account? <span><a class="login" (click)="goLogin()">Login.</a></span></p>
             </form>
         </div>
     </div>

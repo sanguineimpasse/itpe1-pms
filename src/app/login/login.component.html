@@ -13,7 +13,7 @@
             </form>
             <div class="footer">
                 <button type="button" id="qrlogin" [routerLink]="['qr']">Login via QR Code</button>
-                <p>Don't have an account? <span><a class="sign-up" [routerLink]="['register']">Sign up!</a></span></p>
+                <p>Don't have an account? <span><a class="sign-up" (click)="goRegister()">Sign up!</a></span></p>
             </div>
         </div>
     </div>

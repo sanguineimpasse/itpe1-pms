@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { ListDoctorComponent } from './account-management/list-doctor/list-doctor.component';
+import { ListPatientComponent } from './account-management/list-patient/list-patient.component';
 
 const routes: Routes = [
   {
@@ -9,30 +10,35 @@ const routes: Routes = [
   },
   {
     path:'accounts/management/patient',
-    loadChildren: () => import('./account-management/list-patient/list-patient.module').then(mod=>mod.ListPatientModule)
+    component: ListPatientComponent,
+    children:[
+      {
+        path:'edit',
+        loadChildren: () => import('./account-management/edit/edit-patient/edit-patient.module').then(mod=>mod.EditPatientModule)
+      },
+      {
+        path:'add',
+        loadChildren: () => import('./account-management/add/add-patient/add-patient.module').then(mod=>mod.AddPatientModule)
+      }
+    ]
   },
   {
     path:'accounts/management/doctor',
-    loadChildren: () => import('./account-management/list-doctor/list-doctor.module').then(mod=>mod.ListDoctorModule)
-  },
-  //EDIT ACCOUNT PAGES
-  {
-    path:'edit/doctor',
-    loadChildren: () => import('./account-management/edit/edit-doctor/edit-doctor.module').then(mod=>mod.EditDoctorModule)
-  },
-  {
-    path:'edit/patient',
-    loadChildren: () => import('./account-management/edit/edit-patient/edit-patient.module').then(mod=>mod.EditPatientModule)
+    component: ListDoctorComponent,
+    children:[
+      {
+        path:'edit',
+        loadChildren: () => import('./account-management/edit/edit-doctor/edit-doctor.module').then(mod=>mod.EditDoctorModule)
+      },
+      {
+        path:'add',
+        loadChildren: () => import('./account-management/add/add-doctor/add-doctor.module').then(mod=>mod.AddDoctorModule)
+      }
+    ]
   },
   //ADD ACCOUNT PAGES
-  {
-    path:'add/doctor',
-    loadChildren: () => import('./account-management/add/add-doctor/add-doctor.module').then(mod=>mod.AddDoctorModule)
-  },
-  {
-    path:'add/patient',
-    loadChildren: () => import('./account-management/add/add-patient/add-patient.module').then(mod=>mod.AddPatientModule)
-  }
+  
+  
 ];
 
 @NgModule({

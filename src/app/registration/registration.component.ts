@@ -1,4 +1,5 @@
 import { Component, ElementRef, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -6,7 +7,7 @@ import { Component, ElementRef, Renderer2 } from '@angular/core';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent {
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private router: Router, private el: ElementRef, private renderer: Renderer2) {}
   
   isDoctor: boolean = false;
 
@@ -40,5 +41,9 @@ export class RegistrationComponent {
       this.renderer.setStyle(containerImage, 'background-image', 'url(../../assets/images/cdc-uN8TV9Pw2ik-unsplash.jpg)');
       this.renderer.setStyle(containerImage, 'background-position', '40% 50%');
     }
+  }
+
+  goLogin(){
+    this.router.navigate(['/login']);
   }
 }
