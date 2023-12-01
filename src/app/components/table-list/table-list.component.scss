@@ -1,53 +1,60 @@
-.column{
+button{
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+.patient-button{
+    background-color: rgb(196, 238, 196);
+}
+.patient-button:hover{
+    background-color: rgb(123, 188, 123);
+}
+.doctor-button{
+    background-color: #a8d9ff;
+}
+.doctor-button:hover{
+    background-color: #84bdea;
+}
+.row{
     display: flex;
     flex-direction: row;
-    width: 100%;
-    border-radius: 4px;
-
-    .col1, .col2{
-        display: flex;
-        align-items: center;
-        padding: 0.5rem;
-        border: 1.5px solid black;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.875);
+    border-bottom: 1px solid rgb(232, 232, 232);
+    .tb-header{
+        font-weight: bold;
+        font-size: 1.1rem;
     }
-    
+    .col1,.col2{
+        align-items: center;
+    }
     .col1{
         width: 10rem;
     }
-    
     .col2{
+        display: flex;
+        flex-direction: row;
         width: 100%;
-        border-left: 0;
-
         .options-container{
             display: flex;
             flex-direction: row;
-            gap: 0.5rem;
             margin-left: auto;
-    
-            .icon-container{
-                width: 2.2rem;
-                svg{
-                    width: 100%;
-                    height: 100%;
-                    cursor: pointer;
-                }
+            gap: 0.5rem;
+            justify-content: center;
+            align-items: center;
+            svg{
+                width: 1.2rem;
             }
-            button{
+            path{
+                height: 100%;
+                width: 100%;
+            }
+            .icon-container{
                 cursor: pointer;
-                width: 5rem;
             }
         }
+       
     }
-
-    .table-header{
-        background-color: rgb(199, 246, 177);
-        height: 2rem;  
-    } 
-
-    .table-item{
-        height: 3.5rem;
-        border-top: 0px;
-    }
-
+    
 }

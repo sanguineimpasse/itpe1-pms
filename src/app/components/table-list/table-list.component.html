@@ -1,4 +1,4 @@
-<div class="column">
+<div class="row">
     <div class="col1 table-item">
         {{userCode}}
     </div>
@@ -6,12 +6,12 @@
         {{userName}}
         <div class="options-container">
             <!--Edit button for doctor-->
-            <button type="button" [routerLink]="['accounts/edit/doctor']"
+            <button class="doctor-button" type="button" [routerLink]="['accounts/edit/doctor']"
             *ngIf="isDoctor">
                 Edit
             </button>
             <!--Edit button for patient-->
-            <button type="button" [routerLink]="['accounts/edit/patient']"
+            <button class="patient-button" type="button" [routerLink]="['accounts/edit/patient']"
             *ngIf="isPatient">
                 Edit
             </button>
