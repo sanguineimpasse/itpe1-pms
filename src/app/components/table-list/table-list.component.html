@@ -6,12 +6,12 @@
         {{userName}}
         <div class="options-container">
             <!--Edit button for doctor-->
-            <button class="doctor-button" type="button" [routerLink]="['accounts/edit/doctor']"
+            <button class="doctor-button" type="button" [routerLink]="['edit/doctor']"
             *ngIf="isDoctor">
                 Edit
             </button>
             <!--Edit button for patient-->
-            <button class="patient-button" type="button" [routerLink]="['accounts/edit/patient']"
+            <button class="patient-button" type="button" [routerLink]="['edit/patient']"
             *ngIf="isPatient">
                 Edit
             </button>

@@ -17,20 +17,20 @@ const routes: Routes = [
   },
   //EDIT ACCOUNT PAGES
   {
-    path:'accounts/edit/doctor',
+    path:'edit/doctor',
     loadChildren: () => import('./account-management/edit/edit-doctor/edit-doctor.module').then(mod=>mod.EditDoctorModule)
   },
   {
-    path:'accounts/edit/patient',
+    path:'edit/patient',
     loadChildren: () => import('./account-management/edit/edit-patient/edit-patient.module').then(mod=>mod.EditPatientModule)
   },
   //ADD ACCOUNT PAGES
   {
-    path:'accounts/add/doctor',
+    path:'add/doctor',
     loadChildren: () => import('./account-management/add/add-doctor/add-doctor.module').then(mod=>mod.AddDoctorModule)
   },
   {
-    path:'accounts/add/patient',
+    path:'add/patient',
     loadChildren: () => import('./account-management/add/add-patient/add-patient.module').then(mod=>mod.AddPatientModule)
   }
 ];
