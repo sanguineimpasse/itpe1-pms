@@ -4,11 +4,25 @@
     justify-content: center;
     position: absolute;
 }
+@keyframes slideFromTop {
+    0% { 
+        opacity: 0;
+        transform: translateY(-5%);
+    }
+    80%{
+        transform: translateY(0%); 
+    }
+    100% { 
+        opacity: 1;
+        
+    }
+}
 .main-container {
     display: flex;
     text-align:center;
     padding: 1rem;
     box-sizing: border-box;
+    animation: slideFromTop 0.3s;
 }
 
   .form-container {

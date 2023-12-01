@@ -64,7 +64,7 @@
                     <label for="">Password</label>
                     <div class="password-input">
                         <input type="password" name="password" placeholder="Enter Password" required>
-                        <input type="password" name="password" placeholder="Confirm Password" required>
+                        <input type="password" name="confirm" placeholder="Confirm Password" required>
                     </div>
                 </div>
         
@@ -73,7 +73,7 @@
             </form>
 
             <!--form for doctor-->
-            <form action="" method="" id="doctorForm">
+            <form action="" method="" id="doctorForm" name="docForm">
                 <h1>MediWISE</h1>
                 <p class="message">Please use your real name, account verification after creation will ask for your valid ID. </p>
                 <div class="account-row">
@@ -115,11 +115,11 @@
                     <label for="">Password</label>
                     <div class="password-input">
                         <input type="password" name="password" placeholder="Enter Password" required>
-                        <input type="password" name="password" placeholder="Confirm Password" required>
+                        <input type="password" name="confirm" placeholder="Confirm Password" required>
                     </div>
                 </div>
         
-                <button type="submit" form="form1" value="Submit">Submit</button>
+                <button type="submit" form="docForm" value="Submit">Submit</button>
                 <p>Already have an account? <span><a class="login" (click)="goLogin()">Login.</a></span></p>
             </form>
         </div>

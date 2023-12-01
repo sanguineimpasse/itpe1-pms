@@ -42,11 +42,13 @@ main{
     overflow: hidden;
     box-sizing: border-box;
 
+
     .image{
         width: 60rem;
         background-image: url(../../assets/images/cdc-uN8TV9Pw2ik-unsplash.jpg);
         background-size: cover;
         background-position: 40% 50%;
+
         #doctorAttribution{
             display: none;
         }
@@ -69,11 +71,40 @@ main{
         padding: 3rem;
         flex-direction: column;
         overflow-y: auto;
+        @keyframes slideFromLeft {
+            0% { 
+                opacity: 0;
+                transform: translateX(-10%);
+            }
+            80%{
+                transform: translateX(0%); 
+            }
+            100% { 
+                opacity: 1;
+                
+            }
+        }
+        @keyframes slideFromRight {
+            0% { 
+                opacity: 0;
+                transform: translateX(10%);
+            }
+            80%{
+                transform: translateX(0%); 
+            }
+            100% { 
+                opacity: 1;
+                
+            }
+        }
+
         #doctorForm{
             display: none;
+            animation: slideFromRight 0.6s;
         }
         #patientForm{
             display: flex;
+            animation: slideFromLeft 0.6s;
         }
         h1{
             font-size: 3rem;

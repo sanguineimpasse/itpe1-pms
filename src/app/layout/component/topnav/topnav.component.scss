@@ -36,6 +36,7 @@ header {
 }
 
 .dropdown-content {
+    overflow: hidden;
   display: none;
   position: absolute;
   top: 100%;
@@ -57,8 +58,10 @@ header {
   display: block;
   text-decoration: none;
   transition: background-color 0.3s;
+  cursor: pointer;
 }
 
 .dropdown-content a:hover {
   background-color: #ddd;
+  border-radius: 4px;
 }
