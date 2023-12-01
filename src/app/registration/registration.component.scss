@@ -1,132 +1,114 @@
-*{
-    font-family: 'Inter', sans-serif;
-    padding: 0;
-    margin: 0;
+main{
+    width: 100vw;
+    height: 100vh;
     box-sizing: border-box;
-
-}
-
-.container{
-    display: flex;
-    width: 800px;
-    border: 1px solid black;
-    margin: auto;
-    margin-top: 50px;
-    box-shadow: 15px 15px rgba(0, 0, 0, 0.436);
-}
-
-.form{
-    padding: 1rem 1rem 1rem 1rem;
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    align-items: center;
-    background-color: whitesmoke;
-
-}
-
-.form h2{
-    font-size: 1.8rem;
-    margin: 40px;
-    margin-bottom: 0;
-    font-family: 'poppins',sans-serif;
-}
-
-.inputContainerBirthday{
-    margin-bottom: 10px;
-}
-
-.inputContainerName{
-    margin-bottom: 10px;
-}
-
-.box{
-    padding: 12px;
-    width: 60%;
-    border: 1px solid black;
-    outline: none;
-    margin: 5px;
-    border-radius: 10px;
-}
-
-.boxName{   
-    padding: 10px;
-    width: 40%;
-    border: 1px solid black;
-    outline: none;
-    margin: 5px;
-    border-radius: 10px;
-}
-
-
-.boxBirth{
-    padding: 10px;
-    width: 30%;
-    border: 1px solid black;
-    outline: none;
-    margin: 3px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-.boxContact{
-    padding: 10px;
-    width: 45%;
-    border: 1px solid black;
-    outline: none;
-    margin: 5px;
-    border-radius: 10px;
-}
-
-.form p{
-    font-size: 13px;
-    margin-bottom: 15px;
-    text-align: center;
-    text-decoration: none;
-    color:black;
-    margin-top: 15px;
-}
-
-#submit{
-    padding: 12px 30px;
-    width: 40%;
-    margin-top: 20px;
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-}
-#submit:hover{
-    cursor: pointer;
-    background-color: #79AC78;
-    box-shadow: 1px 5px 7px 1px rgba(0,0,0,.4);
-}
-
-.side{
-
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    background-color: #EBF3E8;
-}
-.side img{
-    width: 20rem;
-}
-
-
-@media only screen and (max-width: 750px) {
-    .side{
-        display: none;
-    }
-    .side img{
-        display: none;
-    }
-    .container{
-        width: 400px;
-    }
-    .form{
+    padding: 2rem;
+    background-color: grey;
+    .background{
         width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 0;
+        background-image: url(https://images.unsplash.com/photo-1631248055158-edec7a3c072b?q=80&w=2061&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: grayscale(100%) blur(20px);
     }
 }
+
+.container{
+    z-index: 10;
+    gap: 1rem;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    flex-direction: row;
+    width: 70%;
+    overflow: hidden;
+    .image{
+        width: 50%;
+        background-image: url(../../assets/images/cdc-uN8TV9Pw2ik-unsplash.jpg);
+        background-size: cover;
+        background-position: 40% 50%;
+    }
+    .form-container{
+        width: auto;
+        padding: 2rem;
+        
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 1rem;
+
+            input, button{
+                font-size: 1.05rem;
+                padding: 0.5rem;
+                border: 2px solid rgb(216, 216, 216);
+                border-radius: 4px;
+            }
+            input:focus{
+                border-color: #5ECD81;
+                outline: 3px solid #75ffa1;   
+            }
+            h1{
+                font-size: 3rem;
+                text-align: center;
+            }
+            p{  
+                font-style: italic;
+                line-height: 1.4rem;
+            }
+            label{
+                margin-bottom: 0.4rem;
+            }
+            button{
+                cursor: pointer;
+                color: white;
+                background-color: #5ECD81;
+                border: 0;
+            }
+            button:hover{
+                background-color: #60e189;               
+            }
+            .name-row,.birthday-row,.contact-row{
+                gap: 1rem;
+                flex-direction: column;
+            }
+            .name-row{
+                flex-direction: row;
+                width: 100%;
+                .first-name,.last-name{
+                    width: 100%;
+                    flex-direction: column;
+                }
+            }
+            .birthday-row{
+                gap: 0;
+
+            }
+            .contact-row{
+                gap: 0.8rem;
+                label{
+                    margin-bottom: 0;
+                }
+            }
+            .password-row{
+                flex-direction: column;
+                .password-input{
+                    flex-direction: row;
+                    gap: 1rem;
+                    width: 100%;
+                    input{
+                        width: 100%;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
