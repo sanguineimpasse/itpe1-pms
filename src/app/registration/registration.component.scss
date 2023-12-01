@@ -6,16 +6,24 @@ main{
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    background-color: grey;
+    background-color: black;
     .background{
         width: 100%;
         height: 100%;
         position: absolute;
         z-index: 0;
-        background-image: url(https://images.unsplash.com/photo-1631248055158-edec7a3c072b?q=80&w=2061&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        background-image: url(../../assets/images/chuttersnap-rEEvBPZf4CQ-unsplash.jpg);
         background-repeat: no-repeat;
         background-size: cover;
-        filter: grayscale(100%) blur(20px);
+        filter: grayscale(100%) blur(4px) contrast(50%);
+        background-clip: content-box;
+    }
+    .color-filter{
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        position: absolute;
+        background-color: rgba(204, 241, 214, 0.669);
     }
 }
 
@@ -23,10 +31,10 @@ main{
     z-index: 10;
     gap: 1rem;
     background-color: white;
-    border-radius: 4px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    border-radius: 16px;
+    box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.8);
     flex-direction: row;
-    width: 70%;
+    width: 80%;
     overflow: hidden;
     .image{
         width: 50%;
@@ -36,7 +44,7 @@ main{
     }
     .form-container{
         width: auto;
-        padding: 2rem;
+        padding: 3rem;
         
         form{
             display: flex;
