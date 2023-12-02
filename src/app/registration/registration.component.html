@@ -27,42 +27,39 @@
         
         <div class="form-container">
             <!--form for patient-->
-            <form action="" method="" id="patientForm">
+            <form action="" method="" id="patientForm" class="form-column-gap">
                 <h1>MediWISE</h1>
                 <p class="message">Please use your real name, account verification after creation will ask for your valid ID. </p>
-                <div class="account-row">
+                <div class="account-row form-column-gap">
                     <label for="">I am a</label>
-                    <div class="buttons-container">
+                    <div class="buttons-container form-rows-gap">
                         <button type="button" class="selector-patient">Patient</button>
                         <button type="button" class="selector-doctor disabled" (click)="selectDoctor()">Doctor</button>
                     </div>
                 </div>
         
-                <div class="name-row">
-                    <div class="first-name">
-                        <label for="firstname">First Name</label>
-                        <input type="text" name="firstname" id="" required>
-                    </div>
-                    <div class="last-name">
-                        <label for="lastname">Last Name</label>
-                        <input type="text" name="lastname" required>
+                <div class="name-row form-column-gap">
+                    <label for="firstname">Name</label>
+                    <div class="name-rows form-rows-gap">
+                        <input type="text" name="firstname" id="" placeholder="First Name" required>
+                        <input type="text" name="lastname" placeholder="Last Name" required>
                     </div>
                 </div>
 
-                <div class="birthday-row" name="birthday">
+                <div class="birthday-row form-column-gap">
                     <label>Birth Date</label>
                     <input type="date" name="" id="" required>
                 </div>
 
-                <div class="contact-row">
+                <div class="contact-row form-column-gap">
                     <label for="">Contact Information:</label>
                     <input type="text" class="box" placeholder="Phone Number (optional)">
                     <input type="text" name="email" class="box" placeholder="Email" required>
                 </div>
 
-                <div class="password-row">
+                <div class="password-row form-column-gap">
                     <label for="">Password</label>
-                    <div class="password-input">
+                    <div class="password-input form-rows-gap">
                         <input type="password" name="password" placeholder="Enter Password" required>
                         <input type="password" name="confirm" placeholder="Confirm Password" required>
                     </div>
@@ -73,26 +70,28 @@
             </form>
 
             <!--form for doctor-->
-            <form action="" method="" id="doctorForm" name="docForm">
+            <form action="" method="" id="doctorForm" name="docForm" class="form-column-gap">
                 <h1>MediWISE</h1>
                 <p class="message">Please use your real name, account verification after creation will ask for your valid ID. </p>
-                <div class="account-row">
+                <div class="account-row form-column-gap">
                     <label for="">I am a</label>
-                    <div class="buttons-container">
+                    <div class="buttons-container form-rows-gap">
                         <button type="button" class="selector-patient disabled" (click)="selectPatient()">Patient</button>
                         <button type="button" class="selector-doctor">Doctor</button>
                     </div>
                 </div>
         
-                <div class="name-row">
-                    <div class="first-name">
-                        <label for="firstname">First Name</label>
-                        <input type="text" name="firstname" id="" required>
+                <div class="name-row form-column-gap">
+                    <label for="firstname">Name</label>
+                    <div class="name-rows form-rows-gap">
+                        <input type="text" name="firstname" id="" placeholder="First Name" required>
+                        <input type="text" name="lastname" placeholder="Last Name" required>
                     </div>
-                    <div class="last-name">
-                        <label for="lastname">Last Name</label>
-                        <input type="text" name="lastname" required>
-                    </div>
+                </div>
+
+                <div class="birthday-row form-column-gap">
+                    <label>Birth Date</label>
+                    <input type="date" name="" id="" required>
                 </div>
 
                 <div class="specialization">
@@ -100,26 +99,21 @@
                     <input type="text" name="specialization" required>
                 </div>
 
-                <div class="birthday-row" name="birthday">
-                    <label>Birth Date</label>
-                    <input type="date" name="" id="" required>
-                </div>
-
-                <div class="contact-row">
+                <div class="contact-row form-column-gap">
                     <label for="">Contact Information:</label>
                     <input type="text" class="box" placeholder="Phone Number (optional)">
                     <input type="text" name="email" class="box" placeholder="Email" required>
                 </div>
 
-                <div class="password-row">
+                <div class="password-row form-column-gap">
                     <label for="">Password</label>
-                    <div class="password-input">
+                    <div class="password-input form-rows-gap">
                         <input type="password" name="password" placeholder="Enter Password" required>
                         <input type="password" name="confirm" placeholder="Confirm Password" required>
                     </div>
                 </div>
         
-                <button type="submit" form="docForm" value="Submit">Submit</button>
+                <button type="submit" form="form1" value="Submit">Submit</button>
                 <p>Already have an account? <span><a class="login" (click)="goLogin()">Login.</a></span></p>
             </form>
         </div>
