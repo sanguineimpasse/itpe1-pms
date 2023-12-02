@@ -10,6 +10,14 @@ const routes: Routes = [
   },
   {
     path:'accounts/management/patient',
+    loadChildren: () => import('./account-management/list-patient/list-patient.module').then(mod=>mod.ListPatientModule)
+  },
+  {
+    path:'accounts/management/doctor',
+    loadChildren: () => import('./account-management/list-doctor/list-doctor.module').then(mod=>mod.ListDoctorModule)
+  },
+  {
+    path:'accounts/management/patient',
     component: ListPatientComponent,
     children:[
       {
