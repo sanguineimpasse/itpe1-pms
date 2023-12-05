@@ -1,0 +1,138 @@
+.main-container, .prescription-list-container, .doctor-list-container,
+.horizontal-container, .booking-container, .schedule-list-container, .col1, .col2{
+    display: flex;
+}
+
+/*border-box prevents the elements from making the container grow*/
+.col1,.col2,.horizontal-container,
+.booking-container,.prescription-list-container,.doctor-list-container,.graph{
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.main-container{
+    height: 100%;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.col1{
+    flex-direction: column;
+    width: 80%;
+    
+    .horizontal-container{
+        flex-direction: row;
+        width: 100%;
+        gap: 1rem;
+        justify-content: center;
+        .prescription-list-container{
+            background-color: #95eab0;
+        }
+        .prescription-list-container:hover{
+            background-color: #79d296;
+        }
+        .doctor-list-container{
+            background-color: #59b5cc;
+        }
+        .doctor-list-container:hover{
+            background-color: #4eabc3;
+        }
+        .prescription-list-container,.doctor-list-container{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            cursor: pointer;
+            
+            h2{
+                text-align: center;
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+            p{
+                font-weight: 700;
+                font-size: 3rem;
+                margin-bottom: 2rem;
+            }
+            .recent{
+                margin: 0;
+                font-size: 1rem;
+            }
+        }
+        
+    }
+    
+    .booking-container{
+        height: 100%;
+        .booking{
+            width: 100%;
+            background-color: #F9F9F9;
+            border-radius: 8px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+    }
+}
+
+.col2{
+    flex-direction: column;
+    padding-top: 2rem;
+    margin-left: auto;
+    h2{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .schedule-list-container{
+        flex-direction: column;
+        align-items: center;
+        ul{
+            width: 100%;
+        }
+        .sched li{
+            max-width: 80%;
+            background-color:  #79d296;
+            border-radius: 8px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            margin: 5px;
+            text-align:center;
+        }
+    }
+}
+
+/*tablet*/
+@media screen and (max-width:801px){
+    .main-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .col1{
+        width: auto;
+        .horizontal-container{
+            align-items: center;
+            .prescription-list-container, .doctor-list-container{
+                width: 80%;
+            }
+        }
+    }
+    .col2{
+        width: 90%;
+        margin-left: 0;
+    }
+}
+
+/*mobile*/
+@media screen and (max-width:600px){
+    .col1{
+
+        .horizontal-container{
+            flex-direction: column;
+            .prescription-list-container, .doctor-list-container{
+                width: 100%;
+            }
+        }
+    }
+    
+}
