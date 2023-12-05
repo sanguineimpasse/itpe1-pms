@@ -4,8 +4,13 @@
 }
 
 /*border-box prevents the elements from making the container grow*/
-.col1,.col2,.horizontal-container,
+.col,.horizontal-container,
 .graph-container,.patient-list-container,.doctor-list-container,.graph{
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.col2{
     box-sizing: border-box;
     padding: 1rem;
 }
@@ -26,16 +31,16 @@
         gap: 1rem;
         justify-content: center;
         .patient-list-container{
-            background-color: #95eab0;
+            background-color: #72DE95;
         }
         .patient-list-container:hover{
-            background-color: #79d296;
+            background-color: #41A880;
         }
         .doctor-list-container{
-            background-color: #59b5cc;
+            background-color: #4DABEB;
         }
         .doctor-list-container:hover{
-            background-color: #4eabc3;
+            background-color: #46a0dc;
         }
         .patient-list-container,.doctor-list-container{
             flex-direction: column;
@@ -44,18 +49,20 @@
             width: auto;
             padding: 2.5rem;
             border-radius: 8px;
-            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
             cursor: pointer;
             
             h2{
-                text-align: center;
+                text-align: left;
                 font-size: 1.8rem;
                 margin-bottom: 2rem;
+                color: white;
             }
             p{
                 font-weight: 700;
                 font-size: 3rem;
                 margin-bottom: 2rem;
+                color: white;
             }
             .recent{
                 margin: 0;
@@ -82,7 +89,7 @@
     margin-left: auto;
     h2{
         text-align: center;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
     .account-list-container{
         flex-direction: column;
