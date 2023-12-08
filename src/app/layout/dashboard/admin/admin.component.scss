@@ -4,7 +4,7 @@
 }
 
 /*border-box prevents the elements from making the container grow*/
-.col,.horizontal-container,
+.col1,.horizontal-container,
 .graph-container,.patient-list-container,.doctor-list-container,.graph{
     box-sizing: border-box;
     padding: 1rem;
@@ -23,50 +23,52 @@
 
 .col1{
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     
     .horizontal-container{
         flex-direction: row;
-        width: 100%;
+        width: 70%;
         gap: 1rem;
         justify-content: center;
         .patient-list-container{
-            background-color: #72DE95;
+            background-color: #044B63;
         }
         .patient-list-container:hover{
-            background-color: #41A880;
+            background-color: #115b74;
         }
         .doctor-list-container{
-            background-color: #4DABEB;
+            background-color: #089293;
         }
         .doctor-list-container:hover{
-            background-color: #46a0dc;
+            background-color: #1db0b0;
         }
         .patient-list-container,.doctor-list-container{
             flex-direction: column;
             align-items: center;
             justify-content: center;
             width: auto;
-            padding: 2.5rem;
-            border-radius: 8px;
+            padding: 1rem;
+            border-radius: 5px;
             box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
             cursor: pointer;
             
             h2{
                 text-align: left;
-                font-size: 1.8rem;
-                margin-bottom: 2rem;
+                font-size: 1rem;
+                font-style: bold;
+                margin-bottom: 0.5rem;
                 color: white;
             }
             p{
-                font-weight: 700;
-                font-size: 3rem;
-                margin-bottom: 2rem;
+                font-weight: 400;
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
                 color: white;
             }
             .recent{
                 margin: 0;
-                font-size: 1rem;
+                font-size: 0.7rem;
+                font-weight: 50;
             }
         }
         
