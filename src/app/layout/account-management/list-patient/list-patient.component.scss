@@ -2,14 +2,15 @@ main{
     padding: 1.5rem;
     box-sizing: border-box;
 }
+
 button{
     cursor: pointer;
-    background-color: rgb(196, 238, 196);
+    background-color: #044B63;
     border: 1px solid grey;
-    border-radius: 4px;
+    border-radius: 4px; 
 }
 button:hover{
-    background-color: rgb(123, 188, 123);
+    background-color: #079495;
 }
 .titlebar{
     display: flex;
@@ -24,6 +25,8 @@ button:hover{
         margin-left: auto;
         margin-right: 1rem;
         padding: 0.2rem;
+        font-size: 1rem;
+        color: white;
     }
     .actions-container, .title-container{
         display: flex;
@@ -49,7 +52,7 @@ button:hover{
         }
     }
     .search-button:hover{
-        background-color: rgb(199, 246, 177);
+        background-color: #75c0d9;
     }
     app-back-button{
         width: 2.2rem;
@@ -74,7 +77,7 @@ button:hover{
         border-bottom: 1px solid rgb(232, 232, 232);
     }
     .header{
-        background-color: rgb(199, 246, 177);
+        background: linear-gradient(to right, #044b63 0%, #079495 100%);
     }
     .tb-header{
         font-weight: bold;
@@ -82,11 +85,13 @@ button:hover{
     }
     .col1{
         width: 10rem;
+        color: white;
     }
     .col2{
         display: flex;
         flex-direction: row;
         width: 100%;
+        color: white;
     }
 }
 

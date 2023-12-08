@@ -15,11 +15,12 @@ li{
     box-sizing: border-box;
     padding: 1.5%;
     width: 100%;
-    background-color: #E3E6E6;
+    background: linear-gradient(to right, #044b63 0%, #079495 100%);;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 5px;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
     margin-bottom: 5px;
+    color: white;
     cursor: pointer;
 }
 
@@ -27,11 +28,12 @@ li:hover{
     background-color: white;
 }
 .doctor{
-    background-color: #90e0ef;
-    border: 1px solid rgb(104, 160, 157);
+    background: linear-gradient(to right, #079495 0%, #044b63 100%);
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
 }
 .doctor:hover{
-    background-color: #54b6c7;
+    background-color: white;
 }
 p{
     margin-bottom: 0.2rem;
