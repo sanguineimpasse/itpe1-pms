@@ -10,12 +10,13 @@ main{
 }
 button{
     cursor: pointer;
-    background-color: #a8d9ff;
+    background-color: #089293;
     border: 1px solid grey;
     border-radius: 4px;
+    color:  white;
 }
 button:hover{
-    background-color: #84bdea;
+    background-color: #044B63;
 }
 .titlebar{
     display: flex;
@@ -30,6 +31,8 @@ button:hover{
         margin-left: auto;
         margin-right: 1rem;
         padding: 0.2rem;
+        font-size: 1rem;
+        color: white;
     }
     .actions-container, .title-container{
         display: flex;
@@ -55,7 +58,8 @@ button:hover{
         }
     }
     .search-button:hover{
-        background-color: #a8d9ff;
+        background-color: #044B63;
+        color: white;
     }
     app-back-button{
         width: 2.2rem;
@@ -80,7 +84,7 @@ button:hover{
         border-bottom: 1px solid rgb(232, 232, 232);
     }
     .header{
-        background-color: #a8d9ff;
+        background: linear-gradient(to right, #079495 0%, #044b63 100%);
     }
     .tb-header{
         font-weight: bold;
@@ -88,11 +92,13 @@ button:hover{
     }
     .col1{
         width: 10rem;
+        color: white;
     }
     .col2{
         display: flex;
         flex-direction: row;
         width: 100%;
+        color: white;
     }
 }
 

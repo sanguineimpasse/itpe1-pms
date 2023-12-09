@@ -4,8 +4,13 @@
 }
 
 /*border-box prevents the elements from making the container grow*/
-.col1,.col2,.horizontal-container,
+.col1,.horizontal-container,
 .graph-container,.patient-list-container,.doctor-list-container,.graph{
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.col2{
     box-sizing: border-box;
     padding: 1rem;
 }
@@ -18,48 +23,52 @@
 
 .col1{
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     
     .horizontal-container{
         flex-direction: row;
-        width: 100%;
+        width: 70%;
         gap: 1rem;
         justify-content: center;
         .patient-list-container{
-            background-color: #95eab0;
+            background-color: #044B63;
         }
         .patient-list-container:hover{
-            background-color: #79d296;
+            background-color: #115b74;
         }
         .doctor-list-container{
-            background-color: #59b5cc;
+            background-color: #089293;
         }
         .doctor-list-container:hover{
-            background-color: #4eabc3;
+            background-color: #1db0b0;
         }
         .patient-list-container,.doctor-list-container{
             flex-direction: column;
             align-items: center;
             justify-content: center;
             width: auto;
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
             cursor: pointer;
             
             h2{
-                text-align: center;
-                font-size: 1.8rem;
-                margin-bottom: 2rem;
+                text-align: left;
+                font-size: 1rem;
+                font-style: bold;
+                margin-bottom: 0.5rem;
+                color: white;
             }
             p{
-                font-weight: 700;
-                font-size: 3rem;
-                margin-bottom: 2rem;
+                font-weight: 400;
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+                color: white;
             }
             .recent{
                 margin: 0;
-                font-size: 1rem;
+                font-size: 0.7rem;
+                font-weight: 50;
             }
         }
         
@@ -82,7 +91,7 @@
     margin-left: auto;
     h2{
         text-align: center;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
     .account-list-container{
         flex-direction: column;
