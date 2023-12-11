@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-import { DebugComponent } from './debug.component';
+import { CommonModule } from '@angular/common';
 import { DebugRoutingModule } from './debug-routing.module';
+import { DebugComponent } from './debug.component';
 
 
 
@@ -9,6 +10,7 @@ import { DebugRoutingModule } from './debug-routing.module';
     DebugComponent
   ],
   imports: [
+    CommonModule,
     DebugRoutingModule
   ]
 })

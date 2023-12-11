@@ -1,51 +1,27 @@
 import { NgModule } from '@angular/core';
-import { LayoutComponent } from './layout.component';
 import { RouterModule, Routes } from '@angular/router';
+import { LayoutComponent } from './layout.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: LayoutComponent,
+    path:'',
+    component:LayoutComponent,
     children:[
       {
         path:'',
-        redirectTo: 'dashboard/admin', //path will redirect to admin for now while testing :)
-        pathMatch:'prefix'
+        redirectTo:'dashboard',
+        pathMatch:'full'
       },
-      //SHORTCUTS
       {
         path:'dashboard',
-        redirectTo: 'dashboard/admin'
+        loadChildren: () => import('./dashboard/dashboard.module').then(mod=>mod.DashboardModule)
       },
       {
-        path: 'admin',
-        redirectTo: 'dashboard/admin'
-      },
-      //DASHBOARDS
-      {
-        path:'dashboard/admin',
-        loadChildren: () => import('./dashboard/admin/admin.module').then(mod=>mod.AdminModule)
+        path:'accounts',
+        loadChildren: () => import('./accounts-management/list-accounts/list-accounts.module').then(mod=>mod.ListAccountsModule)
       },
       {
-        path:'dashboard/doctor',
-        loadChildren: () => import('./dashboard/doctor/doctor.module').then(mod=>mod.DoctorModule)
-      },
-      {
-        path: 'dashboard/patient',
-        loadChildren: () => import('./dashboard/patient/patient.module').then(mod=>mod.PatientModule)
-      },
-      
-      {
-        path: 'profile',
-        redirectTo: 'profile/patient'
-      },
-      {
-        path: 'profile/patient',
-        loadChildren: () => import('./profile/patient-profile/patient-profile.module').then(mod=>mod.PatientProfileModule)
-      },
-      //DEBUG
-      {
-        path: 'debug',
+        path:'debug',
         loadChildren: () => import('./debug/debug.module').then(mod=>mod.DebugModule)
       }
     ]
@@ -53,7 +29,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports:[RouterModule.forChild(routes)],
+  exports:[RouterModule]
 })
 export class LayoutRoutingModule { }

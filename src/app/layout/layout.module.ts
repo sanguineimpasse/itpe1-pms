@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutRoutingModule } from './layout-routing.module';
+import { SharedComponentModule } from './components/shared-component.module';
 import { LayoutComponent } from './layout.component';
-import { SharedComponentModule } from './component/shared-component.module';
+
+
 
 @NgModule({
   declarations: [
