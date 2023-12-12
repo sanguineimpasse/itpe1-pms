@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { current_account_credentials } from 'src/data/currentaccount';
 import { user_list_data } from 'src/data/testlistdata';
 
 @Component({
@@ -11,6 +12,7 @@ export class DashboardComponent implements OnInit{
   constructor(private router: Router) {}
 
   //sort the users by dateCreated
+  currentAccount: string = current_account_credentials.accountType;
   userListData = this.filterUsersByDate(user_list_data, 10);
   
   private filterUsersByDate(users: any[], weeksAgo: number): any[] {
