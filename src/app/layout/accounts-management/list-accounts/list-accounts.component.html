@@ -3,8 +3,11 @@
     <div class="titlebar">
         <div class="title-container">
             <app-back-button></app-back-button>
-            <h1>
+            <h1 *ngIf="id==='doctor'">
                 Doctor Accounts List
+            </h1>
+            <h1 *ngIf="id==='patient'">
+                Patient Accounts List
             </h1>
         </div>
         <div class="actions-container">
@@ -19,12 +22,49 @@
     </div>
     <div class="list-container">
         <div class="row header">
-            <div class="col1 tb-header">
+            <div class="col code tb-header">
                 Code
             </div>
-            <div class="col2 tb-header">
+            <div class="col name tb-header">
                 Name
             </div>
+            <div class="col tb-header">
+                Specialization
+            </div>
+            <div class="col tb-header">
+                Specialization
+            </div>
+        </div>
+        <div class="row">
+            <div class="col code tb-element">
+                9C2ND8
+            </div>
+            <div class="col name tb-element">
+                Judas B. Balasubas
+            </div>
+            <div class="col tb-element">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam, ab exercitationem nam excepturi at velit perspiciatis, repellat consectetur commodi voluptate autem recusandae itaque ex unde id eum aspernatur magni.
+            </div>
+            <div class="col tb-element">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam, ab exercitationem nam excepturi at velit perspiciatis, repellat consectetur commodi voluptate autem recusandae itaque ex unde id eum aspernatur magni.
+            </div>
+            <!--
+            <div class="options-container">
+                <button class="doctor-button" type="button" [routerLink]="['edit']"
+                *ngIf="id==='doctor'">
+                    Edit
+                </button>
+                <button class="patient-button" type="button" [routerLink]="['edit']"
+                *ngIf="id==='patient'">
+                    Edit
+                </button>
+                <div class="icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                    </svg>
+                </div>
+            </div>
+            -->
         </div>
         <!--
         <app-table-list *ngFor = "let data of userList"

@@ -2,22 +2,30 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path:'',
-    loadChildren: () => import('./layout/layout.module').then(mod=>mod.LayoutModule)
-  },
-  {
-    path:'login',
-    loadChildren: () => import('./login/login.module').then(mod=>mod.LoginModule)
-  },
-  {
-    path:'register',
-    loadChildren: () => import('./registration/registration.module').then(mod=>mod.RegistrationModule)
-  },
-  { 
-    path: '**', 
-    loadChildren: () => import('./not-found/not-found.module').then(mod=>mod.NotFoundModule)
-  }
+    {
+        path:'',
+        loadChildren: () => import('./layout/layout.module').then(mod=>mod.LayoutModule)
+    },
+    {
+        path:'login',
+        title:'Login',
+        loadChildren: () => import('./login/login.module').then(mod=>mod.LoginModule)
+    },
+    {
+        path:'register',
+        title:'Register',
+        loadChildren: () => import('./registration/registration.module').then(mod=>mod.RegistrationModule)
+    },
+    {
+        path:'nopage',
+        title:'Page Not Found',
+        loadChildren: () => import('./not-found/not-found.module').then(mod=>mod.NotFoundModule)
+    },
+    { 
+        path: '**', 
+        redirectTo:'nopage',
+        pathMatch:'full'
+    }
 ];
 
 @NgModule({

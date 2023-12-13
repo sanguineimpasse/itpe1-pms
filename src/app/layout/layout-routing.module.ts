@@ -14,14 +14,16 @@ const routes: Routes = [
       },
       {
         path:'dashboard',
+        title:'Dashboard',
         loadChildren: () => import('./dashboard/dashboard.module').then(mod=>mod.DashboardModule)
       },
       {
-        path:'accounts',
+        path:'accounts/:id',
         loadChildren: () => import('./accounts-management/list-accounts/list-accounts.module').then(mod=>mod.ListAccountsModule)
       },
       {
         path:'debug',
+        title:'Debug :D',
         loadChildren: () => import('./debug/debug.module').then(mod=>mod.DebugModule)
       }
     ]

@@ -35,9 +35,11 @@ export class DashboardComponent implements OnInit{
   }
 
   goDoctorList(){
-    this.router.navigate(['/accounts/management/doctor']);
+    const id = 'doctor';
+    this.router.navigate(['/accounts',id]);
   }
   goPatientList(){
-    this.router.navigate(['/accounts/management/patient']);
+    const id = 'patient';
+    this.router.navigate(['/accounts',id]);
   }
 }
