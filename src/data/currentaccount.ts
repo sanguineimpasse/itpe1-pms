@@ -1,5 +1,5 @@
 export const current_account_credentials = {
-    accountType:'patient',
+    accountType:'doctor',
     /* 
     can be: 
         admin

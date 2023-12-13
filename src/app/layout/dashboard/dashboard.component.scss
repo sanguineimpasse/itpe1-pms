@@ -1,48 +1,48 @@
-.main-container, .patient-list-container, .doctor-list-container,
-.horizontal-container, .graph-container, .account-list-container, .col1, .col2{
+.Amain-container, .Apatient-list-container, .Adoctor-list-container,
+.Ahorizontal-container, .Agraph-container, .Aaccount-list-container, .Acol1, .Acol2{
     display: flex;
 }
 
 /*border-box prevents the elements from making the container grow*/
-.col1,.horizontal-container,
-.graph-container,.patient-list-container,.doctor-list-container,.graph{
+.Acol1,.Ahorizontal-container,
+.Agraph-container,.Apatient-list-container,.Adoctor-list-container,.Agraph{
     box-sizing: border-box;
     padding: 1rem;
 }
 
-.col2{
+.Acol2{
     box-sizing: border-box;
     padding: 1rem;
 }
 
-.main-container{
+.Amain-container{
     height: 100%;
     width: 100%;
     gap: 0.5rem;
 }
 
-.col1{
+.Acol1{
     flex-direction: column;
     width: 100%;
     
-    .horizontal-container{
+    .Ahorizontal-container{
         flex-direction: row;
         width: 70%;
         gap: 1rem;
         
-        .patient-list-container{
+        .Apatient-list-container{
             background-color: #044B63;
         }
-        .patient-list-container:hover{
+        .Apatient-list-container:hover{
             background-color: #115b74;
         }
-        .doctor-list-container{
+        .Adoctor-list-container{
             background-color: #089293;
         }
-        .doctor-list-container:hover{
+        .Adoctor-list-container:hover{
             background-color: #1db0b0;
         }
-        .patient-list-container,.doctor-list-container{
+        .Apatient-list-container,.Adoctor-list-container{
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -65,7 +65,7 @@
                 margin-bottom: 0.5rem;
                 color: white;
             }
-            .recent{
+            .Arecent{
                 margin: 0;
                 font-size: 0.7rem;
                 font-weight: 50;
@@ -74,9 +74,9 @@
         
     }
     
-    .graph-container{
+    .Agraph-container{
         height: 100%;
-        .graph{
+        .Agraph{
             width: 100%;
             background-color: #F9F9F9;
             border-radius: 8px;
@@ -85,7 +85,7 @@
     }
 }
 
-.col2{
+.Acol2{
     flex-direction: column;
     padding-top: 2rem;
     margin-left: auto;
@@ -93,7 +93,7 @@
         text-align: center;
         margin-bottom: 1rem;
     }
-    .account-list-container{
+    .Aaccount-list-container{
         flex-direction: column;
         align-items: center;
         ul{
@@ -104,20 +104,20 @@
 
 /*tablet*/
 @media screen and (max-width:801px){
-    .main-container{
+    .Amain-container{
         flex-direction: column;
         align-items: center;
     }
-    .col1{
+    .Acol1{
         width: auto;
-        .horizontal-container{
+        .Ahorizontal-container{
             align-items: center;
-            .patient-list-container, .doctor-list-container{
+            .Apatient-list-container, .Adoctor-list-container{
                 width: 80%;
             }
         }
     }
-    .col2{
+    .Acol2{
         width: 90%;
         margin-left: 0;
     }
@@ -125,11 +125,188 @@
 
 /*mobile*/
 @media screen and (max-width:600px){
-    .col1{
+    .Acol1{
 
-        .horizontal-container{
+        .Ahorizontal-container{
             flex-direction: column;
-            .patient-list-container, .doctor-list-container{
+            .Apatient-list-container, .Adoctor-list-container{
+                width: 100%;
+            }
+        }
+    }
+    
+}
+
+
+.Dcontainer {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    flex-wrap: wrap;
+  }
+  
+  .Dcustom-card {
+    border: 1px solid #4CAF50; /* border color */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+  }
+  
+  .Dcustom-card .Dcard-body {
+    padding: 50px;
+    width: 50%;
+  }
+  
+  .Dcustom-card h5 {
+    color: #4CAF50;  /*text color */
+  }
+  
+  .Dcustom-card p {
+    color: #666;
+  }
+  
+  @media (max-width: 100px) {
+    .Dcontainer {
+      flex-direction: column;
+    }
+  }
+  .Dcheckup-appointments-card {
+    width: calc(100% - 20px); 
+    max-width: 100%;
+  }
+
+.Pmain-container, .Pprescription-list-container, .Pdoctor-list-container,
+.Phorizontal-container, .Pbooking-container, .schedule-list-container, .Pcol1, .Pcol2{
+    display: flex;
+}
+
+/*border-box prevents the elements from making the container grow*/
+.Pcol1,.Pcol2,.Phorizontal-container,
+.Pbooking-container,.Pprescription-list-container,.Pdoctor-list-container,.Pgraph{
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.Pmain-container{
+    height: 100%;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.Pcol1{
+    flex-direction: column;
+    width: 80%;
+    
+    .Phorizontal-container{
+        flex-direction: row;
+        width: 100%;
+        gap: 1rem;
+        justify-content: center;
+        .Pprescription-list-container{
+            background-color: #95eab0;
+        }
+        .Pprescription-list-container:hover{
+            background-color: #79d296;
+        }
+        .Pdoctor-list-container{
+            background-color: #59b5cc;
+        }
+        .Pdoctor-list-container:hover{
+            background-color: #4eabc3;
+        }
+        .Pprescription-list-container,.Pdoctor-list-container{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            cursor: pointer;
+            
+            h2{
+                text-align: center;
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+            p{
+                font-weight: 700;
+                font-size: 3rem;
+                margin-bottom: 2rem;
+            }
+            .total{
+                margin: 0;
+                font-size: 1rem;
+            }
+        }
+        
+    }
+    
+    .Pbooking-container{
+        height: 100%;
+        .booking{
+            width: 100%;
+            background-color: #F9F9F9;
+            border-radius: 8px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+    }
+}
+
+.Pcol2{
+    flex-direction: column;
+    padding-top: 2rem;
+    margin-left: auto;
+    h2{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .schedule-list-container{
+        flex-direction: column;
+        align-items: center;
+        ul{
+            width: 100%;
+        }
+        .sched li{
+            max-width: 80%;
+            background-color:  #79d296;
+            border-radius: 8px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            margin: 5px;
+            text-align:center;
+        }
+    }
+}
+
+/*tablet*/
+@media screen and (max-width:801px){
+    .Pmain-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .Pcol1{
+        width: auto;
+        .Phorizontal-container{
+            align-items: center;
+            .Pprescription-list-container, .Pdoctor-list-container{
+                width: 80%;
+            }
+        }
+    }
+    .Pcol2{
+        width: 90%;
+        margin-left: 0;
+    }
+}
+
+/*mobile*/
+@media screen and (max-width:600px){
+    .Pcol1{
+
+        .Phorizontal-container{
+            flex-direction: column;
+            .Pprescription-list-container, .Pdoctor-list-container{
                 width: 100%;
             }
         }

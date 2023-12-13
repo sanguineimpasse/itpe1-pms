@@ -1,151 +1,155 @@
-<!--admin dashb-->
-<main *ngIf="currentAccount === 'admin'" class="main-container">
-    <div class="col1">
-        <div class="horizontal-container">
-            <div class="patient-list-container" (click)="goPatientList()">
-                <h2>TOTAL REGISTERED PATIENTS</h2>
-                <p>{{patients}}</p>
-                <p class="recent">
-                    Recent Patients: {{recentPatients}}
-                </p>
-            </div>
-            <div class="doctor-list-container" (click)="goDoctorList()">
-                <h2>TOTAL REGISTERED DOCTORS</h2>
-                <p>{{doctors}}</p>
-                <p class="recent">
-                    Recent Doctors: {{recentDoctors}}
-                </p>
-            </div>
-        </div>
-        <div class="graph-container">
-            <div class="graph">
-                graph
-            </div>
-            
-        </div>
-    </div>
-    <div class="col2">
-        <h2>Recently Added Accounts</h2>
-        <div class="account-list-container">
-            <ul>
-                <!--
-                <app-dashboard-list-item *ngFor="let data of userListData"
-                userName="{{data.userName}}"
-                accountType="{{data.accountType}}"
-                dateCreated="{{data.dateCreated}}"
-                ></app-dashboard-list-item>
-                -->
-            </ul>
-        </div>
-    </div>
+
+<!--admin dashb2--> 
+<main *ngIf="currentAccount === 'admin'" class="Amain-container">
+  <div class="Acol1">
+      <div class="Ahorizontal-container">
+          <div class="Apatient-list-container" (click)="goPatientList()">
+              <h2>TOTAL REGISTERED PATIENTS</h2>
+              <p>{{patients}}</p>
+              <p class="Arecent">
+                  Recent Patients: {{recentPatients}}
+              </p>
+          </div>
+          <div class="Adoctor-list-container" (click)="goDoctorList()">
+              <h2>TOTAL REGISTERED DOCTORS</h2>
+              <p>{{doctors}}</p>
+              <p class="Arecent">
+                  Recent Doctors: {{recentDoctors}}
+              </p>
+          </div>
+      </div>
+      <div class="Agraph-container">
+          <div class="Agraph">
+              Agraph
+          </div>
+          
+      </div>
+  </div>
+  <div class="Acol2">
+      <h2>Recently Added Accounts</h2>
+      <div class="Aaccount-list-container">
+          <ul>
+              <!--
+              <app-dashboard-list-item *ngFor="let data of userListData"
+              userName="{{data.userName}}"
+              accountType="{{data.accountType}}"
+              dateCreated="{{data.dateCreated}}"
+              ></app-dashboard-list-item>
+              -->
+          </ul>
+      </div>
+  </div>
 </main>
 
-<!--doctor dash-->
-<main *ngIf="currentAccount==='doctor'" class="main-container">
-    <div class="container">
-        <div class="card custom-card">
-          <div class="card-body">
-            <h5 class="card-title">Welcome, Doctor</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+<!--doctor dash22-->
+<main *ngIf="currentAccount==='doctor'" class="main-Dcontainer">
+<div class="Dcontainer">
+    <div class="card Dcustom-card">
+      <div class="Dcard-body">
+        <h5 class="card-title">Welcome, Doctor</h5>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="Dcontainer">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <div class="card Dcustom-card">
+          <div class="Dcard-body">
+            <h5 class="card-title"><i class="fas fa-user-md"></i> Total Patients</h5>
+            <p class="card-text">0</p>
           </div>
         </div>
       </div>
-      
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <div class="card custom-card">
-              <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-user-md"></i> Total Patients</h5>
-                <p class="card-text">0</p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="col-md-6 mb-3">
-            <div class="card custom-card">
-              <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-file-prescription"></i> Total Prescriptions Given</h5>
-                <p class="card-text">0</p>
-              </div>
-            </div>
+  
+      <div class="col-md-6 mb-3">
+        <div class="card Dcustom-card">
+          <div class="Dcard-body">
+            <h5 class="card-title"><i class="fas fa-file-prescription"></i> Total Prescriptions Given</h5>
+            <p class="card-text">0</p>
           </div>
         </div>
-      
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <div class="card custom-card">
-              <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-stethoscope"></i> Total Consultations Attended</h5>
-                <p class="card-text">0</p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="col-md-6 mb-3">
-            <div class="card custom-card">
-              <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-calendar-alt"></i> Recent Appointments</h5>
-                <p class="card-text">0</p>
-              </div>
-            </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <div class="card Dcustom-card">
+          <div class="Dcard-body">
+            <h5 class="card-title"><i class="fas fa-stethoscope"></i> Total Consultations Attended</h5>
+            <p class="card-text">0</p>
           </div>
         </div>
-      
-        <!-- CardRightSide-->
-        <div class="row">
-         <div class="checkup-appointments-card ">
-          <div class="col-md-12">
-            <div class="card custom-card">
-              <div class="card-body">
-                <h5 class="card-title">Checkup Appointments</h5>
-                <p class="card-text">.</p>
-              </div>
-            </div>
-          </div>
+      </div>
+  
+      <div class="col-md-6 mb-3">
+        <div class="card Dcustom-card">
+          <div class="Dcard-body">
+            <h5 class="card-title"><i class="fas fa-calendar-alt"></i> Recent Appointments</h5>
+            <p class="card-text">0</p>
           </div>
         </div>
-      </div>      
+      </div>
+    </div>
+  
+    <!-- CardRightSide-->
+    <div class="row">
+     <div class="Dcheckup-appointments-card ">
+      <div class="col-md-12">
+        <div class="card Dcustom-card">
+          <div class="Dcard-body">
+            <h5 class="card-title">Checkup Appointments</h5>
+            <p class="card-text">.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>      
 </main>
 
+
 <!--patient dash-->
-<main *ngIf="currentAccount==='patient'" class="main-container">
-    <div class="col1">
-        <div class="horizontal-container">
-            <div class="prescription-list-container">
-                <h2>Total Active Prescriptions</h2>
-                <p></p>
-                <p class="total">
-                    0
-                </p>
-            </div>
-            <div class="doctor-list-container">
-                <h2>My Doctors</h2>
-                <p></p>
-                <p class="total">
-                    0
-                </p>
-            </div>
+<main *ngIf="currentAccount==='patient'" class="Pmain-container">
+<div class="Pcol1">
+    <div class="Phorizontal-container">
+        <div class="Pprescription-list-container">
+            <h2>Total Active Prescriptions</h2>
+            <p></p>
+            <p class="total">
+                0
+            </p>
         </div>
-        <div class="booking-container">
-            <div class="booking">
-                Booking Instructions 
-            </div>
+        <div class="Pdoctor-list-container">
+            <h2>My Doctors</h2>
+            <p></p>
+            <p class="total">
+                0
+            </p>
         </div>
     </div>
-    <div class="col2">
-        <h2>Scheduled Checkups</h2>
-        <div class="schedule-list-container">
-            <ul>
-                <div class="sched">
-                    <li>SunDate</li>
-                    <li>Christmas Date</li>
-                    <li>BirthDate</li>
-                    <li>Samg date</li>
-                    <li>NewYears date</li>
-                </div>
-            </ul>
+    <div class="Pbooking-container">
+        <div class="booking">
+            Booking Instructions 
         </div>
     </div>
+</div>
+<div class="Pcol2">
+    <h2>Scheduled Checkups</h2>
+    <div class="schedule-list-container">
+        <ul>
+            <div class="sched">
+                <li>SunDate</li>
+                <li>Christmas Date</li>
+                <li>BirthDate</li>
+                <li>Samg date</li>
+                <li>NewYears date</li>
+            </div>
+        </ul>
+    </div>
+</div>
 </main>
+
 
