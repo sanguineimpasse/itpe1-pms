@@ -31,4 +31,22 @@ export class ListAccountsComponent implements OnInit{
             }
         }
     }
+
+    goAdd(type:string){
+        switch(type){
+            case 'doctor':{
+                const method = 'add';
+                const type = 'doctor';
+                this.router.navigate(['modify',method,type], { relativeTo: this.route });
+                break;
+            }
+            case 'patient':{
+                const method = 'add';
+                const type = 'patient';
+                this.router.navigate(['modify',method,type], { relativeTo: this.route });
+                break;
+            }
+        }
+        
+    }
 }

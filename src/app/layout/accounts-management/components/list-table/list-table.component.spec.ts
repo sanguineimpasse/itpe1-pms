@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InfoModalComponent } from './info-modal.component';
+import { ListTableComponent } from './list-table.component';
 
-describe('InfoModalComponent', () => {
-  let component: InfoModalComponent;
-  let fixture: ComponentFixture<InfoModalComponent>;
+describe('ListTableComponent', () => {
+  let component: ListTableComponent;
+  let fixture: ComponentFixture<ListTableComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [InfoModalComponent]
+      declarations: [ListTableComponent]
     });
-    fixture = TestBed.createComponent(InfoModalComponent);
+    fixture = TestBed.createComponent(ListTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
