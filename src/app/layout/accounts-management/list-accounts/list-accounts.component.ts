@@ -11,6 +11,7 @@ import { Title } from '@angular/platform-browser';
 export class ListAccountsComponent implements OnInit{
     constructor(private route: ActivatedRoute, private router: Router, private titleService: Title) {}
     currentAccount: string = current_account_credentials.accountType;
+
     id: string = '?';
     ngOnInit(): void {
         this.route.params.subscribe(params => {
@@ -24,6 +25,14 @@ export class ListAccountsComponent implements OnInit{
             }
             case 'patient':{
                 this.titleService.setTitle('Patient Accounts');
+                break;
+            }
+            case 'prescriptions':{
+                this.titleService.setTitle('Prescriptions');
+                break;
+            }
+            case 'patients':{
+                
                 break;
             }
             default:{
