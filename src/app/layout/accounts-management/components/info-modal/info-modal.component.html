@@ -18,15 +18,21 @@
                 <input type="file" id="profile-image" name="profile-image" accept="image/*" onchange="previewImage(event)">
               </div>
             </div>
-      
+            
+            <div class="basic-info">
             <label for="fname">First Name:</label>
             <input type="text" id="fname" name="fname" required>
       
             <label for="lname">Last Name:</label>
             <input type="text" id="lname" name="lname" required>
       
-            <div *ngIf="type==='doctor'">
+            <div *ngIf="type==='Doctor'">
               <label for="sp">Specialization:</label>
+              <input type="text" id="sp" name="sp" required>
+            </div>
+
+            <div *ngIf="type==='Doctor'">
+              <label for="sp">Subspecialty:</label>
               <input type="text" id="sp" name="sp" required>
             </div>
       
@@ -44,11 +50,25 @@
       
             <label for="birthdate">Birthdate:</label>
             <input type="date" id="birthdate" name="birthdate" required>
-      
+            
+          </div>
+
+            <div class="more">
+            <div *ngIf="type==='Doctor'">
+              <label for="sp">Specialization:</label>
+              <input type="text" id="sp" name="sp" required>
+            </div>
+
+            <div *ngIf="type==='Doctor'">
+              <label for="sp">Specialization:</label>
+              <input type="text" id="sp" name="sp" required>
+            </div>
+
             <div class="buttons-container">
               <button type="submit">Add</button>
               <button type="button" onclick="window.history.back()">Cancel</button>
             </div>
+          </div>
           </form>
         </div>
     </div>
