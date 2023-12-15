@@ -317,17 +317,17 @@
     flex-wrap: wrap;
   }
   .Pwelcome{
-    width: 35%;
+    width: 200%;
   }
   .Pcustom-card {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 10px;
-    background: linear-gradient(150deg, rgba(126,164,179,1) 0%, rgba(60,180,180,1) 98%);
+    background: radial-gradient(circle, rgb(84, 223, 193)  1%, rgb(75, 212, 182) 84%);
   }
   
   .Pcustom-card:hover {
-    background: linear-gradient(150deg, rgb(153, 198, 216) 0%, rgb(49, 159, 159) 98%);
+    background: radial-gradient(circle, rgb(74, 197, 170)  1%, rgb(75, 212, 183) 84%);
     cursor: pointer;
   }
   .Pwelcome{
