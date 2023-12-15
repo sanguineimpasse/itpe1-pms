@@ -204,8 +204,12 @@
 
 .Pmain-container{
     height: 100%;
-    width: 100%;
+    width: 80%;
     gap: 0.5rem;
+    display: flex;
+    
+    margin: 20px auto;
+    flex-wrap: wrap;
 }
 
 .Pcol1{
@@ -218,17 +222,18 @@
         gap: 1rem;
         justify-content: center;
         .Pprescription-list-container{
-            background: radial-gradient(circle, rgba(48,187,132,1) 1%, rgba(116,224,151,1) 84%);
+            background: radial-gradient(circle, rgb(84, 223, 193)  1%, rgb(75, 212, 182) 84%);
         }
         .Pprescription-list-container:hover{
-            background: radial-gradient(circle, rgb(93, 205, 203) 0%, rgb(97, 185, 179) 98%);
+            background: radial-gradient(circle, rgb(74, 197, 170)  1%, rgb(75, 212, 183) 84%);
             cursor: pointer;
         }
         .Pdoctor-list-container{
-            background: radial-gradient(circle, rgba(116,224,151,1) 1%, rgb(62, 219, 156) 84%);
+            background: radial-gradient(circle, rgb(84, 223, 193)  1%, rgb(75, 212, 183) 84%);
         }
         .Pdoctor-list-container:hover{
-            background: radial-gradient(circle, rgba(116,224,151,1) 1%, rgb(59, 211, 150) 84%);
+            background: radial-gradient(circle, rgb(74, 197, 170)  1%, rgb(75, 212, 183) 84%);
+            cursor: pointer;
         }
         .Pprescription-list-container,.Pdoctor-list-container{
             flex-direction: column;
@@ -242,12 +247,13 @@
             
             h2{
                 text-align: center;
-                font-size: 1.8rem;
+                font-size: 1.5rem;
                 margin-bottom: 2rem;
                 font-family: Arial, Helvetica, sans-serif;
 	            font-style: italic;
                 color: white;
             }
+
             p{
                 font-weight: 700;
                 font-size: 3rem;
@@ -280,21 +286,31 @@
     h2{
         text-align: center;
         margin-bottom: 2rem;
+        font-size: 1.5rem;
     }
     .schedule-list-container{
         flex-direction: column;
         align-items: center;
+        flex-direction: column;
         ul{
             width: 100%;
         }
         .sched li{
             max-width: 80%;
-            background-color:  #79d296;
+            background: linear-gradient(90deg, rgb(37, 211, 173)  1%, rgb(159, 230, 214) 84%);
             border-radius: 8px;
             box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
             padding: 1rem;
-            margin: 5px;
+            margin: 4px;
             text-align:center;
+            color: white;
+            width: auto;
+        }
+
+        .sched li:hover{
+            background: rgb(223, 223, 223);
+            color: black;
+            cursor: pointer;
         }
     }
 }
