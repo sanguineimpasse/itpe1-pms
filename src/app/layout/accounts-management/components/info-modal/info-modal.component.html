@@ -1,4 +1,4 @@
-
+<!---
 <div class="background">
     <div class="main-container">
         <div class="form-container">
@@ -74,13 +74,13 @@
         </div>
     </div>
 </div>
-
+-->
 
 
 <div class="background-2">
   <div class="main-container-2">
     <div class="form-container-2">
-      <h2>{{method}} {{type}}</h2>
+      <h1>{{method}} {{type}}</h1>
       <form action="">
         <button type="button" class="close-button" onclick="window.history.back()">X</button>
         <div class="image-container-2">
@@ -104,9 +104,13 @@
           <label for="age">Age:</label>
           <input type="number" id="age" name="age">
     
-          <label>Sex:</label>
-          <label><input type="radio" name="sex" value="male" > Male</label>
-          <label><input type="radio" name="sex" value="female"> Female</label>
+          <label for="sex">Gender:</label>
+          <select id="sex" name="sex">
+            <option value="">- - -</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>>
+            <option value="undecided">Prefer not to say</option>>
+          </select>
     
           <label for="dob">Date of Birth:</label>
           <input type="date" id="dob" name="dob">
@@ -125,6 +129,7 @@
     
           <label for="maritalStatus">Marital Status:</label>
           <select id="maritalStatus" name="maritalStatus">
+            <option value="">- - -</option>
             <option value="single">Single</option>
             <option value="married">Married</option>
             <option value="divorced">Divorced</option>
