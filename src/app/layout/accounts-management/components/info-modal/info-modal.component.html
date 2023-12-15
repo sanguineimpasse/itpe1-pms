@@ -1,3 +1,4 @@
+
 <div class="background">
     <div class="main-container">
         <div class="form-container">
@@ -55,23 +56,13 @@
 
             <div class="more">
             <div *ngIf="type==='Doctor'">
-              <label for="sp">Certifications:</label>
+              <label for="sp">Specialization:</label>
               <input type="text" id="sp" name="sp" required>
             </div>
 
             <div *ngIf="type==='Doctor'">
-              <label for="sp">Affiliations:</label>
+              <label for="sp">Specialization:</label>
               <input type="text" id="sp" name="sp" required>
-            </div>
-
-            <div *ngIf="type==='Doctor'">
-              <label for="sp">Experience:</label>
-              <input type="text" id="sp" name="sp" required>
-            </div>
-
-            <div *ngIf="type==='Doctor'">
-              <label for="sp">Clinic Schedules:</label>
-              <input type="date" id="birthdate" name="birthdate" required>
             </div>
 
             <div class="buttons-container">
@@ -82,5 +73,73 @@
           </form>
         </div>
     </div>
+</div>
+
+
+
+<div class="background-2">
+  <div class="main-container-2">
+    <div class="form-container-2">
+      <h2>{{method}} {{type}}</h2>
+      <form action="">
+        <button type="button" class="close-button" onclick="window.history.back()">X</button>
+        <div class="image-container-2">
+          <div class="image-upload-2">
+          
+          </div>
+          <div>
+            <label for="profile-image" class="image-preview">
+              <img id="image-preview" src="image.jpg" alt="Profile Image">
+            </label>
+            
+            <label for="profile-image" class="upload-icon" tabindex="0">📷</label>
+            <input type="file" id="profile-image" name="profile-image" accept="image/*" onchange="previewImage(event)">
+          </div>
+        </div>
+
+        <div class="basic-info-2">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name">
+    
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age">
+    
+          <label>Sex:</label>
+          <label><input type="radio" name="sex" value="male" > Male</label>
+          <label><input type="radio" name="sex" value="female"> Female</label>
+    
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob">
+    
+          <label for="height">Height (cm):</label>
+          <input type="number" id="height" name="height">
+    
+          <label for="weight">Weight (kg):</label>
+          <input type="number" id="weight" name="weight">
+    
+          <label for="religion">Religion:</label>
+          <input type="text" id="religion" name="religion">
+    
+          <label for="nationality">Nationality:</label>
+          <input type="text" id="nationality" name="nationality">
+    
+          <label for="maritalStatus">Marital Status:</label>
+          <select id="maritalStatus" name="maritalStatus">
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+            <option value="divorced">Divorced</option>
+          </select>
+    
+          <label for="address">Address:</label>
+          <textarea id="address" name="address"></textarea>
+    
+          <div class="buttons-container-2">
+            <button type="submit">Submit</button>
+            <button type="button" onclick="window.history.back()">Close</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 
