@@ -8,24 +8,7 @@
   background-color: rgba(0, 0, 0, 0.54);
 }
 
-@media screen and (max-width: 600px) {
-  .column {
-      width: 100%;
-          }
-  }
-  
-@keyframes slideFromTop {
-  0% { 
-      opacity: 0;
-      transform: translateY(-5%);
-  }
-  80%{
-      transform: translateY(0%); 
-  }
-  100% { 
-      opacity: 1;
-  }
-}
+
 
 .main-container {
   display: flex;
@@ -112,10 +95,6 @@ button[type="submit"] {
   color: #fff;
 }
 
-button[type="button"] {
-  background-color: #ccc;
-  color: #000;
-}
 
 button[type="button"].close-button {
   position: absolute;
@@ -150,8 +129,8 @@ button[type="button"].close-button {
   height: 100vh;
 }
 
-.form-container-2 {
-  max-width: 800px;
+.form-container2 {
+  max-width: 80%;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -160,34 +139,12 @@ button[type="button"].close-button {
   box-sizing: border-box;
   background-color: #fff; 
   text-align: left; 
+  overflow-y: auto;
+  max-height: 80%;
+ 
 }
 
-h2.new-form {
-  text-align: center;
-  margin-bottom: 20px;
-}
 
-.image-container-2 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; 
-  margin-bottom: 16px;
-}
-
-.image-upload-2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.image-preview-2 {
-  margin-bottom: 8px;
-}
-
-.upload-icon-2 {
-  cursor: pointer;
-  margin-left: 5px;
-}
 
 .basic-info-2 label {
   display: block;
@@ -215,21 +172,24 @@ h2.new-form {
 .buttons-container-2 {
   margin-top: 20px;
   text-align: center;
+  
 }
 
-button.new-form {
+button[type="button"].close-button2{
+  
+  
+  top: -70px; 
   padding: 10px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
-
-button.new-form[type="submit"] {
-  background-color: #4caf50;
+  background-color: #ff0000;
   color: #fff;
+  position: relative;
 }
 
-button.new-form[type="button"] {
-  background-color: #ccc;
-  color: #000;
-}
+  .buttons-container-2 {
+    display: flex;
+    justify-content: space-between;
+  }
+  
