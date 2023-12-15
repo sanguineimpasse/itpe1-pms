@@ -22,6 +22,10 @@ const routes: Routes = [
         loadChildren: () => import('./accounts-management/list-accounts/list-accounts.module').then(mod=>mod.ListAccountsModule)
       },
       {
+        path:'appointments',
+        loadChildren: () => import('./accounts-management/doctor-appointments/doctor-appointments.module').then(mod=>mod.DoctorAppointmentsModule)
+      },
+      {
         path:'debug',
         title:'Debug :D',
         loadChildren: () => import('./debug/debug.module').then(mod=>mod.DebugModule)
