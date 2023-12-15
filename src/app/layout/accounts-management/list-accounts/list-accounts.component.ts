@@ -56,6 +56,11 @@ export class ListAccountsComponent implements OnInit{
                 break;
             }
         }
-        
+    }
+
+    goPrescriptions(){
+        const method = 'view';
+        const type = 'prescriptions';
+        this.router.navigate(['modify',method,type], { relativeTo: this.route });
     }
 }
