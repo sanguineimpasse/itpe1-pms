@@ -207,9 +207,7 @@
     width: 80%;
     gap: 0.5rem;
     display: flex;
-    
     margin: 20px auto;
-    flex-wrap: wrap;
 }
 
 .Pcol1{
@@ -286,12 +284,10 @@
     h2{
         text-align: center;
         margin-bottom: 2rem;
-        font-size: 1.5rem;
     }
     .schedule-list-container{
         flex-direction: column;
         align-items: center;
-        flex-direction: column;
         ul{
             width: 100%;
         }
@@ -300,11 +296,10 @@
             background: linear-gradient(90deg, rgb(37, 211, 173)  1%, rgb(159, 230, 214) 84%);
             border-radius: 8px;
             box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-            padding: 1rem;
+            padding: 9px;
             margin: 4px;
             text-align:center;
             color: white;
-            width: auto;
         }
 
         .sched li:hover{
@@ -314,6 +309,48 @@
         }
     }
 }
+
+.Pcontainer {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    flex-wrap: wrap;
+  }
+  .Pwelcome{
+    width: 35%;
+  }
+  .Pcustom-card {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    background: linear-gradient(150deg, rgba(126,164,179,1) 0%, rgba(60,180,180,1) 98%);
+  }
+  
+  .Pcustom-card:hover {
+    background: linear-gradient(150deg, rgb(153, 198, 216) 0%, rgb(49, 159, 159) 98%);
+    cursor: pointer;
+  }
+  .Pwelcome{
+    width: 40%;
+  }
+  .Pcustom-card .Pcard-body {
+    padding: 50px;
+    
+  }
+  
+  .Pcustom-card h5 {
+    color: white;  /*text color */
+    font-size: 1.4rem;
+    font-style: bold;
+    font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
+  }
+  
+  .Pcustom-card p {
+    color: rgb(56, 56, 56);   
+    font-size: 1rem;
+  }
+
 
 /*tablet*/
 @media screen and (max-width:801px){
@@ -333,6 +370,8 @@
     .Pcol2{
         width: 90%;
         margin-left: 0;
+        display:flex;
+        
     }
 }
 
@@ -347,5 +386,10 @@
             }
         }
     }
-    
+    .Pcol2{
+        width: 90%;
+        margin-left: 0;
+    }
 }
+    
+

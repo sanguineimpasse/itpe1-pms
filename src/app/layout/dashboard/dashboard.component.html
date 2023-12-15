@@ -44,7 +44,7 @@
 
 <!--doctor dash-->
 <main *ngIf="currentAccount==='doctor'" class="main-Dcontainer">
-<div class="Dcontainer welcome">
+  <div class="Dcontainer welcome">
     <div class="card Dcustom-card">
       <div class="Dcard-body ">
         <h5 class="card-title">Welcome, Doctor</h5>
@@ -115,6 +115,16 @@
 <!--patient dash-->
 <main *ngIf="currentAccount==='patient'" class="Pmain-container">
     <div class="Pcol1">
+
+      <div class="Pcontainer Pwelcome">
+        <div class="card Pcustom-card">
+          <div class="Pcard-body ">
+            <h5 class="card-title">Welcome, Patient</h5>
+            <p class="card-text">Whatever you do, do with determination. You have one life to live; 
+              do your work with passion and give your best.</p>
+          </div>
+        </div>
+      </div>
         <div class="Phorizontal-container">
             <div class="Pprescription-list-container">
                 <h2>Total Active Prescriptions</h2>
