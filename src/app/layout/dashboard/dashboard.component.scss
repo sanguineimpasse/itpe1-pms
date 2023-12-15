@@ -144,26 +144,37 @@
     margin: 20px auto;
     flex-wrap: wrap;
   }
-  
+  .welcome{
+    width: 35%;
+  }
   .Dcustom-card {
-    border: 1px solid #4CAF50; /* border color */
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 10px;
+    background: linear-gradient(150deg, rgba(126,164,179,1) 0%, rgba(60,180,180,1) 98%);
   }
   
+  .welcome{
+    width: 40%;
+  }
   .Dcustom-card .Dcard-body {
     padding: 50px;
-    width: 50%;
+    
   }
   
   .Dcustom-card h5 {
-    color: #4CAF50;  /*text color */
+    color: white;  /*text color */
+    font-size: 1.4rem;
+    font-style: bold;
+    font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
   }
   
   .Dcustom-card p {
-    color: #666;
+    color: rgb(56, 56, 56);   
+    font-size: 1rem;
   }
+
   
   @media (max-width: 100px) {
     .Dcontainer {
