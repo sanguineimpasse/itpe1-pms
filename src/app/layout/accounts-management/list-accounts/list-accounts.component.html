@@ -1,5 +1,5 @@
 <router-outlet></router-outlet>
-<main>
+<main *ngIf="id==='doctor'||id==='patient'">
     <div class="titlebar">
         <div class="title-container">
             <app-back-button></app-back-button>
@@ -75,4 +75,66 @@
         ></app-table-list>
         -->
     </div>
+</main>
+
+<main *ngIf="id==='prescriptions'">
+    <div class="titlebar">
+        <div class="title-container">
+            <h1>
+                Prescriptions
+            </h1>
+        </div>
+        <div class="actions-container">
+            <button type="button" > Add Prescription </button>
+            <input class="searchbar" type="text" placeholder="Search..">
+            <div class="search-button">
+                <svg class="search-button" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="row header">
+            <div class="col code tb-header">
+                PID
+            </div>
+            <div class="col name tb-header">
+                Patient Name
+            </div>
+            <div class="col tb-header">
+                Date
+            </div>
+            <div class="col tb-header">
+                Time
+            </div>
+            <div class="col tb-header">
+                Actions
+            </div>
+            <div class="col tb-header">
+                
+            </div>     
+        </div>
+        <div class="row">
+            <div class="col code tb-element">
+                9C2ND8
+            </div>
+            <div class="col name tb-element">
+                Judas B. Balasubas
+            </div>
+            <div class="col tb-element">
+                15/12/2023
+            </div>
+            <div class="col tb-element">
+                1
+            </div>
+            <div class="col tb-element">
+                <button type="button" class="view">View</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<main *ngIf="id==='patients'">
+    <h1>sanaol patient :D</h1>
 </main>
