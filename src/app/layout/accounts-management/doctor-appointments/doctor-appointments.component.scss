@@ -180,3 +180,22 @@ button:hover{
 .row-title{
     background-color: aliceblue;
 }
+
+.col.action-buttons button {
+    background-color: azure;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: space-between;
+    margin-right: 5px;
+}
+
+.check-button svg,
+.x-button svg {
+    width: 20px; 
+    height: 20px;
+    color: green; 
+}
+
+.x-button svg {
+    color: red; 
+}
