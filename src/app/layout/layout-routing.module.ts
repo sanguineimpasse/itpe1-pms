@@ -26,6 +26,10 @@ const routes: Routes = [
         loadChildren: () => import('./accounts-management/doctor-appointments/doctor-appointments.module').then(mod=>mod.DoctorAppointmentsModule)
       },
       {
+        path: 'profile',
+        loadChildren: () => import('./accounts-management/components/profile/profile.module').then(mod=>mod.ProfileModule)
+      },
+      {
         path:'debug',
         title:'Debug :D',
         loadChildren: () => import('./debug/debug.module').then(mod=>mod.DebugModule)
