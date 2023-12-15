@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { SharedComponentModule } from './components/shared-component.module';
 import { LayoutComponent } from './layout.component';
+import { DoctorAppointmentsComponent } from './accounts-management/doctor-appointments/doctor-appointments.component';
 
 
 
 @NgModule({
   declarations: [
-    LayoutComponent
+    LayoutComponent,
+    DoctorAppointmentsComponent
   ],
   imports: [
     CommonModule,
