@@ -55,13 +55,23 @@
 
             <div class="more">
             <div *ngIf="type==='Doctor'">
-              <label for="sp">Specialization:</label>
+              <label for="sp">Certifications:</label>
               <input type="text" id="sp" name="sp" required>
             </div>
 
             <div *ngIf="type==='Doctor'">
-              <label for="sp">Specialization:</label>
+              <label for="sp">Affiliations:</label>
               <input type="text" id="sp" name="sp" required>
+            </div>
+
+            <div *ngIf="type==='Doctor'">
+              <label for="sp">Experience:</label>
+              <input type="text" id="sp" name="sp" required>
+            </div>
+
+            <div *ngIf="type==='Doctor'">
+              <label for="sp">Clinic Schedules:</label>
+              <input type="date" id="birthdate" name="birthdate" required>
             </div>
 
             <div class="buttons-container">
