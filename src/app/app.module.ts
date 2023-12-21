@@ -8,7 +8,7 @@ import { RegistrationModule } from './registration/registration.module';
 import { LayoutModule } from './layout/layout.module';
 import { ScreenSizeModule } from './components/debug/screen-size/screen-size.module';
 import { NotFoundModule } from './not-found/not-found.module';
-import { LayoutComponent } from './layout/layout.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -16,6 +16,7 @@ import { LayoutComponent } from './layout/layout.component';
   ],
   imports: [
     BrowserModule,
+    NgbModule,
     AppRoutingModule,
     LayoutModule,
     LoginModule,
