@@ -7,6 +7,7 @@ import { InfoModalComponent } from '../components/info-modal/info-modal.componen
 
 
 
+
 @NgModule({
   declarations: [
     ListAccountsComponent,
