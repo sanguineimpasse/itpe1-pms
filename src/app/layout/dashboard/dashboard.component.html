@@ -1,7 +1,57 @@
 
 <!--admin dash--> 
 <main *ngIf="currentAccount === 'admin'" class="Amain-container">
-  <div class="Acol1">
+  
+  <div class="admin container-fluid">
+
+    <div class="row">
+      <div class="col-md-8">
+
+        <div class="row">
+          
+          <div class="patients col-md gx-4 m-1" (click)="goPatientList()">
+            <h3>TOTAL REGISTERED PATIENTS</h3>
+            <p>{{patients}}</p>
+            <h6>
+              Recent Patients: {{recentPatients}}
+            </h6>
+          </div>
+
+          <div class="doctors col-md gx-4 m-1" (click)="goDoctorList()">
+            <h3>TOTAL REGISTERED DOCTORS</h3>
+            <p>{{doctors}}</p>
+            <h6>
+              Recent Doctors: {{recentDoctors}}
+            </h6>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="graph col-xxl">
+           <p>GRAPH</p>
+          </div>
+          
+        </div>
+
+
+      </div>
+
+      <div class="col-md-4">
+        <H2>RECENTLY ADDED ACCOUNTS</H2>
+        <div class="account row">
+          account
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  
+  <!-- <div class="Acol1">
       <div class="Ahorizontal-container">
           <div class="Apatient-list-container" (click)="goPatientList()">
               <h2>TOTAL REGISTERED PATIENTS</h2>
@@ -29,16 +79,10 @@
       <h2>Recently Added Accounts</h2>
       <div class="Aaccount-list-container">
           <ul>
-              <!--
-              <app-dashboard-list-item *ngFor="let data of userListData"
-              userName="{{data.userName}}"
-              accountType="{{data.accountType}}"
-              dateCreated="{{data.dateCreated}}"
-              ></app-dashboard-list-item>
-              -->
+
           </ul>
       </div>
-  </div>
+  </div> -->
 </main>
 
 
