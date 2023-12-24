@@ -12,24 +12,13 @@
     font-size: 2rem;
     font-weight: 400;
   }
-  .row{
-    padding: 1rem;
-  }
-  .col-md-4{
-    text-align: center;
-    
-    .account{
-      background-color: #F9F9F9;
-      border-radius: 5px;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    }
+  .account{
+    background-color: #F9F9F9;
+    box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
   }
   .doctors{
     background-color: #089293;
-    border-radius: 5px;
-    padding: 1rem;
     box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
-    text-align: center;
     color: #fff;
     cursor: pointer;
   }
@@ -38,10 +27,7 @@
   }
   .patients{
     background-color: #044B63;
-    border-radius: 5px;
-    padding: 1rem;
     box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
-    text-align: center;
     color: #fff;
     cursor: pointer;
   }
@@ -50,13 +36,9 @@
   }
   .graph{
     background-color: #F9F9F9;
-    border-radius: 5px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
   }
 }
-
-
-
 
 // .Amain-container, .Apatient-list-container, .Adoctor-list-container,
 // .Ahorizontal-container, .Agraph-container, .Aaccount-list-container, .Acol1, .Acol2{

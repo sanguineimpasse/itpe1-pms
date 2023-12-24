@@ -4,12 +4,12 @@
   
   <div class="admin container-fluid">
 
-    <div class="row">
+    <div class="row p-5">
       <div class="col-md-8">
 
         <div class="row">
           
-          <div class="patients col-md gx-4 m-1" (click)="goPatientList()">
+          <div class="patients col-md text-center rounded m-1 p-3 " (click)="goPatientList()">
             <h3>TOTAL REGISTERED PATIENTS</h3>
             <p>{{patients}}</p>
             <h6>
@@ -17,7 +17,7 @@
             </h6>
           </div>
 
-          <div class="doctors col-md gx-4 m-1" (click)="goDoctorList()">
+          <div class="doctors col-md text-center rounded m-1 p-3" (click)="goDoctorList()">
             <h3>TOTAL REGISTERED DOCTORS</h3>
             <p>{{doctors}}</p>
             <h6>
@@ -27,9 +27,9 @@
 
         </div>
 
-        <div class="row">
+        <div class="row p-1  ">
 
-          <div class="graph col">
+          <div class="graph col rounded mt-3 p-3 ">
            <p>GRAPH</p>
           </div>
           
@@ -38,14 +38,24 @@
 
       </div>
 
-      <div class="col-md-4">
-        <H2>RECENTLY ADDED ACCOUNTS</H2>
-        <div class="account row">
-          account
-        </div>
+      <div class="col-md-4 text-center">
+
+        <H2 class="mt-3 mb-3">RECENTLY ADDED ACCOUNTS</H2>
+
+          <div class="account row rounded mx-1 mb-1 p-3 ">
+            account
+          </div>
+          <div class="account row rounded mx-1 mb-1 p-3 ">
+            account
+          </div>
+          <div class="account row rounded mx-1 mb-1 p-3 ">
+            account
+          </div>
+
       </div>
 
     </div>
+
   </div>
 
 
