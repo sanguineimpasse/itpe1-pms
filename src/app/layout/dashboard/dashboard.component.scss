@@ -181,11 +181,48 @@
 
 
 //FOR DOCTOR DASHBOARD
-
+// lagyan nyo nalang ulit ng styles like bg color hehe
 
 .doctor{
   h3{
     font-size: 2rem;
+    font-weight: 700;
+  }
+  .h2{
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  h5{
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  p, .card-text{
+    font-size: 1.25rem;
+  }
+
+  .welcome{
+    background-color: #F9F9F9;
+    box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
+  }
+  .totalPatients{
+    background-color: #F9F9F9;
+    box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
+  }
+  .totalPrescriptions{
+    background-color: #F9F9F9;
+    box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
+  }
+  .totalConsultations{
+    background-color: #F9F9F9;
+    box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
+  }
+  .recentAppointments{
+    background-color: #F9F9F9;
+    box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
+  }
+  .checkup{
+    background-color: #F9F9F9;
+    box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
   }
 }
 // .Dcontainer {
