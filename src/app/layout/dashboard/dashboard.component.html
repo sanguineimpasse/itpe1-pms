@@ -98,7 +98,87 @@
 
 <!--doctor dash-->
 <main *ngIf="currentAccount==='doctor'" class="main-Dcontainer">
-  <div class="Dcontainer welcome">
+  
+  <div class="doctor container-fluid">
+
+    <div class="row mx-4 mt-3">
+
+      <div class="col-md-8">
+
+        <div class="container my-3 d-flex justify-content-center">
+
+          <div class="col-md-12 ">
+
+            <div class="row-md">
+  
+              <div class="welcome row bg-background-tertiary rounded text-center p-5 mx-3">
+                <h3 class="card-title my-1">Welcome, Doctor ________</h3>
+                <!-- <p class="card-text">Whatever you do, do with determination. You have one life to live; 
+                  do your work with passion and give your best.</p> -->
+              </div>
+    
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="container my-3">
+
+          <div class="row d-flex justify-content-around">
+
+            <div class="totalPatients col-md-5 bg-background-tertiary rounded text-center p-5 m-1">
+              <h5 class="card-title"><i class="fas fa-user-md"></i> Total Patients</h5>
+              <p class="card-text">0</p>
+            </div>
+  
+            <div class="totalPrescriptions col-md-5 bg-background-tertiary rounded text-center p-5 m-1">
+              <h5 class="card-title"><i class="fas fa-file-prescription"></i> Total Prescriptions Given</h5>
+              <p class="card-text">0</p>
+            </div>
+  
+          </div>
+
+        </div>
+    
+
+        <div class="container my-3">
+          <div class="row d-flex justify-content-around">
+            <div class="totalConsultations col-md-5 bg-background-tertiary rounded text-center p-5 m-1">
+              <h5 class="card-title"><i class="fas fa-user-md"></i>Total Consultations Attended</h5>
+              <p class="card-text">0</p>
+            </div>
+  
+            <div class="recentAppointments col-md-5 bg-background-tertiary rounded text-center p-5 m-1">
+              <h5 class="card-title"><i class="fas fa-file-prescription"></i>Recent Appointments</h5>
+              <p class="card-text">0</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  
+      <div class="checkup col-md-4 bg-background-tertiary rounded text-center my-3 p-3">
+        <h2 class="card-title my-3">Checkup Appointments</h2>
+
+        <div class="row"> 
+          <p class="card-text">APPOINTMENT #</p>
+        </div>
+        <div class="row">
+          <p class="card-text">APPOINTMENT #</p>
+        </div>  
+        <div class="row">
+          <p class="card-text">APPOINTMENT #</p>
+        </div>  
+
+      </div>
+
+    </div>
+
+  </div>
+
+  
+  <!-- <div class="Dcontainer welcome">
     <div class="card Dcustom-card">
       <div class="Dcard-body ">
         <h5 class="card-title">Welcome, Doctor</h5>
@@ -149,7 +229,7 @@
       </div>
     </div>
   
-    <!-- CardRightSide-->
+    CardRightSide
     <div class="row">
      <div class="Dcheckup-appointments-card ">
       <div class="col-md-12">
@@ -162,7 +242,7 @@
       </div>
       </div>
     </div>
-  </div>      
+  </div>       -->
 </main>
 
 
