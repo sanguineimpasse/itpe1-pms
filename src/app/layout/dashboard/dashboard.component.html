@@ -248,7 +248,71 @@
 
 <!--patient dash-->
 <main *ngIf="currentAccount==='patient'" class="Pmain-container">
-    <div class="Pcol1">
+
+  <div class="patient container-fluid my-4">
+
+    <div class="row">
+
+      <div class="col-md-7">
+
+        <div class="greetings row-md rounded m-3 p-3 ">
+          <h3>Hi!, ___________</h3>
+
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">How are you feeling today?</label>
+          </div>
+
+        </div>  
+  
+  
+        <div class="row d-flex justify-content-around">
+  
+          <div class="active-prescriptions col-md-5 rounded text-center m-1 p-3">
+            <h5 class="card-title">Active Prescriptions</h5>
+            <p class="total">
+                0
+            </p>
+          </div>
+    
+          <div class="my-doctors col-md-5 rounded text-center m-1 p-3">
+            <h5>My Doctors</h5>
+            <p class="total">
+                0
+            </p>
+          </div>
+        </div>
+  
+        <div class="booking row-md rounded m-3 p-5 ">
+          <p>booking instructions</p>
+        </div>
+  
+      </div>
+  
+      <div class="col-md-5 text-center mt-3">
+
+        <h3 class="my-2 mb-4">SCHEDULED CHECKUP</h3>
+
+        <div class="schedule-checkup row rounded mb-2 mx-3 p-2">
+          <p>SCHEDULED CHECKUP #</p>
+        </div>
+        <div class="schedule-checkup row rounded mb-2 mx-3 p-2">
+          <p>SCHEDULED CHECKUP #</p>
+        </div>
+        <div class="schedule-checkup row rounded mb-2 mx-3 p-2">
+          <p>SCHEDULED CHECKUP #</p>
+        </div>
+        <div class="schedule-checkup row rounded mb-2 mx-3 p-2">
+          <p>SCHEDULED CHECKUP #</p>
+        </div>
+  
+      </div>
+
+    </div>
+
+  </div>
+
+    <!-- <div class="Pcol1">
 
       <div class="Pcontainer Pwelcome">
         <div class="card Pcustom-card">
@@ -293,7 +357,7 @@
                 </div>
             </ul>
         </div>
-    </div>
+    </div> -->
 </main>
 
 
