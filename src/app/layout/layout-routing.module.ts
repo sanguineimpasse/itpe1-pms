@@ -26,8 +26,9 @@ const routes: Routes = [
         loadChildren: () => import('./accounts-management/doctor-appointments/doctor-appointments.module').then(mod=>mod.DoctorAppointmentsModule)
       },
       {
-        path: 'profile',
-        loadChildren: () => import('./accounts-management/components/profile/profile.module').then(mod=>mod.ProfileModule)
+        path:'settings/admin',
+        title:'Admin Settings',
+        loadChildren: () => import('./accounts-management/admin/admin-settings/admin-settings.module').then(mod=>mod.AdminSettingsModule)
       },
       {
         path:'debug',
