@@ -23,8 +23,9 @@ export class DashboardComponent implements OnInit{
       .filter(user => new Date(user.dateCreated) >= minDate)
       .sort((a, b) => new Date(b.dateCreated).getTime() - new Date(a.dateCreated).getTime());
   }
-  recentlyAddedUsers = this.filterUsersByDate(user_list_data, 10); // adjust the number of weeks here
+  recentlyAddedUsers = this.filterUsersByDate(user_list_data, 15); // adjust the number of weeks here
   
+  //list the recent patients && doctors
   patients  = user_list_data.filter(user => user.accountType === 'patient').length; //filter the array with only the type of 'patient', then measure length
   doctors = user_list_data.filter(user => user.accountType === 'doctor').length; //filter the array with only the type of 'doctor', then measure length
   recentPatients = this.recentlyAddedUsers.filter(user => user.accountType === 'patient').length;
@@ -32,6 +33,24 @@ export class DashboardComponent implements OnInit{
 
   ngOnInit(): void {
       //console.log(this.userListData);
+  }
+
+  determineListBackground(type:string){
+    if(type === 'doctor'){
+      return {
+        'background-color':'#089293',
+      }
+    }
+    else if(type === 'patient'){
+      return{
+        'background-color':'#044B63',
+      }
+    }
+    else{
+      return{
+        'background-color':'black'
+      }
+    }
   }
 
   goDoctorList(){

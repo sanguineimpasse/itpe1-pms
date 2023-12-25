@@ -9,9 +9,9 @@
 
         <div class="row">
           
-          <div class="patients col-md text-center rounded m-1 p-3 " (click)="goPatientList()">
+          <div class="patients col-md text-center rounded m-1 p-3" (click)="goPatientList()">
             <h3>TOTAL REGISTERED PATIENTS</h3>
-            <p>{{patients}}</p>
+            <p class="number-display">{{patients}}</p>
             <h6>
               Recent Patients: {{recentPatients}}
             </h6>
@@ -19,7 +19,7 @@
 
           <div class="doctors col-md text-center rounded m-1 p-3" (click)="goDoctorList()">
             <h3>TOTAL REGISTERED DOCTORS</h3>
-            <p>{{doctors}}</p>
+            <p class="number-display">{{doctors}}</p>
             <h6>
               Recent Doctors: {{recentDoctors}}
             </h6>
@@ -42,14 +42,11 @@
 
         <H2 class="mt-3 mb-3">RECENTLY ADDED ACCOUNTS</H2>
 
-          <div class="account row rounded mx-1 mb-1 p-3 ">
-            account
-          </div>
-          <div class="account row rounded mx-1 mb-1 p-3 ">
-            account
-          </div>
-          <div class="account row rounded mx-1 mb-1 p-3 ">
-            account
+          <div class="account row rounded mx-1 mb-1 p-3" 
+          [ngStyle]="determineListBackground(data.accountType)" 
+          *ngFor="let data of recentlyAddedUsers">
+            <h1>{{data.accountType}}</h1>
+            <p>{{data.userName}}</p>
           </div>
 
       </div>

@@ -11,9 +11,13 @@ import { user_list_data } from 'src/data/testlistdata';
 })
 export class ListAccountsComponent implements OnInit{
     constructor(private route: ActivatedRoute, private router: Router, private titleService: Title) {}
+    
     currentAccount: string = current_account_credentials.accountType;
     id: string = '?';
+    idName: string = '';
+    currentMethod: string = '';
     userList = user_list_data.filter(user => user.accountType === this.id);
+
     ngOnInit(): void {
         this.route.params.subscribe(params => {
             this.id = params['id'];
@@ -23,18 +27,20 @@ export class ListAccountsComponent implements OnInit{
             case 'doctor':{
                 this.titleService.setTitle('Doctor Accounts');
                 this.setUser(this.id);
+                this.idName = 'Doctor';
                 break;
             }
             case 'patient':{
                 this.titleService.setTitle('Patient Accounts');
                 this.setUser(this.id);
+                this.idName = 'Patient';
                 break;
             }
             case 'prescriptions':{
                 this.titleService.setTitle('Prescriptions');
                 break;
             }
-            case 'patients':{
+            case 'doctorsPatients':{
                 
                 break;
             }
@@ -44,25 +50,13 @@ export class ListAccountsComponent implements OnInit{
         }
     }
 
+    changeMethod(method:string){
+      this.currentMethod = method;
+    }
+
+    //change the display on the tables based on the id
     setUser(id:string){
       this.userList = user_list_data.filter(user => user.accountType === id);
-    }
-    
-    goAdd(type:string){
-        switch(type){
-            case 'doctor':{
-                const method = 'add';
-                const type = 'doctor';
-                this.router.navigate(['modify',method,type], { relativeTo: this.route });
-                break;
-            }
-            case 'patient':{
-                const method = 'add';
-                const type = 'patient';
-                this.router.navigate(['modify',method,type], { relativeTo: this.route });
-                break;
-            }
-        }
     }
 
     goPrescriptions(){
