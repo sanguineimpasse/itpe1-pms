@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-admin-settings',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-settings.component.scss']
 })
 export class AdminSettingsComponent {
-
+  constructor(private location: Location) {}
+  
+  goBack(){
+    this.location.back();
+  }
 }

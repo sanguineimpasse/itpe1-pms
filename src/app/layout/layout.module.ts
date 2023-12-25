@@ -10,9 +10,7 @@ import { AdminSettingsComponent } from './accounts-management/admin/admin-settin
 
 @NgModule({
   declarations: [
-    LayoutComponent,
-    DoctorAppointmentsComponent,
-    AdminSettingsComponent
+    LayoutComponent
   ],
   imports: [
     CommonModule,
