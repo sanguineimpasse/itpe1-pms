@@ -5,7 +5,8 @@
         <i class="bi bi-person" style="font-size: 2em"></i>
       </button>
       <div class="dropdown-content">
-        <a [routerLink]="['profile']">Profile</a>
+        <a [routerLink]="['profile']" *ngIf="accountLoggedIn==='doctor'">Profile</a>
+        <a [routerLink]="['profile']" *ngIf="accountLoggedIn==='patient'">Profile</a>
         <a [routerLink]="['settings/admin']" *ngIf="accountLoggedIn==='admin'">Settings</a>
         <a >Log-out</a>
       </div>

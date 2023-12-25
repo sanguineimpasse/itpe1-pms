@@ -16,7 +16,7 @@ export const user_list_data = [
     {
       userID:"3",
       accountType:"patient",
-      userCode:"5DCC2f",
+      userCode:"5DCC2F",
       userName:"Gusion Lodicakes",
       dateCreated:"2023-01-15"
     },
@@ -79,6 +79,20 @@ export const user_list_data = [
       userCode:"B3ST13",
       userName: "Yuniq Enrer",
       dateCreated:"2023-08-22"
+    },
+    {
+      userID:"12",
+      accountType:"patient",
+      userCode:"MD0SNA",
+      userName: "Iemung Mahma",
+      dateCreated:"2023-12-25"
+    },
+    {
+      userID:"13",
+      accountType:"doctor",
+      userCode:"0BHB23",
+      userName: "Doctor Stone",
+      dateCreated:"2023-12-26"
     }
 
 ]

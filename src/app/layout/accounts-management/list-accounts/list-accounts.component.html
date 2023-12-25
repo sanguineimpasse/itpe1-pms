@@ -40,14 +40,14 @@
 
         <!--buttons for doctor-->
         <td class="d-flex gap-2 end" *ngIf="id==='doctor'">
-          <button class="btn btn-sm btn-secondary">View Profile</button>
+          <button class="btn btn-sm btn-secondary" [routerLink]="['/profile','by-admin',data.accountType,data.userCode]">View Profile</button>
           <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal" (click)="changeMethod('Edit')">Edit</button>
           <i class="bi bi-trash-fill align-self-center" data-bs-toggle="modal" data-bs-target="#deleteModal"></i>
         </td>
 
         <!--buttons for patient-->
         <td class="d-flex gap-2 end" *ngIf="id==='patient'">
-          <button class="btn btn-sm btn-secondary">View Profile</button>
+          <button class="btn btn-sm btn-secondary" [routerLink]="['/profile','by-admin',data.accountType,data.userCode]">View Profile</button>
           <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal" (click)="changeMethod('Edit')">Edit</button>
           <i class="bi bi-trash-fill align-self-center" data-bs-toggle="modal" data-bs-target="#deleteModal"></i>
         </td>

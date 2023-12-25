@@ -1,16 +1,13 @@
 <div class="background">
 
     <div class="container">
-        <div class="profileContainer">
+        <div class="profileContainer row-cols-2">
 
-            <div class="image-container">
-
+            <div class="image-container col">
                 <div>
                   <label for="profile-image" class="image-preview">
                     <img id="image-preview" src="image.jpg" alt="Profile Image">
                   </label>
-                  
-
                 </div>
 
                 <div>
@@ -19,39 +16,43 @@
 
                 <div class="image-upload">
                     <label for="ai">CODE:</label>
+                    <h3>{{userID}}</h3>
                 </div>
 
                 <button >Book an <br> Appointment</button>
-
             </div>
 
-            <div class="info-container">
-
-                <div class="name">
-                    <p>Name:</p>
+            <div class="container col">
+                <div class="mb-3">
+                  <label for="txtName" class="form-label">Name:</label>
+                  <input type="text" id="txtName" class="form-control" placeholder="name" disabled>
                 </div>
 
-                <div class="specialty">
-                    <p>Specialty:</p>
+                <div class="row" *ngIf="userType==='doctor'">
+                  <div class="mb-3 col">
+                    <label for="txtSP" class="form-label">Specialty:</label>
+                    <input type="text" id="txtSP" class="form-control" placeholder="specialty" disabled>
+                  </div>
+                  <div class="mb-3 col">
+                    <label for="txtSBSP" class="form-label">Subspecialty:</label>
+                    <input type="text" id="txtSBSP" class="form-control" placeholder="subspecialty" disabled>
+                  </div>
                 </div>
 
-                <div class="clinic-sched">
-                    <p>Clinic Schedule (date and time):</p>
+                <div class="mb-3">
+                  <label for="txtClinicSched" class="form-label">Clinic Schedule (date and time):</label>
+                  <input type="text" id="txtClinicSched" class="form-control" placeholder="ClinicSched" disabled>
                 </div>
 
-                <div class="clinic">
-                    <p>Available clinics:</p>
+                <div class="mb-3">
+                  <label for="txtClinicAvailable" class="form-label">Available clinics:</label>
+                  <input type="text" id="txtClinicAvailable" class="form-control" placeholder="ClinicAvailable" disabled>
                 </div>
 
                 <div class="records">
                     <p>Your Medical Records:</p>
                 </div>
             </div>
-
-            <div class="subspeciality">
-                <p>Subspecialty:</p>
-            </div>
-
 
         </div>
     </div>

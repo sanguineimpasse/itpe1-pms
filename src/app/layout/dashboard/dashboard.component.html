@@ -1,6 +1,6 @@
 
 <!--admin dash--> 
-<main *ngIf="currentAccount === 'admin'" class="Amain-container">
+<main *ngIf="currentAccount === 'admin'" class="admin-container">
   
   <div class="admin container-fluid">
 
@@ -10,7 +10,7 @@
 
         <div class="row">
           
-          <div class="patients col-md-4 text-center rounded m-1 p-3" (click)="goPatientList()">
+          <div class="patients col-md-3 text-center rounded m-1 p-3" (click)="goPatientList()">
             <h3>TOTAL REGISTERED PATIENTS</h3>
             <p class="number-display">{{patients}}</p>
             <h6>
@@ -18,7 +18,7 @@
             </h6>
           </div>
 
-          <div class="doctors col-md-4 text-center rounded m-1 p-3" (click)="goDoctorList()">
+          <div class="doctors col-md-3 text-center rounded m-1 p-3" (click)="goDoctorList()">
             <h3>TOTAL REGISTERED DOCTORS</h3>
             <p class="number-display">{{doctors}}</p>
             <h6>
@@ -26,9 +26,16 @@
             </h6>
           </div>
 
+          <div class="doctors col-md-3 text-center rounded m-1 p-3 d-flex flex-column align-items-center justify-content-center" [routerLink]="['/settings/admin']">
+            <h3>CHANGE ADMIN SETTINGS</h3>
+            <h6>
+              Click Here
+            </h6>
+          </div>
+
         </div>
 
-        <div class="row p-1 h-100">
+        <div class="row p-1">
 
           <div class="graph col rounded mt-3 p-3 h-100">
            <p>GRAPH</p>
@@ -44,55 +51,17 @@
 
         <H2 class="mt-3 mb-3">RECENTLY ADDED ACCOUNTS</H2>
 
-          <div class="account row rounded mx-1 mb-1 p-3" 
+          <div class="account rounded mx-1 mb-1 p-2" 
+          [routerLink]="['/profile','by-admin',data.accountType,data.userCode]"
           [ngStyle]="determineListBackground(data.accountType)" 
           *ngFor="let data of recentlyAddedUsers">
             <p><em>{{data.accountType}}</em></p>
             <h1>{{data.userName}}</h1>
             <p>Date Created: {{data.dateCreated}}</p>
           </div>
-
       </div>
-
-    </div>
-
-  </div>
-
-
-
-  
-  <!-- <div class="Acol1">
-      <div class="Ahorizontal-container">
-          <div class="Apatient-list-container" (click)="goPatientList()">
-              <h2>TOTAL REGISTERED PATIENTS</h2>
-              <p>{{patients}}</p>
-              <p class="Arecent">
-                  Recent Patients: {{recentPatients}}
-              </p>
-          </div>
-          <div class="Adoctor-list-container" (click)="goDoctorList()">
-              <h2>TOTAL REGISTERED DOCTORS</h2>
-              <p>{{doctors}}</p>
-              <p class="Arecent">
-                  Recent Doctors: {{recentDoctors}}
-              </p>
-          </div>
-      </div>
-      <div class="Agraph-container">
-          <div class="Agraph">
-              Agraph
-          </div>
-          
-      </div>
-  </div>
-  <div class="Acol2">
-      <h2>Recently Added Accounts</h2>
-      <div class="Aaccount-list-container">
-          <ul>
-
-          </ul>
-      </div>
-  </div> -->
+    </div><!--main row-->
+  </div><!--admin container-->
 </main>
 
 

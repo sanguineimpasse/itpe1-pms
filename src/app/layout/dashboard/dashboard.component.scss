@@ -1,9 +1,19 @@
 //FOR ADMIN DASHBOARD
 
 .admin{
+  h3{
+    font-size: 1rem;
+  }
+  h6{
+    font-size: 0.8rem;
+  }
+  .admin-container{
+    padding: 0;
+  }
   .account{
     color: white;
     box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
+    cursor: pointer;
     h1{
       font-size: 1.2rem;
       font-weight: 600;
@@ -41,11 +51,6 @@
     box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
   }
 }
-
-// .Amain-container, .Apatient-list-container, .Adoctor-list-container,
-// .Ahorizontal-container, .Agraph-container, .Aaccount-list-container, .Acol1, .Acol2{
-//     display: flex;
-// }
 
 // /*border-box prevents the elements from making the container grow*/
 // .Acol1,.Ahorizontal-container,
