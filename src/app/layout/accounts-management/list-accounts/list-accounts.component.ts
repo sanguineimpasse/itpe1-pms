@@ -77,4 +77,8 @@ export class ListAccountsComponent implements OnInit{
         const type = 'prescriptions';
         this.router.navigate(['modify',method,type], { relativeTo: this.route });
     }
+
+    goBack(){
+      this.router.navigate(['/dashboard']);
+    }
 }

@@ -11,6 +11,7 @@ export class ProfileComponent implements OnInit{
   byWho:string = '';
   userType:string = '';
   userID:string = '';
+  editMode:boolean = false;
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -35,6 +36,17 @@ export class ProfileComponent implements OnInit{
       default:{
         this.router.navigate(['notfound']);
       }
+    }
+  }
+
+  btnEdit(){
+    if(!this.editMode){
+
+      this.editMode = true;
+    }
+    else if(this.editMode){
+      
+      this.editMode = false;
     }
   }
 }

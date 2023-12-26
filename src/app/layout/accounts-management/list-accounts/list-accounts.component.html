@@ -1,28 +1,36 @@
 <router-outlet></router-outlet>
 <!--ACCOUNTS LIST-->
 <main class="p-4" *ngIf="id==='doctor'||id==='patient'">
-  <div class="hstack gap-2 align-items-center p-1 titlebar">
-      <app-back-button></app-back-button>
-      <h1 *ngIf="id==='doctor'">
-          Doctor Accounts List
-      </h1>
-      <h1 *ngIf="id==='patient'">
-          Patient Accounts List
-      </h1>
-      <div class="spacer mx-auto"></div>
-      <div class="gap-2 d-flex end">
-        <div *ngIf="currentAccount==='admin'">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal" *ngIf="id==='doctor'" (click)="changeMethod('Add')"> 
-            Add Doctor
-          </button>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal" *ngIf="id==='patient'" (click)="changeMethod('Add')"> 
-            Add Patient
-          </button>
+  <div class="">
+      <div class="row">
+        <div class="col-lg-4">
+          
+          <h1 *ngIf="id==='doctor'">
+            <i class="bi bi-chevron-left" (click)="goBack()"></i>
+            Doctor Accounts List
+          </h1>
+          <h1 *ngIf="id==='patient'">
+            <i class="bi bi-chevron-left" (click)="goBack()"></i>
+            Patient Accounts List
+          </h1>
         </div>
-        <input class="form-control w-50" type="text" placeholder="Search..">
-        <button class="btn btn-secondary ">
-          <i class="bi bi-search"></i>
-        </button>
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+          <div class="gap-2 d-flex end">
+            <div *ngIf="currentAccount==='admin'">
+              <button type="button" class="btn btn-primary h-100" data-bs-toggle="modal" data-bs-target="#infoModal" *ngIf="id==='doctor'" (click)="changeMethod('Add')"> 
+                Add Doctor
+              </button>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal" *ngIf="id==='patient'" (click)="changeMethod('Add')"> 
+                Add Patient
+              </button>
+            </div>
+            <input class="form-control w-50" type="text" placeholder="Search..">
+            <button class="btn btn-secondary">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </div>
       </div>
   </div>
   
@@ -48,9 +56,9 @@
         <!--buttons for doctor-->
         <td class="d-flex gap-2 end">
           <button class="btn btn-sm btn-secondary" [routerLink]="['/profile',byWhom,data.accountType,data.userCode]">View Profile</button>
-          <div *ngIf="currentAccount==='admin'">
+          <div class="hstack" *ngIf="currentAccount==='admin'">
             <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal" (click)="changeMethod('Edit')">Edit</button>
-            <i class="bi bi-trash-fill align-self-center" data-bs-toggle="modal" data-bs-target="#deleteModal"></i>
+            <i class="bi bi-trash-fill align-self-center m-1 align-self-center" data-bs-toggle="modal" data-bs-target="#deleteModal"></i>
           </div>
           <div *ngIf="currentAccount==='doctor'">
             <i class="bi bi-x-circle-fill align-self-center text-danger" data-bs-toggle="modal" data-bs-target="#removeModal"></i>
@@ -72,68 +80,36 @@
         </div>
 
         <div class="modal-body"><!--body-->
-          <div class="image-container">
-            <div>
-              <label for="profile-image" class="image-preview">
-                
-              </label>
-              <img id="profile-image" src="image.jpg">
-              
-              <label for="profile-image" class="upload-icon" tabindex="0">📷</label>
-              <input type="file" id="profile-image" name="profile-image" accept="image/*" onchange="previewImage(event)">
+          <div class="mb-3">
+            <div class="image-display mb-3">
+              <img class="rounded-circle shadow" id="profile-image" src="../../../../assets/svg/person_placeholder.svg">
             </div>
+            <span class="form-label">User Image</span>
+            <input class="form-control " type="file" id="profile-image" name="profile-image" accept="image/*" onchange="previewImage(event)">
           </div>
-          <div class="row">
-            <div class="row mb-3">
-              <div class="col">
+
+            <div class="mb-3">
                 <span class="form-label">First name</span>
                 <input class="form-control" type="text" id="fname" name="fname" aria-label="First name" required>
-              </div>
-              <div class="col">
-                <span class="form-label">Last name</span>
-                <input class="form-control" type="text" id="lname" name="lname" aria-label="Last name" required>
-              </div>
             </div>
             <div class="mb-3">
-              <label class="form-label" for="birthdate">Birthdate:</label>
-              <input class="form-control" type="date" id="birthdate" name="birthdate" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="pn">Phone Number:</label>
-              <input class="form-control" type="tel" id="pn" name="pn">
+              <span class="form-label">Last name</span>
+              <input class="form-control" type="text" id="lname" name="lname" aria-label="Last name" required>
             </div>
             <div class="mb-3">
               <label class="form-label" for="pn">Email:</label>
               <input class="form-control" type="email" id="email" name="email" >
             </div>
-            <div class="row">
-              <div class="col">
-                <label class="form-label" for="password">Password:</label>
-                <input class="form-control" type="password" id="password" name="password">
-              </div>
-              <div class="col">
-                <label class="form-label" for="cpassword">Confirm Password:</label>
-                <input class="form-control" type="password" id="cpassword" name="cpassword">
-              </div>
+            <div class="mb-3">
+              <label class="form-label" for="password">Password:</label>
+              <input class="form-control" type="password" id="password" name="password">
             </div>
-
-            <div *ngIf="id==='doctor'">
-              <div class="mb-3">
-                <label for="sp" class="form-label">Specialization</label>
-                <input type="email" class="form-control" id="sp" required>
-              </div>
-              <div class="mb-3">
-                <label for="sbsp" class="form-label">Subspecialty</label>
-                <input type="email" class="form-control" id="sbsp" required>
-              </div>
+            <div class="mb-3">
+              <label class="form-label" for="cpassword">Confirm Password:</label>
+              <input class="form-control" type="password" id="cpassword" name="cpassword">
             </div>
-
-          </div>
-          
-
-
-          
-
+            
+            <div class="form-text">Their profiles can be edited once their accounts are created.</div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
