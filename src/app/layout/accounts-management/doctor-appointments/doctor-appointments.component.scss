@@ -1,23 +1,24 @@
 
-app-edit-doctor{
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-}
-main{
-    padding: 1.5rem;
-    box-sizing: border-box;
-}
-button{
-    cursor: pointer;
-    background-color: #089293;
-    border: 1px solid grey;
-    border-radius: 4px;
-    color:  white;
-}
-button:hover{
-    background-color: #044B63;
-}
+// app-edit-doctor{
+//     width: 100%;
+//     height: 100%;
+//     overflow-y: auto;
+// }
+// main{
+//     padding: 1.5rem;
+//     box-sizing: border-box;
+// }
+// button{
+//     cursor: pointer;
+//     background-color: #089293;
+//     border: 1px solid grey;
+//     border-radius: 4px;
+//     color:  white;
+// }
+// button:hover{
+//     background-color: #044B63;
+// }
+
 .titlebar{
     display: flex;
     flex-direction: row;
@@ -66,136 +67,140 @@ button:hover{
         margin-right: 0.8rem;
     }
 }
-.side-by-side-lists {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.list-container{
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    width: 100%;
-    background-color: white;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
-    overflow: hidden;
-    margin-right: 10px;
-    margin-left: 10px;
-
-    .row{
-        display: flex;
-        flex-direction: row;
-        padding: 1rem;
-        background-color: rgba(255, 255, 255, 0.875);
-        border-bottom: 1px solid rgb(232, 232, 232);
-    }
-    .header{
-        background: linear-gradient(to right, #079495 0%, #044b63 100%);
-    }
-    .tb-header{
-        font-weight: bold;
-        font-size: 1.1rem;
-        color: white;
-    }
-    .tb-element{
-        font-size: 0.9rem;
-    }
-    .col{
-        display: block;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        width: 10rem;
-        margin-right: 1rem;
-    }
-    .code{
-        width: 6rem;
-    }
-    .name{
-        width: 16rem;
-    }
-}
 
 
 
 
-@media screen and (max-width:801px) {
-    .titlebar{
-        gap: 1.5rem;
-        flex-direction: column;
-        app-back-button{
-            align-content: flex-start;
-        }
-        button{
-            height: 100%;
-        }
-        .actions-container{
-            margin-left: 10%;
-        }
-    }
-    .list-container {
-        display: flex;
-        flex-direction: row; 
-        flex-wrap: wrap; 
-        gap: 1rem; 
-        width: 100%;
-        background-color: white;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 8px;
-        overflow: hidden;
+// .side-by-side-lists {
+//     display: flex;
+//     justify-content: space-between;
+//     margin-bottom: 20px;
+// }
+
+// .list-container{
+//     display: flex;
+//     flex: 1;
+//     flex-direction: column;
+//     width: 100%;
+//     background-color: white;
+//     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+//     border-radius: 8px;
+//     overflow: hidden;
+//     margin-right: 10px;
+//     margin-left: 10px;
+
+//     .row{
+//         display: flex;
+//         flex-direction: row;
+//         padding: 1rem;
+//         background-color: rgba(255, 255, 255, 0.875);
+//         border-bottom: 1px solid rgb(232, 232, 232);
+//     }
+//     .header{
+//         background: linear-gradient(to right, #079495 0%, #044b63 100%);
+//     }
+//     .tb-header{
+//         font-weight: bold;
+//         font-size: 1.1rem;
+//         color: white;
+//     }
+//     .tb-element{
+//         font-size: 0.9rem;
+//     }
+//     .col{
+//         display: block;
+//         overflow: hidden;
+//         white-space: nowrap;
+//         text-overflow: ellipsis;
+//         width: 10rem;
+//         margin-right: 1rem;
+//     }
+//     .code{
+//         width: 6rem;
+//     }
+//     .name{
+//         width: 16rem;
+//     }
+// }
+
+
+
+
+// @media screen and (max-width:801px) {
+//     .titlebar{
+//         gap: 1.5rem;
+//         flex-direction: column;
+//         app-back-button{
+//             align-content: flex-start;
+//         }
+//         button{
+//             height: 100%;
+//         }
+//         .actions-container{
+//             margin-left: 10%;
+//         }
+//     }
+//     .list-container {
+//         display: flex;
+//         flex-direction: row; 
+//         flex-wrap: wrap; 
+//         gap: 1rem; 
+//         width: 100%;
+//         background-color: white;
+//         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+//         border-radius: 8px;
+//         overflow: hidden;
     
-        .row {
-            display: flex;
-            flex-direction: row;
-            padding: 1rem;
-            background-color: rgba(255, 255, 255, 0.875);
-            border-bottom: 1px solid rgb(232, 232, 232);
-            width: calc(50% - 0.5rem);
-            box-sizing: border-box;
-        }
-        .col{
-            display: flex;
-            white-space: nowrap;
-            text-overflow:unset;
-            width: 20rem;
-            margin-right: 1rem;
-        }
-        .name{
-            width: 20rem;
-        }
-    }
-}
+//         .row {
+//             display: flex;
+//             flex-direction: row;
+//             padding: 1rem;
+//             background-color: rgba(255, 255, 255, 0.875);
+//             border-bottom: 1px solid rgb(232, 232, 232);
+//             width: calc(50% - 0.5rem);
+//             box-sizing: border-box;
+//         }
+//         .col{
+//             display: flex;
+//             white-space: nowrap;
+//             text-overflow:unset;
+//             width: 20rem;
+//             margin-right: 1rem;
+//         }
+//         .name{
+//             width: 20rem;
+//         }
+//     }
+// }
 
-@media screen and (max-width: 801px) {
-    .list-container {
-        flex-direction: column; 
-    }
+// @media screen and (max-width: 801px) {
+//     .list-container {
+//         flex-direction: column; 
+//     }
 
-    .row {
-        width: 100%; 
-    }
-}
-.row-title{
-    background-color: aliceblue;
-}
+//     .row {
+//         width: 100%; 
+//     }
+// }
+// .row-title{
+//     background-color: aliceblue;
+// }
 
-.col.action-buttons button {
-    background-color: azure;
-    border-radius: 5px;
-    cursor: pointer;
-    justify-content: space-between;
-    margin-right: 5px;
-}
+// .col.action-buttons button {
+//     background-color: azure;
+//     border-radius: 5px;
+//     cursor: pointer;
+//     justify-content: space-between;
+//     margin-right: 5px;
+// }
 
-.check-button svg,
-.x-button svg {
-    width: 20px; 
-    height: 20px;
-    color: green; 
-}
+// .check-button svg,
+// .x-button svg {
+//     width: 20px; 
+//     height: 20px;
+//     color: green; 
+// }
 
-.x-button svg {
-    color: red; 
-}
+// .x-button svg {
+//     color: red; 
+// }
