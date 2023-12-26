@@ -92,7 +92,8 @@ export const user_list_data = [
       accountType:"doctor",
       userCode:"0BHB23",
       userName: "Doctor Stone",
-      dateCreated:"2023-12-26"
+      dateCreated:"2023-12-26",
+      specialization:"cooking 😩👌"
     }
 
 ]

@@ -68,48 +68,47 @@
         </li>
   
         <li>
-            <a >
+            <a [routerLink]="['accounts/patient']">
                 <i class="bi bi-clipboard-pulse"></i>
                     Patients  
             </a>
         </li>
         <li>
-            <a >
+            <a [routerLink]="['appointments']">
                 <i class="bi bi-calendar2-plus"></i>
                     Appointments
             </a>
         </li>
         <li>
-            <a >
+            <a [routerLink]="['accounts/prescriptions']">
                 <i class="bi bi-prescription2"></i>
                     Prescriptions
             </a>
         </li>
+        <!--
+        <li>
+          <a >
+              <i class="bi bi-calendar"></i>
+                  Calendar                 
+          </a>
+        </li>
+        -->
         <li>
             <a >
-                <i class="bi bi-gear-fill"></i>
-                    Settings
+                <i class="bi bi-file-person-fill"></i>
+                  View My Profile
             </a>
         </li>
-        <li>
-            <a >
-                <i class="bi bi-calendar"></i>
-                    Calendar                 
-
-            </a>
-        </li>
-    </ul>
-
-    <div class="logout">
-        <a>
+        <li class="d-flex" style="flex: 1;">
+          <a >
             <i class="bi bi-box-arrow-in-right"></i>
                 Log out
-        </a>
-    </div>
+          </a>
+        </li>
+    </ul>
 </nav>
 
 <!--PATIENT SIDENAV-->
-
 <nav *ngIf="isPatient" class="sidenav">
     <ul class="sidenav-items">
         <li>

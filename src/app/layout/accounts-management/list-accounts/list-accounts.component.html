@@ -41,7 +41,7 @@
         <th>Code</th>
         <th>Name</th>
         <th *ngIf="id==='doctor'">Specialization</th>
-        <th>placeholder</th>
+        <th *ngIf="currentAccount==='admin'">Date Created</th>
         <th></th><!--buttons-->
       </tr>
     </thead>
@@ -51,19 +51,21 @@
         <th scope="row">{{data.userCode}}</th>
         <td>{{data.userName}}</td>
         <td *ngIf="id==='doctor'">{{data.specialization}}</td>
-        <td>place</td>
+        <td *ngIf="currentAccount==='admin'">{{data.dateCreated}}</td>
 
-        <!--buttons for doctor-->
-        <td class="d-flex gap-2 end">
+        <td class="d-flex gap-2 end"><!--buttons-->
           <button class="btn btn-sm btn-secondary" [routerLink]="['/profile',data.accountType,data.userCode]">View Profile</button>
-          <div class="hstack" *ngIf="currentAccount==='admin'">
+          <div class="hstack gap-2" *ngIf="currentAccount==='admin'">
             <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal" (click)="changeMethod('Edit')">Edit</button>
-            <i class="bi bi-trash-fill align-self-center m-1 align-self-center" data-bs-toggle="modal" data-bs-target="#deleteModal"></i>
+            <button class="btn btn-sm btn-danger ">
+              <i class="bi bi-trash-fill align-self-center m-1 align-self-center" data-bs-toggle="modal" data-bs-target="#deleteModal"></i>
+            </button>
+            
           </div>
           <div *ngIf="currentAccount==='doctor'">
             <i class="bi bi-x-circle-fill align-self-center text-danger" data-bs-toggle="modal" data-bs-target="#removeModal"></i>
           </div>
-        </td>
+        </td><!--buttons-->
       
     </tbody>
   </table>
@@ -172,10 +174,14 @@
 
   <div class="container-fluid p-4">
 
-    <div class="row gap-2 text-center">
-
+    <div class="hstack gap-2">
       <h1>Prescriptions</h1>
-
+      <div class="mx-auto"></div>
+      <button class="btn btn-primary " type="button" data-bs-toggle="modal" data-bs-target="#prescriptionModal"> Add Prescription </button>
+      <input class="search-box form-control" type="text" placeholder="Search..">
+      <button class="btn btn-secondary ">
+        <i class="bi bi-search"></i>
+      </button>
     </div>
 
     <div class="row">
@@ -190,13 +196,6 @@
               <th>Time</th>
               <th>
 
-                <div class="hstack gap-2 d-flex justify-content-end">
-                  <input class="search-box form-control" type="text" placeholder="Search..">
-                  <button class="btn btn-secondary ">
-                    <i class="bi bi-search"></i>
-                  </button>
-                </div>
-
               </th> <!-- button -->
             </tr>
           </thead>
@@ -209,9 +208,10 @@
               <td>place</td>
 
               <td class="d-flex gap-2 end">
-                <button class="btn btn-sm btn-secondary">View Profile</button>
-                <button type="button" class="btn btn-outline-danger">                <i class="bi bi-trash-fill align-self-center"></i></button>
-
+                <button class="btn btn-sm btn-secondary">View Prescription</button>
+                <button type="button" class="btn btn-danger">                
+                  <i class="bi bi-trash-fill align-self-center"></i>
+                </button>
               </td>
 
             </tr>
@@ -224,98 +224,41 @@
 
   </div>
 
-    <!-- <div class="titlebar">
-        <div class="title-container">
-            <h1>
-                Prescriptions
-            </h1>
-        </div>
-        <div class="actions-container">
-            <button type="button" data-bs-toggle="modal" data-bs-target="#prescriptionModal"> Add Prescription </button>
-            <input class="searchbar" type="text" placeholder="Search..">
-            <div class="search-button">
-                <svg class="search-button" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg>
-            </div>
-        </div>
-    </div>
-    <div class="list-container">
-        <div class="row header">
-            <div class="col code tb-header">
-                PID
-            </div>
-            <div class="col name tb-header">
-                Patient Name
-            </div>
-            <div class="col tb-header">
-                Date
-            </div>
-            <div class="col tb-header">
-                Time
-            </div>
-            <div class="col tb-header">
-                Actions
-            </div>
-            <div class="col tb-header">
-                
-            </div>     
-        </div>
-        <div class="row">
-            <div class="col code tb-element">
-                9C2ND8
-            </div>
-            <div class="col name tb-element">
-                Judas B. Balasubas
-            </div>
-            <div class="col tb-element">
-                15/12/2023
-            </div>
-            <div class="col tb-element">
-                1
-            </div>
-            <div class="col tb-element">
-                <button type="button" class="view">View</button>
-            </div>
-        </div>
-    </div> -->
-
   <!--add prescription modal-->
   <div class="modal fade" id="prescriptionModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="">Add Prescription</h1>
+          <h1 class="modal-title fs-5" id="">Prescription for:</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
         <div class="modal-body"><!--body-->
-          <div class="row mb-3">
-            <div class="col">
-              <span class="form-label">First name</span>
-              <input class="form-control" type="text" id="fname" name="fname" aria-label="First name" required>
+          <div class="mb-3">
+            <span class="form-label ">Patient Name</span>
+            <div class="input-group">              
+                <input type="text" class="form-control" placeholder="" aria-label="Patient Name Search">
+                <button class="btn btn-secondary" type="button" id="btnSearchName">
+                  <i class="bi bi-search"></i>
+                </button>            
             </div>
-            <div class="col">
-              <span class="form-label">Last name</span>
-              <input class="form-control" type="text" id="lname" name="lname" aria-label="Last name" required>
-            </div>
+            <div class="form-text">Search for the name of the patient.</div>
           </div>
           <div class="mb-3">
             <label class="form-label" for="medication">Rx: Medication / Strength / Frequency</label>
             <input class="form-control" type="text" id="medication" name="medication" placeholder="Medication" required>
           </div>
-          <div class="row mb-3">
-            <div class="col">
-              <label for="">Physician's E-signature</label>
-              <div class="input-border">
-                <input type="file" id="profile-image" name="profile-image" accept="image/*" onchange="previewImage(event)">
-              </div>
-            </div>
-            <div class="col">
-              <label for="">Data Signed</label>
-              <input type="date" class="date">
+          <div class="mb-3">
+            <label class="form-label" for="txtDateSigned">Data Signed</label>
+            <input class="form-control" type="date" id="txtDateSigned">
+          </div>
+          <div class="mb-3">
+            <label class="form-label"  for="inputProfileImage">Physician's E-signature</label>
+            <div class="input-border">
+              <input class="form-control " type="file" id="inputProfileImage" name="inputProfileImage" accept="image/*" onchange="previewImage(event)">
             </div>
           </div>
+
         </div><!--modal body-->
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

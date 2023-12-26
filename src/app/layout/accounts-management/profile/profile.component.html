@@ -60,12 +60,14 @@
           <div class="col gap-2"><!--edit field-->
             <div *ngIf="userType==='doctor'">
               <p>Clinic Schedule(s):</p>
-              <button class="btn btn-sm btn-primary mb-3" *ngIf="editMode===true">Add a new schedule</button>
+              <button class="btn btn-sm btn-primary mb-3" *ngIf="editMode===true" data-bs-toggle="modal" data-bs-target="#schedModal">
+                Add a new schedule
+              </button>
               <div class="mb-3">
                 <h3>Clinic Name</h3>
                 <h6>Clinic name, Clinic street, Clinic City, Clinic Province</h6>
-                <h6>Days,Of,The,Week</h6>
                 <h6>Start:Time - End:Time</h6>
+                <h6>Days,Of,The,Week</h6>
                 <button class="btn btn-sm btn-danger" *ngIf="editMode===true">
                   Remove this Schedule
                 </button>
@@ -73,8 +75,8 @@
               <div class="mb-3">
                 <h3>Clinic Name</h3>
                 <h6>Clinic name, Clinic street, Clinic City, Clinic Province</h6>
-                <h6>Days,Of,The,Week</h6>
                 <h6>Start:Time - End:Time</h6>
+                <h6>Days,Of,The,Week</h6>
                 <button class="btn btn-sm btn-danger" *ngIf="editMode===true">
                   Remove this Schedule
                 </button>
@@ -82,8 +84,8 @@
               <div class="mb-3">
                 <h3>Clinic Name</h3>
                 <h6>Clinic name, Clinic street, Clinic City, Clinic Province</h6>
-                <h6>Days,Of,The,Week</h6>
                 <h6>Start:Time - End:Time</h6>
+                <h6>Days,Of,The,Week</h6>
                 <button class="btn btn-sm btn-danger" *ngIf="editMode===true">
                   Remove this Schedule
                 </button>
@@ -142,4 +144,71 @@
       </div><!--row-->
     </div>
 
+    <!--modals-->
+    <!--add schedule modal-->
+    <div class="modal fade" id="schedModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Schedule</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            
+            <div class="mb-3">
+              <span class="form-label">Name of Clinic</span>
+              <input class="form-control" type="text" id="txtClinicName">
+            </div>
+            <div class="mb-3">
+              <span class="form-label">Address</span>
+              <input class="form-control" type="text" id="txtClinicAddress">
+            </div>
+            <div class="row mb-3">
+              <div class="col-lg">
+                <span class="form-label">Start Time</span>
+                <input class="form-control" type="time" id="txtStartTime">
+              </div>
+              <div class="col-lg">
+                <span class="form-label">End Time</span>
+                <input class="form-control" type="time" id="txtEndTime">
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <div class="row">
+                <span class="form-label">Days</span>
+              </div>
+              <div class="hstack gap-1">
+                <input type="checkbox" class="btn-check" id="chkMon" autocomplete="off">
+                <label class="btn btn-outline-success" for="chkMon">M</label>
+  
+                <input type="checkbox" class="btn-check" id="chkTue" autocomplete="off">
+                <label class="btn btn-outline-success" for="chkTue">T</label>
+  
+                <input type="checkbox" class="btn-check" id="chkWed" autocomplete="off">
+                <label class="btn btn-outline-success" for="chkWed">W</label>
+  
+                <input type="checkbox" class="btn-check" id="chkThu" autocomplete="off">
+                <label class="btn btn-outline-success" for="chkThu">Th</label>
+  
+                <input type="checkbox" class="btn-check" id="chkFri" autocomplete="off">
+                <label class="btn btn-outline-success" for="chkFri">F</label>
+  
+                <input type="checkbox" class="btn-check" id="chkSat" autocomplete="off">
+                <label class="btn btn-outline-success" for="chkSat">S</label>
+  
+                <input type="checkbox" class="btn-check" id="chkSun" autocomplete="off">
+                <label class="btn btn-outline-success" for="chkSun">S</label>
+              </div>
+            </div>
+            
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-success">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
