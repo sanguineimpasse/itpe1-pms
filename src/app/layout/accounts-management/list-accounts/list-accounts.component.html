@@ -8,15 +8,19 @@
       <h1 *ngIf="id==='patient'">
           Patient Accounts List
       </h1>
-      <div class="spacer mx-auto "></div>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal" *ngIf="id==='doctor'" (click)="changeMethod('Add')"> 
-        Add Doctor
-      </button>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal" *ngIf="id==='patient'" (click)="changeMethod('Add')"> 
-        Add Patient
-      </button>
-      <input class="" type="text" placeholder="Search..">
-      <i class="bi bi-search" style="font-size: 2em"></i>
+      <div class="spacer mx-auto"></div>
+      <div class="gap-2 d-flex end">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal" *ngIf="id==='doctor'" (click)="changeMethod('Add')"> 
+          Add Doctor
+        </button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal" *ngIf="id==='patient'" (click)="changeMethod('Add')"> 
+          Add Patient
+        </button>
+        <input class="form-control w-50" type="text" placeholder="Search..">
+        <button class="btn btn-secondary ">
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
   </div>
   
   <!--TABLE------------------------------------------------------------------------------------------------------>
