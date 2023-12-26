@@ -227,9 +227,13 @@
     background-color: #F9F9F9;
     box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
   }
-  .checkup{
-    background-color: #F9F9F9;
+  .appointment{
+    background-color: #e9e9e9;
     box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
+    cursor: pointer;
+  }
+  .appointment:hover{
+    background-color: #1db0b0;
   }
 }
 // .Dcontainer {
