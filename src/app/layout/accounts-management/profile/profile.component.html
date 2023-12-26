@@ -1,59 +1,119 @@
 <div class="container">
 
     <div class="card shadow p-5 my-5">
-      <h1>{{userType}} profile</h1>
-        <div class="row">
-            <div class="col-lg-4">
-              <div class="mb-3">
-                <label for="profile-image" class="image-preview">
-                  <img id="image-preview" src="image.jpg" alt="Profile Image">
-                </label>
-              </div>
+      <div class="hstack">
+        <h1>{{userType}} profile</h1>
+        <div class="mx-auto"></div>
+        <button class="btn btn-success" *ngIf="byWho==='by-admin'">Edit</button>
+      </div>
+      
+      <div class="row">
 
-              <div class="mb-3">
-                  <input type="file" id="profile-image" name="profile-image" accept="image/*" onchange="previewImage(event)">
-              </div>
-
-              <div class="image-upload mb-3">
-                  <label for="ai">CODE:</label>
-                  <h3>{{userID}}</h3>
-              </div>
-
-              <button class="btn btn-lg btn-success" *ngIf="byWho==='by-patient'">Book an Appointment</button>
+          <!--col 1-->
+          <div class="col-lg-5">
+            <div class="mb-3">
+              <label for="profile-image" class="image-preview">
+                <img id="image-preview" src="image.jpg" alt="Profile Image">
+              </label>
             </div>
 
-            <div class="col gap-2">
+            <div class="mb-3">
+                <input type="file" id="profile-image" name="profile-image" accept="image/*" onchange="previewImage(event)">
+            </div>
+
+            <div class="image-upload mb-3">
+                <label for="ai">CODE:</label>
+                <h3>{{userID}}</h3>
+            </div>
+
+            <div class="row">
+              <label for="txtName" class="form-label">Name:</label>
+              <div class="col-lg mb-3">
+                <input type="text" id="txtFName" class="form-control" placeholder="fname" disabled>
+              </div>
+              <div class="col-lg mb-3">
+                <input type="text" id="txtLName" class="form-control" placeholder="lname" disabled>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="address">Address:</label>
+              <textarea class="form-control" id="address" name="address" disabled></textarea>
+            </div>
+            
+            <button class="btn btn-lg btn-success" *ngIf="byWho==='by-patient'">Book an Appointment</button>
+          </div>
+
+          <!--col 2-->
+          <div class="col gap-2"><!--edit field-->
+            <div *ngIf="userType==='doctor'">
               <div class="mb-3">
-                <label for="txtName" class="form-label">Name:</label>
-                <input type="text" id="txtName" class="form-control" placeholder="name" disabled>
+                <label for="txtSP" class="form-label">Specialty:</label>
+                <input type="text" id="txtSP" class="form-control" placeholder="specialty" disabled>
               </div>
-
-              <div class="row" *ngIf="userType==='doctor'">
-                <div class="mb-3 col">
-                  <label for="txtSP" class="form-label">Specialty:</label>
-                  <input type="text" id="txtSP" class="form-control" placeholder="specialty" disabled>
-                </div>
-                <div class="mb-3 col">
-                  <label for="txtSBSP" class="form-label">Subspecialty:</label>
-                  <input type="text" id="txtSBSP" class="form-control" placeholder="subspecialty" disabled>
-                </div>
+              <div class="mb-3">
+                <label for="txtSBSP" class="form-label">Subspecialty:</label>
+                <input type="text" id="txtSBSP" class="form-control" placeholder="subspecialty" disabled>
               </div>
-
               <div class="mb-3">
                 <label for="txtClinicSched" class="form-label">Clinic Schedule (date and time):</label>
                 <input type="text" id="txtClinicSched" class="form-control" placeholder="ClinicSched" disabled>
               </div>
-
+  
               <div class="mb-3">
                 <label for="txtClinicAvailable" class="form-label">Available clinics:</label>
                 <input type="text" id="txtClinicAvailable" class="form-control" placeholder="ClinicAvailable" disabled>
               </div>
-
-              <div class="records">
-                  <p>Your Medical Records:</p>
-              </div>
             </div>
-        </div><!--row-->
+
+            <div *ngIf="userType==='patient'">
+              <div class="mb-3">
+                <label class="form-label" for="sex">Gender:</label>
+                <select class="form-control" id="sex" name="sex" disabled>
+                  <option value="">- Select your gender -</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>>
+                  <option value="undecided">Prefer not to say</option>>
+                </select>
+              </div>
+  
+              <div class="row mb-3">
+                <div class="col-lg">
+                  <label class="form-label" for="height">Height (cm):</label>
+                  <input class="form-control" type="number" id="height" name="height" disabled>
+                </div>
+                <div class="col-lg">
+                  <label class="form-label" for="weight">Weight (kg):</label>
+                  <input class="form-control"  type="number" id="weight" name="weight" disabled>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="religion">Religion:</label>
+                <input class="form-control"  type="text" id="religion" name="religion" disabled>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="nationality">Nationality:</label>
+                <input class="form-control" type="text" id="nationality" name="nationality" disabled>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="maritalStatus">Marital Status:</label>
+                <select class="form-control" id="maritalStatus" name="maritalStatus" disabled>
+                  <option value="">- - -</option>
+                  <option value="single">Single</option>
+                  <option value="married">Married</option>
+                  <option value="divorced">Divorced</option>
+                </select>
+              </div>
+              
+            </div>
+
+          </div><!--maincol-->
+          <div class="records" *ngIf="userType==='patient'">
+            <p>Medical Records:</p>
+        </div>
+      </div><!--row-->
     </div>
 
 </div>

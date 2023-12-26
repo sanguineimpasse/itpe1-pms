@@ -83,50 +83,57 @@
               <input type="file" id="profile-image" name="profile-image" accept="image/*" onchange="previewImage(event)">
             </div>
           </div>
-          <div class="row mb-3">
-            <div class="col">
-              <span class="form-label">First name</span>
-              <input class="form-control" type="text" id="fname" name="fname" aria-label="First name" required>
+          <div class="row">
+            <div class="row mb-3">
+              <div class="col">
+                <span class="form-label">First name</span>
+                <input class="form-control" type="text" id="fname" name="fname" aria-label="First name" required>
+              </div>
+              <div class="col">
+                <span class="form-label">Last name</span>
+                <input class="form-control" type="text" id="lname" name="lname" aria-label="Last name" required>
+              </div>
             </div>
-            <div class="col">
-              <span class="form-label">Last name</span>
-              <input class="form-control" type="text" id="lname" name="lname" aria-label="Last name" required>
+            <div class="mb-3">
+              <label class="form-label" for="birthdate">Birthdate:</label>
+              <input class="form-control" type="date" id="birthdate" name="birthdate" required>
             </div>
-          </div>
-          <div class="mb-3">
-            <label class="form-label" for="birthdate">Birthdate:</label>
-            <input class="form-control" type="date" id="birthdate" name="birthdate" required>
+            <div class="mb-3">
+              <label class="form-label" for="pn">Phone Number:</label>
+              <input class="form-control" type="tel" id="pn" name="pn">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="pn">Email:</label>
+              <input class="form-control" type="email" id="email" name="email" >
+            </div>
+            <div class="row">
+              <div class="col">
+                <label class="form-label" for="password">Password:</label>
+                <input class="form-control" type="password" id="password" name="password">
+              </div>
+              <div class="col">
+                <label class="form-label" for="cpassword">Confirm Password:</label>
+                <input class="form-control" type="password" id="cpassword" name="cpassword">
+              </div>
+            </div>
+
+            <div *ngIf="id==='doctor'">
+              <div class="mb-3">
+                <label for="sp" class="form-label">Specialization</label>
+                <input type="email" class="form-control" id="sp" required>
+              </div>
+              <div class="mb-3">
+                <label for="sbsp" class="form-label">Subspecialty</label>
+                <input type="email" class="form-control" id="sbsp" required>
+              </div>
+            </div>
+
           </div>
           
-          <div  *ngIf="id==='doctor'">
-            <div class="mb-3">
-              <label for="sp" class="form-label">Specialization</label>
-              <input type="email" class="form-control" id="sp" required>
-            </div>
-            <div class="mb-3">
-              <label for="sbsp" class="form-label">Subspecialty</label>
-              <input type="email" class="form-control" id="sbsp" required>
-            </div>
-          </div>
 
-          <div class="mb-3">
-            <label class="form-label" for="pn">Phone Number:</label>
-            <input class="form-control" type="tel" id="pn" name="pn">
-          </div>
-          <div class="mb-3">
-            <label class="form-label" for="pn">Email:</label>
-            <input class="form-control" type="email" id="email" name="email" >
-          </div>
-          <div class="row">
-            <div class="col">
-              <label class="form-label" for="password">Password:</label>
-              <input class="form-control" type="password" id="password" name="password">
-            </div>
-            <div class="col">
-              <label class="form-label" for="cpassword">Confirm Password:</label>
-              <input class="form-control" type="password" id="cpassword" name="cpassword">
-            </div>
-          </div>
+
+          
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -193,7 +200,7 @@
             </h1>
         </div>
         <div class="actions-container">
-            <button type="button" (click)="goPrescriptions()"> Add Prescription </button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#prescriptionModal"> Add Prescription </button>
             <input class="searchbar" type="text" placeholder="Search..">
             <div class="search-button">
                 <svg class="search-button" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -241,4 +248,50 @@
             </div>
         </div>
     </div>
+
+  <!--add prescription modal-->
+  <div class="modal fade" id="prescriptionModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="">Add Prescription</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body"><!--body-->
+          <div class="row mb-3">
+            <div class="col">
+              <span class="form-label">First name</span>
+              <input class="form-control" type="text" id="fname" name="fname" aria-label="First name" required>
+            </div>
+            <div class="col">
+              <span class="form-label">Last name</span>
+              <input class="form-control" type="text" id="lname" name="lname" aria-label="Last name" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="medication">Rx: Medication / Strength / Frequency</label>
+            <input class="form-control" type="text" id="medication" name="medication" placeholder="Medication" required>
+          </div>
+          <div class="row mb-3">
+            <div class="col">
+              <label for="">Physician's E-signature</label>
+              <div class="input-border">
+                <input type="file" id="profile-image" name="profile-image" accept="image/*" onchange="previewImage(event)">
+              </div>
+            </div>
+            <div class="col">
+              <label for="">Data Signed</label>
+              <input type="date" class="date">
+            </div>
+          </div>
+        </div><!--modal body-->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-success" id="btnAddDoctor">Add Prescription</button>
+        </div>
+      </div>
+    </div>
+  </div><!--add prescription modal------------------------------------------------------------------------------------------------------------------------>
+
 </main>
