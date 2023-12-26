@@ -1,278 +1,77 @@
-<div class="titlebar">
-    <div class="actions-container">
-        <input class="searchbar" type="text" placeholder="Search..">
-        <div class="search-button">
-            <svg class="search-button" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-            </svg>
-        </div>
-    </div>
-</div>
+<main>
+  <div class="container-fluid p-4">
 
-
-
-<div class="doctor-appointments container-fluid">
-    <!-- main row -->
     <div class="row">
-        
-        <!-- col for appointment requests -->
-        <div class="col-lg-7">
 
-            <div class="container">
-
-                <div class="row row-title text-center">
-
-                    <h1 id="doctor">
-                        Appointment Requests
-                    </h1>
-    
-                </div>
-
-                <div class="row">
-                    <table class="table table-striped table-borderless rounded-3 overflow-hidden table-shadow my-2">
-
-                        <thead>
-                            <tr class="table-dark">
-                                <th scope="col">Patient Name</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Time</th>
-                                <th scope="col"></th><!-- button -->
-                            </tr>
-                        </thead>
-
-                        <tbody>
-
-                            <tr>
-                                <th>Hannah Banana</th>
-                                <td>26/12/2023</td>
-                                <td>3:50 PM</td>
-                                <td class="d-flex justify-content-end">
-                                    <button type="button" class="btn btn-outline-success mx-1">
-                                        <i class="bi bi-check2"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-outline-danger mx-1">
-                                        <i class="bi bi-x"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <th>place</th>
-                                <td>place</td>
-                                <td>place</td>
-                                <td class="d-flex justify-content-end">
-                                    <button type="button" class="btn btn-outline-success mx-1">
-                                        <i class="bi bi-check2"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-outline-danger mx-1">
-                                        <i class="bi bi-x"></i>
-                                    </button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <th>place</th>
-                                <td>place</td>
-                                <td>place</td>
-                                <td class="d-flex justify-content-end">
-                                    <button type="button" class="btn btn-outline-success mx-1">
-                                        <i class="bi bi-check2"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-outline-danger mx-1">
-                                        <i class="bi bi-x"></i>
-                                    </button>
-                                </td>
-                            </tr>      
-                            
-                        </tbody>
-                        
-
-                    </table>
-                </div>
-
-            </div>
-
-        </div><!-- col for doctor account list -->
-
-        <!-- col for appointments -->
-        <div class="col-lg-5 ">
-
-            <div class="container">
-
-                <div class="row row-title text-center">
-
-                    <h1 id="doctor">
-                        Appointments
-                    </h1>
-    
-                </div>  
-
-                <div class="row">
-
-                    <table class="table table-striped table-borderless rounded-3 overflow-hidden table-shadow my-2">
-
-                        <thead>
-                            <tr class="table-dark">
-                                <th>Patient Name</th>
-                                <th>Date</th>
-                                <th>Time</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-
-                            <tr>
-                                <th>place</th>
-                                <td>place</td>
-                                <td>place</td>
-                            </tr>
-
-                            <tr>
-                                <th>place</th>
-                                <td>place</td>
-                                <td>place</td>
-                            </tr>
-
-                            <tr>
-                                <th>place</th>
-                                <td>place</td>
-                                <td>place</td>
-                            </tr>
-                                
-                        </tbody>
-                        
-                    </table>
-
-                </div>
-
-            </div>
-
-        </div><!-- col for patient account list -->
-
-    </div><!-- main row -->
-
-</div>
-
-<!-- <div class="side-by-side-lists">
-    First Container
-    <div class="list-container">
-        First Row
-        <div class="row-title">
+      <div class="col-lg-6"><!--appointment requests col-->
+        <div class="container">
+          <div class="row row-title">
             <h1 id="doctor">
-                Doctor Accounts List
+              Appointment Requests
             </h1>
+          </div>
+
+          <div class="row">
+            <table class="table table-striped table-borderless rounded-3 overflow-hidden table-shadow my-2">
+              <thead>
+                <tr class="table-dark">
+                  <th>Patient Name</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Code</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>place</th>
+                  <td>place</td>
+                  <td>place</td>
+                  <td>place</td>
+                </tr>
+              </tbody>
+
+            </table>
+          </div>
         </div>
-        <div class="row header hstack gap-2 align-items-center p-1 titlebar">
-            <div class="col name tb-header">
-                Name
-            </div>
-            <div class="col tb-header">
-                Date
-            </div>
-            <div class="col tb-header">
-                Time
-            </div>
-        </div>
-
-        First Data Row
-        <div class="row">
-            <div class="col name tb-element">
-                Judas B. Balasubas
-            </div>
-            <div class="col tb-element">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam, ab exercitationem nam excepturi at velit perspiciatis, repellat consectetur commodi voluptate autem recusandae itaque ex unde id eum aspernatur magni.
-            </div>
-            <div class="col tb-element">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam, ab exercitationem nam excepturi at velit perspiciatis, repellat consectetur commodi voluptate autem recusandae itaque ex unde id eum aspernatur magni.
-            </div>
-
-            <div class="col action-buttons">
-                <button class="check-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                        <path d="M13.742 3.742a1 1 0 0 0-1.414 0L6 10.586 3.672 8.27a1 1 0 1 0-1.415 1.414l3.95 3.95a1 1 0 0 0 1.415 0l7-7a1 1 0 0 0 0-1.414z"/>
-                    </svg>
-                </button>
-                <button class="x-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                        <path d="M11.354 4.354a1 1 0 0 0-1.415 0L8 6.586 5.354 4.354a1 1 0 1 0-1.415 1.415L6.586 8l-2.293 2.293a1 1 0 0 0 1.415 1.415L8 9.414l2.646 2.293a1 1 0 0 0 1.415-1.415L9.414 8l2.293-2.293a1 1 0 0 0 0-1.415z"/>
-                    </svg>
-                </button>
-
-
-            </div>
-        </div>
-
-        Second Row
-        <div class="row">
-            <div class="col name tb-element">
-                Mary C. Johnson
-            </div>
-            <div class="col tb-element">
-            example description.
-            </div>
-            <div class="col tb-element">
-            example description.
-            </div>
-            <div class="col action-buttons">
-                <button class="check-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                        <path d="M13.742 3.742a1 1 0 0 0-1.414 0L6 10.586 3.672 8.27a1 1 0 1 0-1.415 1.414l3.95 3.95a1 1 0 0 0 1.415 0l7-7a1 1 0 0 0 0-1.414z"/>
-                    </svg>
-                </button>
-                <button class="x-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                        <path d="M11.354 4.354a1 1 0 0 0-1.415 0L8 6.586 5.354 4.354a1 1 0 1 0-1.415 1.415L6.586 8l-2.293 2.293a1 1 0 0 0 1.415 1.415L8 9.414l2.646 2.293a1 1 0 0 0 1.415-1.415L9.414 8l2.293-2.293a1 1 0 0 0 0-1.415z"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    Second Container
-    <div class="list-container">
-        First Row
-        <div class="row-title">
-            <h1 id="patient">
-                Patient Accounts List
+      </div><!--appointment requests col-->
+      
+      <div class="col-lg-6"><!--appointments col-->
+        <div class="container">
+          <div class="hstack gap-2">
+            <h1 id="doctor">
+              Appointments
             </h1>
+            <div class="mx-auto hstack ">
+              <input class="searchbar" type="text" placeholder="Search..">
+              <div class="search-button">
+                <i class="bi bi-search" style="font-size: 2em"></i>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <table class="table table-striped table-borderless rounded-3 overflow-hidden table-shadow my-2">
+              <thead>
+                <tr class="table-dark">
+                  <th>Patient Name</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Code</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>place</th>
+                  <td>place</td>
+                  <td>place</td>
+                  <td>place</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        
-        <div class="row header">
-            <div class="col name tb-header">
-                Name
-            </div>
-            <div class="col tb-header">
-                Date
-            </div>
-            <div class="col tb-header">
-                Time
-            </div>
-        </div>
+      </div><!--appointments col-->
 
-        First Data Row
-        <div class="row">
-            <div class="col name tb-element">
-                Judas B. Balasubas
-            </div>
-            <div class="col tb-element">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam, ab exercitationem nam excepturi at velit perspiciatis, repellat consectetur commodi voluptate autem recusandae itaque ex unde id eum aspernatur magni.
-            </div>
-            <div class="col tb-element">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam, ab exercitationem nam excepturi at velit perspiciatis, repellat consectetur commodi voluptate autem recusandae itaque ex unde id eum aspernatur magni.
-            </div>
-        </div>
+    </div><!--main row-->
 
-        Second Row
-        <div class="row">
-            <div class="col name tb-element">
-                Mary C. Johnson
-            </div>
-            <div class="col tb-element">
-            example description.
-            </div>
-            <div class="col tb-element">
-            example description.
-            </div>
-        </div>
-    </div>
-</div> -->
+  </div><!--main container-->
+</main>
