@@ -1,8 +1,8 @@
 <div class="container">
 
     <div class="card shadow p-5 my-5">
-      <div class="hstack">
-        <h1>{{userType}} profile</h1>
+      <div class="hstack mb-2">
+        <h1>{{capitalize(userType)}} Profile</h1>
         <div class="mx-auto"></div>
         <button class="btn btn-secondary " *ngIf="currentUser==='admin'&&editMode==false" (click)="btnEdit()">Edit</button>
         <button class="btn btn-danger me-2" *ngIf="currentUser==='admin'&&editMode==true" (click)="btnEdit()">Discard Changes</button>
@@ -13,16 +13,16 @@
 
           <!--col 1-->
           <div class="col-lg-5">
-            
-            <div class="mb-3">
-              <label for="ai">CODE:</label>
-              <h3>{{userID}}</h3>
-            </div>
-
-            <div class="mb-3">
-              <label for="profile-image" class="image-preview">
-                <img class="shadow rounded-circle" id="image-preview" src="../../../../assets/svg/person_placeholder.svg" alt="Profile Image">
-              </label>
+            <div class="row mb-3">
+              <div class="col-lg-5">
+                <label for="ai">CODE:</label>
+                <h3>{{userID}}</h3>
+              </div>
+              <div class="col">
+                <label for="profile-image" class="image-preview">
+                  <img class="shadow rounded-circle" id="image-preview" src="../../../../assets/svg/person_placeholder.svg" alt="Profile Image">
+                </label>
+              </div>
             </div>
 
             <div class="mb-3" *ngIf="editMode===true">

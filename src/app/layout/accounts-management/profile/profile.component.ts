@@ -41,6 +41,18 @@ export class ProfileComponent implements OnInit{
     }
   }
 
+  capitalize(x:string){
+    switch(x){
+      case 'doctor':{
+        return 'Doctor';
+      }
+      case 'patient':{
+        return 'Patient';
+      }
+    }
+    return null;
+  }
+
   btnEdit(){
     if(!this.editMode){
 
