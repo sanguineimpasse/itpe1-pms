@@ -4,9 +4,9 @@
       <div class="hstack">
         <h1>{{userType}} profile</h1>
         <div class="mx-auto"></div>
-        <button class="btn btn-secondary " *ngIf="byWho==='by-admin'&&editMode==false" (click)="btnEdit()">Edit</button>
-        <button class="btn btn-danger me-2" *ngIf="byWho==='by-admin'&&editMode==true" (click)="btnEdit()">Discard Changes</button>
-        <button class="btn btn-success" *ngIf="byWho==='by-admin'&&editMode==true" (click)="btnEdit()">Save Changes</button>
+        <button class="btn btn-secondary " *ngIf="currentUser==='admin'&&editMode==false" (click)="btnEdit()">Edit</button>
+        <button class="btn btn-danger me-2" *ngIf="currentUser==='admin'&&editMode==true" (click)="btnEdit()">Discard Changes</button>
+        <button class="btn btn-success" *ngIf="currentUser==='admin'&&editMode==true" (click)="btnEdit()">Save Changes</button>
       </div>
       
       <div class="row">
@@ -60,24 +60,35 @@
           <div class="col gap-2"><!--edit field-->
             <div *ngIf="userType==='doctor'">
               <p>Clinic Schedule(s):</p>
+              <button class="btn btn-sm btn-primary mb-3" *ngIf="editMode===true">Add a new schedule</button>
               <div class="mb-3">
                 <h3>Clinic Name</h3>
                 <h6>Clinic name, Clinic street, Clinic City, Clinic Province</h6>
                 <h6>Days,Of,The,Week</h6>
                 <h6>Start:Time - End:Time</h6>
+                <button class="btn btn-sm btn-danger" *ngIf="editMode===true">
+                  Remove this Schedule
+                </button>
               </div>
               <div class="mb-3">
                 <h3>Clinic Name</h3>
                 <h6>Clinic name, Clinic street, Clinic City, Clinic Province</h6>
                 <h6>Days,Of,The,Week</h6>
                 <h6>Start:Time - End:Time</h6>
+                <button class="btn btn-sm btn-danger" *ngIf="editMode===true">
+                  Remove this Schedule
+                </button>
               </div>
               <div class="mb-3">
                 <h3>Clinic Name</h3>
                 <h6>Clinic name, Clinic street, Clinic City, Clinic Province</h6>
                 <h6>Days,Of,The,Week</h6>
                 <h6>Start:Time - End:Time</h6>
+                <button class="btn btn-sm btn-danger" *ngIf="editMode===true">
+                  Remove this Schedule
+                </button>
               </div>
+
             </div>
 
             <div *ngIf="userType==='patient'">

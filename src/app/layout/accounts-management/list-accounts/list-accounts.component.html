@@ -55,7 +55,7 @@
 
         <!--buttons for doctor-->
         <td class="d-flex gap-2 end">
-          <button class="btn btn-sm btn-secondary" [routerLink]="['/profile',byWhom,data.accountType,data.userCode]">View Profile</button>
+          <button class="btn btn-sm btn-secondary" [routerLink]="['/profile',data.accountType,data.userCode]">View Profile</button>
           <div class="hstack" *ngIf="currentAccount==='admin'">
             <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal" (click)="changeMethod('Edit')">Edit</button>
             <i class="bi bi-trash-fill align-self-center m-1 align-self-center" data-bs-toggle="modal" data-bs-target="#deleteModal"></i>
@@ -154,7 +154,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p>Are you sure you want to remove this patient?</p>
+          <p>Are you sure you want to remove this patient from your list?</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Cancel</button>

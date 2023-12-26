@@ -1,5 +1,5 @@
 export const current_account_credentials = {
-    accountType:'admin',
+    accountType:'doctor',
     /* 
     can be: 
         admin
@@ -7,4 +7,7 @@ export const current_account_credentials = {
         patient
         visitor
     */
+   firstName:'Juan',
+   lastName:'Dela Cruz',
+
 };

@@ -52,7 +52,7 @@
         <H2 class="mt-3 mb-3">RECENTLY ADDED ACCOUNTS</H2>
 
           <div class="account rounded mx-1 mb-1 p-2" 
-          [routerLink]="['/profile','by-admin',data.accountType,data.userCode]"
+          [routerLink]="['/profile',data.accountType,data.userCode]"
           [ngStyle]="determineListBackground(data.accountType)" 
           *ngFor="let data of recentlyAddedUsers">
             <p><em>{{data.accountType}}</em></p>
@@ -80,7 +80,7 @@
 
             <div class="row-md text-center p-5">
   
-              <h3 class="card-title my-1">Welcome, Doctor ________</h3>
+              <h3 class="card-title my-1">Welcome, Doctor {{currentAccountName}}</h3>
               <!-- <p class="card-text">Whatever you do, do with determination. You have one life to live; 
                 do your work with passion and give your best.</p> -->
     
