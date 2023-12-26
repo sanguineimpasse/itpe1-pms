@@ -26,7 +26,7 @@ const routes: Routes = [
         loadChildren: () => import('./accounts-management/doctor-appointments/doctor-appointments.module').then(mod=>mod.DoctorAppointmentsModule)
       },
       {
-        path:'profile/:byWhom/:userType/:id',
+        path:'profile/:userType/:id',
         title:'Profile',
         loadChildren: ()=> import('./accounts-management/profile/profile.module').then(mod=>mod.ProfileModule)
       },

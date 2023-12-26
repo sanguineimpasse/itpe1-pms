@@ -7,4 +7,7 @@ export const current_account_credentials = {
         patient
         visitor
     */
+   firstName:'Juan',
+   lastName:'Dela Cruz',
+
 };

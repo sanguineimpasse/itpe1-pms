@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { current_account_credentials } from 'src/data/currentaccount';
 
 @Component({
   selector: 'app-profile',
@@ -8,29 +9,58 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit{
   constructor(private route: ActivatedRoute, private router: Router) {}
+  currentUser = '';
   byWho:string = '';
   userType:string = '';
   userID:string = '';
+  editMode:boolean = false;
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.byWho = params['byWhom'];
+      this.currentUser = current_account_credentials.accountType;
       this.userType = params['userType'];
       this.userID = params['id'];
       console.log(
-        'View by: '+ this.byWho + '\n' +
-        'Type of user: '+ this.userType + '\n' +
-        'of: '+ this.userID + '\n' 
+        'current user: ' + this.currentUser + '\n' +
+        'Display type: '+ this.userType + '\n' +
+        'With ID: '+ this.userID + '\n' 
         );
     })
-    switch(this.byWho){
-      case 'by-admin':{
+    switch(this.userType){
+      case 'doctor':{
           
+        break;
+      }
+      case 'patient':{
+        
         break;
       }
       default:{
         this.router.navigate(['notfound']);
       }
+    }
+  }
+
+  capitalize(x:string){
+    switch(x){
+      case 'doctor':{
+        return 'Doctor';
+      }
+      case 'patient':{
+        return 'Patient';
+      }
+    }
+    return null;
+  }
+
+  btnEdit(){
+    if(!this.editMode){
+
+      this.editMode = true;
+    }
+    else if(this.editMode){
+      
+      this.editMode = false;
     }
   }
 }

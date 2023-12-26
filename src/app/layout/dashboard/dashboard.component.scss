@@ -52,141 +52,6 @@
   }
 }
 
-// /*border-box prevents the elements from making the container grow*/
-// .Acol1,.Ahorizontal-container,
-// .Agraph-container,.Apatient-list-container,.Adoctor-list-container,.Agraph{
-//     box-sizing: border-box;
-//     padding: 1rem;
-// }
-
-// .Acol2{
-//     box-sizing: border-box;
-//     padding: 1rem;
-// }
-
-// .Amain-container{
-//     height: 100%;
-//     width: 100%;
-//     gap: 0.5rem;
-// }
-
-// .Acol1{
-//     flex-direction: column;
-//     width: 100%;
-    
-//     .Ahorizontal-container{
-//         flex-direction: row;
-//         width: 70%;
-//         gap: 1rem;
-        
-//         .Apatient-list-container{
-//             background-color: #044B63;
-//         }
-//         .Apatient-list-container:hover{
-//             background-color: #115b74;
-//         }
-//         .Adoctor-list-container{
-//             background-color: #089293;
-//         }
-//         .Adoctor-list-container:hover{
-//             background-color: #1db0b0;
-//         }
-//         .Apatient-list-container,.Adoctor-list-container{
-//             flex-direction: column;
-//             align-items: center;
-//             justify-content: center;
-//             width: auto;
-//             padding: 1rem;
-//             border-radius: 5px;
-//             box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
-//             cursor: pointer;
-            
-//             h2{
-//                 text-align: left;
-//                 font-size: 1rem;
-//                 font-style: bold;
-//                 margin-bottom: 0.5rem;
-//                 color: white;
-//             }
-//             p{
-//                 font-weight: 400;
-//                 font-size: 2rem;
-//                 margin-bottom: 0.5rem;
-//                 color: white;
-//             }
-//             .Arecent{
-//                 margin: 0;
-//                 font-size: 0.7rem;
-//                 font-weight: 50;
-//             }
-//         }
-        
-//     }
-    
-//     .Agraph-container{
-//         height: 100%;
-//         .Agraph{
-//             width: 100%;
-//             background-color: #F9F9F9;
-//             border-radius: 8px;
-//             box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-//         }
-//     }
-// }
-
-// .Acol2{
-//     flex-direction: column;
-//     padding-top: 2rem;
-//     margin-left: auto;
-//     h2{
-//         text-align: center;
-//         margin-bottom: 1rem;
-//     }
-//     .Aaccount-list-container{
-//         flex-direction: column;
-//         align-items: center;
-//         ul{
-//             width: 100%;
-//         }
-//     }
-// }
-
-// /*tablet*/
-// @media screen and (max-width:801px){
-//     .Amain-container{
-//         flex-direction: column;
-//         align-items: center;
-//     }
-//     .Acol1{
-//         width: auto;
-//         .Ahorizontal-container{
-//             align-items: center;
-//             .Apatient-list-container, .Adoctor-list-container{
-//                 width: 80%;
-//             }
-//         }
-//     }
-//     .Acol2{
-//         width: 90%;
-//         margin-left: 0;
-//     }
-// }
-
-// /*mobile*/
-// @media screen and (max-width:600px){
-//     .Acol1{
-
-//         .Ahorizontal-container{
-//             flex-direction: column;
-//             .Apatient-list-container, .Adoctor-list-container{
-//                 width: 100%;
-//             }
-//         }
-//     }
-    
-// }
-
-
 //FOR DOCTOR DASHBOARD
 // lagyan nyo nalang ulit ng styles like bg color hehe
 
@@ -205,6 +70,9 @@
   }
   p, .card-text{
     font-size: 1.25rem;
+  }
+  .pointer{
+    cursor: pointer;
   }
 
   .welcome{
@@ -227,9 +95,13 @@
     background-color: #F9F9F9;
     box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
   }
-  .checkup{
-    background-color: #F9F9F9;
+  .appointment{
+    background-color: #e9e9e9;
     box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
+    cursor: pointer;
+  }
+  .appointment:hover{
+    background-color: #1db0b0;
   }
 }
 // .Dcontainer {

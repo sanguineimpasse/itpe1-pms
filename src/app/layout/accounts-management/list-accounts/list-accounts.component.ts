@@ -17,7 +17,7 @@ export class ListAccountsComponent implements OnInit{
     idName: string = '';
     currentMethod: string = '';
     userList = user_list_data.filter(user => user.accountType === this.id);
-
+    byWhom:string = '';
     ngOnInit(): void {
         this.route.params.subscribe(params => {
             this.id = params['id'];
@@ -40,13 +40,26 @@ export class ListAccountsComponent implements OnInit{
                 this.titleService.setTitle('Prescriptions');
                 break;
             }
-            case 'doctorsPatients':{
-                
-                break;
-            }
             default:{
                 this.router.navigate(['notfound']);
             }
+        }
+        switch(this.currentAccount){
+          case 'admin':{
+            this.byWhom = 'by-admin';
+            break;
+          }
+          case 'doctor':{
+            this.byWhom = 'by-doctor';
+            break;
+          }
+          case 'patient':{
+
+            break;
+          }
+          default:{
+            console.log('unknown user type');
+          }
         }
     }
 
@@ -63,5 +76,9 @@ export class ListAccountsComponent implements OnInit{
         const method = 'view';
         const type = 'prescriptions';
         this.router.navigate(['modify',method,type], { relativeTo: this.route });
+    }
+
+    goBack(){
+      this.router.navigate(['/dashboard']);
     }
 }

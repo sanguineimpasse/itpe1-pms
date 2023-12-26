@@ -1,34 +1,42 @@
-app-back-button{
-  width: 2.2rem;
-  margin-right: 0.8rem;
+.image-display{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
-
-i{
-  cursor: pointer;
-  font-size: 1.3rem;
-}
-
 .table-shadow{
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .end{
   justify-content: flex-end;
 }
 
-@media screen and (max-width:801px) {
-    .titlebar{
+.buttons-row{
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+}
 
-    }
-    .table{
-      overflow-x: auto;
-    }
+h1{
+  i{
+    cursor: pointer;
+  }
+}
+
+.bi-x-circle-fill{
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.search-box{
+  width: 10rem;
+}
+
+@media screen and (max-width:801px) {
+
 }
 
 @media screen and (max-width:600px) {
-    .titlebar{
-        h1{
-            font-size: 1.75rem;
-        }
-    }
+
 }

@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit{
   constructor(private router: Router) {}
 
   //sort the users by dateCreated
+  currentAccountName:string = current_account_credentials.lastName;
   currentAccount: string = current_account_credentials.accountType;
   userListData = this.filterUsersByDate(user_list_data, 10);
   
