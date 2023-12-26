@@ -78,13 +78,12 @@
 
           <div class="col-xl-12 ">
 
-            <div class="row-md">
+            <div class="row-md text-center p-5">
   
-              <div class="welcome row bg-background-tertiary rounded text-center p-5 mx-3">
                 <h3 class="card-title my-1">Welcome, Doctor ________</h3>
                 <!-- <p class="card-text">Whatever you do, do with determination. You have one life to live; 
                   do your work with passion and give your best.</p> -->
-              </div>
+
     
             </div>
 
@@ -96,12 +95,12 @@
 
           <div class="row d-flex justify-content-around">
 
-            <div class="totalPatients col-xl-5 bg-background-tertiary rounded text-center p-5 m-1">
+            <div class="pointer totalPatients col-xl-5 bg-background-tertiary rounded text-center p-5 m-1" [routerLink]="['/accounts/','patient']">
               <h5 class="card-title"><i class="fas fa-user-md"></i> Total Patients</h5>
               <p class="card-text">0</p>
             </div>
   
-            <div class="totalPrescriptions col-xl-5 bg-background-tertiary rounded text-center p-5 m-1">
+            <div class="pointer totalPrescriptions col-xl-5 bg-background-tertiary rounded text-center p-5 m-1" [routerLink]="['/accounts/','prescriptions']">
               <h5 class="card-title"><i class="fas fa-file-prescription"></i> Total Prescriptions Given</h5>
               <p class="card-text">0</p>
             </div>
@@ -129,7 +128,9 @@
   
       <div class="checkup col-md-4 bg-background-tertiary rounded text-center my-3 p-3">
         <h2 class="card-title my-3">Checkup Appointments</h2>
-
+        <button class="btn btn-success mb-3 w-100" [routerLink]="['/appointments']">
+          View all appointments
+        </button>
         <div class="row"> 
           <p class="appointment card-text rounded p-1 m-1">APPOINTMENT #</p>
         </div>
@@ -145,73 +146,6 @@
     </div>
 
   </div>
-
-  
-  <!-- <div class="Dcontainer welcome">
-    <div class="card Dcustom-card">
-      <div class="Dcard-body ">
-        <h5 class="card-title">Welcome, Doctor</h5>
-        <p class="card-text">Whatever you do, do with determination. You have one life to live; 
-          do your work with passion and give your best.</p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="Dcontainer">
-    <div class="row">
-      <div class="col-md-6 mb-3">
-        <div class="card Dcustom-card">
-          <div class="Dcard-body">
-            <h5 class="card-title"><i class="fas fa-user-md"></i> Total Patients</h5>
-            <p class="card-text">0</p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="col-md-6 mb-3">
-        <div class="card Dcustom-card">
-          <div class="Dcard-body">
-            <h5 class="card-title"><i class="fas fa-file-prescription"></i> Total Prescriptions Given</h5>
-            <p class="card-text">0</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <div class="row">
-      <div class="col-md-6 mb-3">
-        <div class="card Dcustom-card">
-          <div class="Dcard-body">
-            <h5 class="card-title"><i class="fas fa-stethoscope"></i> Total Consultations Attended</h5>
-            <p class="card-text">0</p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="col-md-6 mb-3">
-        <div class="card Dcustom-card">
-          <div class="Dcard-body">
-            <h5 class="card-title"><i class="fas fa-calendar-alt"></i> Recent Appointments</h5>
-            <p class="card-text">0</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    CardRightSide
-    <div class="row">
-     <div class="Dcheckup-appointments-card ">
-      <div class="col-md-12">
-        <div class="card Dcustom-card">
-          <div class="Dcard-body">
-            <h5 class="card-title">Checkup Appointments</h5>
-            <p class="card-text">.</p>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-  </div>       -->
 </main>
 
 

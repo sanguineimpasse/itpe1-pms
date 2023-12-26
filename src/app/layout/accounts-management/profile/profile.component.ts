@@ -28,6 +28,10 @@ export class ProfileComponent implements OnInit{
           
         break;
       }
+      case 'by-doctor':{
+        
+        break;
+      }
       default:{
         this.router.navigate(['notfound']);
       }
