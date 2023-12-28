@@ -141,27 +141,42 @@
             <td>11:59 PM</td>
             <td>
               <!-- place -->
-              <div class="pending d-flex gap-2 justify-content-start">
+              <!-- <div class="pending d-flex gap-2 justify-content-start">
                 <i class="bi bi-clock-history"></i>
                 <p>Pending</p>
-              </div>
-              <!-- <div class="done d-flex gap-2 justify-content-start">
+              </div> -->
+              <div class="done d-flex gap-2 justify-content-start">
                 <i class="bi bi-check2-circle"></i>
                 <p>Done</p>
-              </div> -->
-              <!-- <div class="cancelled d-flex gap-2 justify-content-start p-0 m-0">
+              </div>
+              <!-- <div class="cancelled d-flex gap-2 justify-content-start">
                 <i class="bi bi-x-circle"></i>
                 <p>Cancelled</p>
               </div> -->
             </td>
             <th class="d-flex gap-1 justify-content-end">
-              <!-- <button type="button" class="btn btn-sm btn-primary">Details</button> -->
+              <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#detailsModal">View Details</button>
               <button type="button" class="btn btn-sm btn-warning">Archive</button>
             </th>
           </tr> 
         </tbody>
 
       </table>
+
+      <!-- Modals -->
+      <div class="modal fade" id="detailsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Schedule Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Heya there :DD</p>
+            </div>
+          </div>
+        </div>
+      </div>
       
       
     </div><!--main row-->
