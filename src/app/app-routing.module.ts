@@ -17,6 +17,11 @@ const routes: Routes = [
         loadChildren: () => import('./registration/registration.module').then(mod=>mod.RegistrationModule)
     },
     {
+      path:'welcome',
+      title:'Welcome',
+      loadChildren: () => import('./visitor-home/visitor-home.module').then(mod=>mod.VisitorHomeModule)
+    },
+    {
         path:'nopage',
         title:'Page Not Found',
         loadChildren: () => import('./not-found/not-found.module').then(mod=>mod.NotFoundModule)

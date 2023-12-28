@@ -1,0 +1,79 @@
+main{
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  overflow-y: auto;
+  .background{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 0;
+      background-image: url(../../assets/images/petr-magera-HuWm7malJ18-unsplash-lowres.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: grayscale(100%) blur(8px) contrast(80%);
+      background-clip: content-box;
+  }
+  .color-filter{
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      position: absolute;
+      background-color: rgba(236, 255, 242, 0.85);
+  }
+}
+
+.main-content{
+  z-index: 10;
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.image{
+  width: 80%;
+  z-index: 10;
+  background-image: url(../../assets/images/cdc-uN8TV9Pw2ik-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  background-position: 40% 50%;
+}
+.logo{
+  width: 10rem;
+  align-self: center;
+}
+.content{
+  color: #2a4141;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 10;
+  padding: 4rem;
+  text-align: center;
+  overflow-y: auto;
+}
+.content h1{
+  color: #2a4141;
+}
+.para{
+  align-self: center;
+  font-size: 1.1rem;
+  margin: 2rem;
+  text-align: justify;
+  line-height: 2.3rem;
+}
+.highlight{
+    font-weight: bolder;
+}
+.title{
+  font-size: 2.8rem;
+  font-weight: bold;
+}
