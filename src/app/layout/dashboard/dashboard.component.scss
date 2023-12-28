@@ -183,13 +183,23 @@
     background-color: #F9F9F9;
     box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
   }
-  .booking{
-    background-color: #F9F9F9;
-    box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
-  }
   .schedule-checkup{
     background-color: #F9F9F9;
     box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
+  }
+
+  .carousel-item{
+    height: 20rem;
+    background: #777;
+    color: #fff;
+
+    .container{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding-bottom: 1rem;
+    }
   }
 }
 
