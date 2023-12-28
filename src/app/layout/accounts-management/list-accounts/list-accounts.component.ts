@@ -36,30 +36,9 @@ export class ListAccountsComponent implements OnInit{
                 this.idName = 'Patient';
                 break;
             }
-            case 'prescriptions':{
-                this.titleService.setTitle('Prescriptions');
-                break;
-            }
             default:{
                 this.router.navigate(['notfound']);
             }
-        }
-        switch(this.currentAccount){
-          case 'admin':{
-            this.byWhom = 'by-admin';
-            break;
-          }
-          case 'doctor':{
-            this.byWhom = 'by-doctor';
-            break;
-          }
-          case 'patient':{
-
-            break;
-          }
-          default:{
-            console.log('unknown user type');
-          }
         }
     }
 
@@ -69,13 +48,8 @@ export class ListAccountsComponent implements OnInit{
 
     //change the display on the tables based on the id
     setUser(id:string){
+      //replace the dummy variable with an actual query from the DB when the backend is finished
       this.userList = user_list_data.filter(user => user.accountType === id);
-    }
-
-    goPrescriptions(){
-        const method = 'view';
-        const type = 'prescriptions';
-        this.router.navigate(['modify',method,type], { relativeTo: this.route });
     }
 
     goBack(){

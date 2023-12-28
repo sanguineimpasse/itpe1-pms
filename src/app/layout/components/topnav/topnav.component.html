@@ -1,15 +1,31 @@
 <header>
     <div class="logo" [routerLink]="['dashboard']">MediWISE</div>
     <div class="user-profile">
+      
       <button class="user-button">
-        <i class="bi bi-person" style="font-size: 2em"></i>
+        <div class="dropdown-toggler-mobile" (click)="showDropdown()"></div>
+        <h6 class="username mx-4">{{accountName}}</h6>
+        <i class="bi bi-person me-3"></i>
       </button>
-      <div class="dropdown-content">
-        <a [routerLink]="['profile']" *ngIf="accountLoggedIn==='doctor'">Profile</a>
-        <a [routerLink]="['profile']" *ngIf="accountLoggedIn==='patient'">Profile</a>
-        <a [routerLink]="['settings/admin']" *ngIf="accountLoggedIn==='admin'">Settings</a>
-        <a >Log-out</a>
+      <div class="dropdown-content" [style.display]="styleDisplay">
+        <a >
+            <i class="bi bi-file-person-fill"></i>
+            View My Profile
+        </a>
+        <a *ngIf="accountLoggedIn==='doctor'||'patient'">
+          <i class="bi bi-person-fill-gear"></i>
+          Account Settings
+        </a>
+        <a *ngIf="accountLoggedIn==='admin'" [routerLink]="['settings/admin']" >
+          Account Settings
+        </a>
+        <a >
+          Log-out
+        </a>
       </div>
+    </div>
+    <div class="disable-container">
+      <div class="invisible-disable" [style.display]="styleDisplay" (click)="showDropdown()" (pointerdown)="showDropdown()"></div>
     </div>
 </header>
   

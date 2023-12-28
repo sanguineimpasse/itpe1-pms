@@ -39,6 +39,8 @@ export class ProfileComponent implements OnInit{
         this.router.navigate(['notfound']);
       }
     }
+    //add a check that checks if the user exists
+    
   }
 
   capitalize(x:string){

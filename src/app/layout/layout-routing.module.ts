@@ -26,6 +26,10 @@ const routes: Routes = [
         loadChildren: () => import('./accounts-management/doctor-appointments/doctor-appointments.module').then(mod=>mod.DoctorAppointmentsModule)
       },
       {
+        path:'prescriptions',
+        loadChildren: ()=> import('./accounts-management/prescriptions/prescriptions.module').then(mod=>mod.PrescriptionsModule)
+      },
+      {
         path:'profile/:userType/:id',
         title:'Profile',
         loadChildren: ()=> import('./accounts-management/profile/profile.module').then(mod=>mod.ProfileModule)

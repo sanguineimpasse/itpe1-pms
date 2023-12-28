@@ -80,7 +80,7 @@
             </a>
         </li>
         <li>
-            <a [routerLink]="['accounts/prescriptions']">
+            <a [routerLink]="['prescriptions']">
                 <i class="bi bi-prescription2"></i>
                 <p class="mt-3 d-none d-md-block">Prescriptions</p>
             </a>
@@ -99,13 +99,12 @@
                 <p class="mt-3 d-none d-md-block">View My Profile</p>
             </a>
         </li>
-        <!-- alisin mo na logout dine kung may logout lang din sa topnav -->
-        <!-- <li class="d-flex" style="flex: 1;">
+        <li>
           <a >
-            <i class="bi bi-box-arrow-in-right"></i>
-            <p class="mt-3 d-none d-md-block">Log out</p>
+              <i class="bi bi-person-fill-gear"></i>
+              <p class="mt-3 d-none d-md-block">Account Settings</p>      
           </a>
-        </li> -->
+      </li>
     </ul>
 </nav>
 
@@ -120,7 +119,7 @@
         </li>
   
         <li>
-            <a >
+            <a [routerLink]="['accounts','doctor']">
                 <i class="bi bi-clipboard-pulse"></i>
                 <p class="mt-3 d-none d-md-block">Doctors</p>
             </a>
@@ -128,21 +127,16 @@
         <li>
             <a >
                 <i class="bi bi-calendar2-plus"></i>
-                <p class="mt-3 d-none d-md-block">Checkups</p>
+                <p class="mt-3 d-none d-md-block">Scheduled Checkups</p>
             </a>
         </li>
         <li>
-            <a >
+            <a [routerLink]="['prescriptions']">
                 <i class="bi bi-prescription2"></i>
                 <p class="mt-3 d-none d-md-block">Prescriptions</p>
             </a>
         </li>
-        <li>
-            <a >
-                <i class="bi bi-gear-fill"></i>
-                <p class="mt-3 d-none d-md-block">Settings</p>      
-            </a>
-        </li>
+        <!--
         <li>
             <a >
                 <i class="bi bi-calendar"></i>
@@ -151,13 +145,7 @@
 
             </a>
         </li>
+        -->
     </ul>
-        <!-- alisin mo na logout dine kung may logout lang din sa topnav -->
-    <!-- <div class="logout">
-        <a>
-            <i class="bi bi-box-arrow-in-right"></i>
-                Log out
-        </a>
-    </div> -->
 
 </nav>

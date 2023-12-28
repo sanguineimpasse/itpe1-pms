@@ -1,0 +1,99 @@
+<div class="container-fluid p-4">
+
+  <div class="hstack gap-2">
+    <h1>
+      <i class="bi bi-chevron-left" (click)="goBack()"></i>
+      Prescriptions
+    </h1>
+    <div class="mx-auto"></div>
+    <button class="btn btn-primary " type="button" data-bs-toggle="modal" data-bs-target="#prescriptionModal"> Add Prescription </button>
+    <input class="search-box form-control" type="text" placeholder="Search..">
+    <button class="btn btn-secondary ">
+      <i class="bi bi-search"></i>
+    </button>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <!--TABLE------------------------------------------------------------------------------------>
+      <table class="table table-striped table-borderless rounded-3 overflow-hidden shadow my-2">
+        <thead>
+          <tr class="table-dark">
+            <th>PID</th>
+            <th>Patient Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>
+
+            </th> <!-- button -->
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>place</td>
+            <td>place</td>
+            <td>place</td>
+            <td>place</td>
+
+            <td class="d-flex gap-2 justify-content-end">
+              <button class="btn btn-sm btn-secondary">View Prescription</button>
+              <button type="button" class="btn btn-danger">                
+                <i class="bi bi-trash-fill align-self-center"></i>
+              </button>
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+  </div>
+
+</div>
+
+<!--add prescription modal-->
+<div class="modal fade" id="prescriptionModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="">Prescription for:</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body"><!--body-->
+        <div class="mb-3">
+          <span class="form-label ">Patient Name</span>
+          <div class="input-group">              
+              <input type="text" class="form-control" placeholder="" aria-label="Patient Name Search">
+              <button class="btn btn-secondary" type="button" id="btnSearchName">
+                <i class="bi bi-search"></i>
+              </button>            
+          </div>
+          <div class="form-text">Search for the name of the patient.</div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="medication">Rx: Medication / Strength / Frequency</label>
+          <input class="form-control" type="text" id="medication" name="medication" placeholder="Medication" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="txtDateSigned">Data Signed</label>
+          <input class="form-control" type="date" id="txtDateSigned">
+        </div>
+        <div class="mb-3">
+          <label class="form-label"  for="inputProfileImage">Physician's E-signature</label>
+          <div class="input-border">
+            <input class="form-control " type="file" id="inputProfileImage" name="inputProfileImage" accept="image/*" onchange="previewImage(event)">
+          </div>
+        </div>
+
+      </div><!--modal body-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-success" id="btnAddDoctor">Add Prescription</button>
+      </div>
+    </div>
+  </div>
+</div><!--add prescription modal------------------------------------------------------------------------------------------------------------------------>
