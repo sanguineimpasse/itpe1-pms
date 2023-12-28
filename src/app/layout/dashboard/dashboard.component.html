@@ -95,12 +95,12 @@
           <div class="row d-flex justify-content-around">
 
             <div class="pointer totalPatients col-xl-5 bg-background-tertiary rounded text-center p-5 m-1" [routerLink]="['/accounts/','patient']">
-              <h5 class="card-title"><i class="fas fa-user-md"></i> Total Patients</h5>
+              <h5 class="card-title">Total Patients</h5>
               <p class="card-text">0</p>
             </div>
   
             <div class="pointer totalPrescriptions col-xl-5 bg-background-tertiary rounded text-center p-5 m-1" [routerLink]="['/accounts/','prescriptions']">
-              <h5 class="card-title"><i class="fas fa-file-prescription"></i> Total Prescriptions Given</h5>
+              <h5 class="card-title">Total Prescriptions Given</h5>
               <p class="card-text">0</p>
             </div>
   
@@ -112,12 +112,12 @@
         <div class="container my-3">
           <div class="row d-flex justify-content-around">
             <div class="totalConsultations col-xl-5 bg-background-tertiary rounded text-center p-5 m-1">
-              <h5 class="card-title"><i class="fas fa-user-md"></i>Total Consultations Attended</h5>
+              <h5 class="card-title">Total Consultations Attended</h5>
               <p class="card-text">0</p>
             </div>
   
             <div class="recentAppointments col-xl-5 bg-background-tertiary rounded text-center p-5 m-1">
-              <h5 class="card-title"><i class="fas fa-file-prescription"></i>Recent Appointments</h5>
+              <h5 class="card-title">Recent Appointments</h5>
               <p class="card-text">0</p>
             </div>
           </div>
@@ -156,21 +156,15 @@
     <div class="row">
 
       <div class="col-lg-7">
-
-        <div class="greetings row-md rounded m-3 p-3 ">
-          <h3>Hi!, ___________</h3>
-
-          <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">How are you feeling today?</label>
-          </div>
-
-        </div>  
-  
+        
+        <div class="text-center my-4">
+          <h3>Hi! {{currentAccountFName}} {{currentAccountName}}</h3>
+          <h4>How are you feeling today?</h4>
+        </div>
   
         <div class="row d-flex justify-content-around">
   
-          <div class="active-prescriptions col-md-5 rounded text-center m-1 p-3">
+          <div class="active-prescriptions col-md-5 rounded text-center m-1 p-3 clickable">
 
             <h5 class="card-title">Active Prescriptions</h5>
             <p class="total">
@@ -179,7 +173,7 @@
 
           </div>
     
-          <div class="my-doctors col-md-5 rounded text-center m-1 p-3">
+          <div class="my-doctors col-md-5 rounded text-center m-1 p-3 clickable">
 
             <h5>My Doctors</h5>
             <p class="total">
@@ -197,7 +191,7 @@
   
       <div class="col-md-5 text-center mt-3">
 
-        <h3 class="my-2 mb-4">SCHEDULED CHECKUP</h3>
+        <h3 class="my-2 mb-4">My Scheduled Checkups</h3>
 
         <div class="schedule-checkup row rounded mb-2 mx-3 p-2">
           <p>SCHEDULED CHECKUP #</p>
@@ -211,59 +205,12 @@
         <div class="schedule-checkup row rounded mb-2 mx-3 p-2">
           <p>SCHEDULED CHECKUP #</p>
         </div>
-  
+        <button class="btn btn-secondary ">View all</button>
       </div>
 
     </div>
 
   </div>
-
-    <!-- <div class="Pcol1">
-
-      <div class="Pcontainer Pwelcome">
-        <div class="card Pcustom-card">
-          <div class="Pcard-body ">
-            <h5 class="card-title">Good Day!</h5>
-            <p class="card-text">How are you feeling today?</p>
-          </div>
-        </div>
-      </div>
-        <div class="Phorizontal-container">
-            <div class="Pprescription-list-container">
-                <h2>Total Active Prescriptions</h2>
-                <p></p>
-                <p class="total">
-                    0
-                </p>
-            </div>
-            <div class="Pdoctor-list-container">
-                <h2>My Doctors</h2>
-                <p></p>
-                <p class="total">
-                    0
-                </p>
-            </div>
-        </div>
-        <div class="Pbooking-container">
-            <div class="booking">
-                Booking Instructions 
-            </div>
-        </div>
-    </div>
-    <div class="Pcol2">
-        <h2>Scheduled Checkups</h2>
-        <div class="schedule-list-container">
-            <ul>
-                <div class="sched">
-                    <li>SunDate</li>
-                    <li>Christmas Date</li>
-                    <li>BirthDate</li>
-                    <li>Samg date</li>
-                    <li>NewYears date</li>
-                </div>
-            </ul>
-        </div>
-    </div> -->
 </main>
 
 

@@ -11,9 +11,12 @@ import { user_list_data } from 'src/data/testlistdata';
 export class DashboardComponent implements OnInit{
   constructor(private router: Router) {}
 
-  //sort the users by dateCreated
+  //these are just dummy variables, replace with actual queries from the DB
   currentAccountName:string = current_account_credentials.lastName;
+  currentAccountFName:string = current_account_credentials.firstName;
   currentAccount: string = current_account_credentials.accountType;
+
+  //sort the users by dateCreated
   userListData = this.filterUsersByDate(user_list_data, 10);
   
   private filterUsersByDate(users: any[], weeksAgo: number): any[] {
