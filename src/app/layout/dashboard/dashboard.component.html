@@ -149,7 +149,7 @@
 
 
 <!--patient dash-->
-<main *ngIf="currentAccount==='patient'" class="Pmain-container">
+<main *ngIf="currentAccount==='patient'">
 
   <div class="patient container-fluid my-4">
 
@@ -185,56 +185,42 @@
         </div>
 
         <!-- CAROUSEL --------------------------->
-        <div id="myCarousel" class="row-md carousel slide" data-ride="carousel">
-
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
-
-          <div class="carousel-inner">
-
-            <div class="carousel-item active rounded mt-1 p-1">
-              <div class="container">
-                <img src="" alt="">
-                <h1>HELLO WORLD</h1>
-                <a href="#" class="btn btn-lg btn-primary">Book now</a>
-              </div>
-    
+        <h5 class="mt-4 mb-2 text-center ">Booking Instructions</h5>
+        <ngb-carousel class="ms-4"
+          [interval]="0"
+          [keyboard]="false"
+          [showNavigationIndicators]="true"
+        >
+          <ng-template ngbSlide>
+            <div class="img-wrapper">
+              <img src="../../../assets//images//petr-magera-HuWm7malJ18-unsplash-lowres.jpg" alt="Random first slide" />
             </div>
-  
-            <div class="carousel-item rounded mt-1 p-1  ">
-  
-              <div class="container">
-                <h1>Booking Instructions</h1>
-                <a href="#" class="btn btn-lg btn-primary">Book now</a>
-              </div>
-    
+            <div class="carousel-caption">
+              <h3>Step 1</h3>
+              <p class="text-dark">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </div>
-
-            <div class="carousel-item rounded mt-1 p-1  ">
-  
-              <div class="container">
-                <h1>Booking Instructions</h1>
-                <a href="#" class="btn btn-lg btn-primary">Book now</a>
-              </div>
-    
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="img-wrapper">
+              <img src="../../../assets//images//petr-magera-HuWm7malJ18-unsplash-lowres.jpg" alt="Random second slide" />
             </div>
+            <div class="carousel-caption">
+              <h3>Step 2</h3>
+              <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="img-wrapper">
+              <img src="../../../assets//images//petr-magera-HuWm7malJ18-unsplash-lowres.jpg" alt="Random third slide" />
+            </div>
+            <div class="carousel-caption">
+              <h3>Step 3</h3>
+              <p class="text-dark">Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+          </ng-template>
+        </ngb-carousel>
 
-            <!-- next and prev btn -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-
-          </div>
-
-        </div>
+        <!-- CAROUSEL --------------------------->
     
       </div><!-- first-col -->
   
@@ -257,7 +243,7 @@
         <button class="btn btn-secondary ">View all</button>
       </div>
 
-    </div>
+    </div><!--row-->
 
   </div>
 </main>

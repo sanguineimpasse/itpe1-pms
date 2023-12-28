@@ -107,61 +107,8 @@
     background-color: #1db0b0;
   }
 }
-// .Dcontainer {
-//   display: flex;
-//   justify-content: space-around;
-//   margin: 20px auto;
-//   flex-wrap: wrap;
-// }
-// .welcome{
-//   width: 35%;
-// }
-// .Dcustom-card {
-//   border-radius: 10px;
-//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-//   margin: 10px;
-//   background: linear-gradient(150deg, rgba(126,164,179,1) 0%, rgba(60,180,180,1) 98%);
-// }
-
-// .Dcustom-card:hover {
-//   background: linear-gradient(150deg, rgb(153, 198, 216) 0%, rgb(49, 159, 159) 98%);
-//   cursor: pointer;
-// }
-// .welcome{
-//   width: 40%;
-// }
-// .Dcustom-card .Dcard-body {
-//   padding: 50px;
-  
-// }
-
-// .Dcustom-card h5 {
-//   color: white;  /*text color */
-//   font-size: 1.4rem;
-//   font-style: bold;
-//   font-family: Arial, Helvetica, sans-serif;
-// font-style: italic;
-// }
-
-// .Dcustom-card p {
-//   color: rgb(56, 56, 56);   
-//   font-size: 1rem;
-// }
-
-
-// @media (max-width: 100px) {
-//   .Dcontainer {
-//     flex-direction: column;
-//   }
-// }
-// .Dcheckup-appointments-card {
-//   width: calc(100% - 20px); 
-//   max-width: 100%;
-// }
-
 
 //FOR PATIENT DASHBOARD
-
 .patient{
 
   h3{
@@ -187,19 +134,18 @@
     background-color: #F9F9F9;
     box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
   }
+}
+ngb-carousel{
+  width: 50rem;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
+}
+.img-wrapper{
+  width: 18rem;
+  height: 20rem;
+  img{
 
-  .carousel-item{
-    height: 20rem;
-    background: #777;
-    color: #fff;
-
-    .container{
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding-bottom: 1rem;
-    }
   }
 }
 

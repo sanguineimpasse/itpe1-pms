@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { current_account_credentials } from 'src/data/currentaccount';
 import { user_list_data } from 'src/data/testlistdata';
 
@@ -10,6 +11,7 @@ import { user_list_data } from 'src/data/testlistdata';
 })
 export class DashboardComponent implements OnInit{
   constructor(private router: Router) {}
+  //images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
   //these are just dummy variables, replace with actual queries from the DB
   currentAccountName:string = current_account_credentials.lastName;

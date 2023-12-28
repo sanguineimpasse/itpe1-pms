@@ -1,6 +1,9 @@
 div{
 	display: flex;
 }
+a:link{
+  text-decoration: none;
+}
 main{
     width: 100vw;
     height: 100vh;
@@ -28,7 +31,7 @@ main{
 }
 
 
-.container{
+.form-card-container{
     margin: 3.2rem;
     z-index: 10;
     gap: 1rem;
@@ -56,7 +59,7 @@ main{
             margin: 1rem;
             padding: 0.3rem;
             border-radius: 3px;
-            height: 1rem;
+            height: 2rem;
             background-color: rgba(0, 0, 0, 0.3);
             color: white;
             gap: 0.2rem;
