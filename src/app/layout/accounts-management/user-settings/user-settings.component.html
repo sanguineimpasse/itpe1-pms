@@ -1,0 +1,44 @@
+<main>
+  <div class="main-card rounded shadow p-5 col-md-12 col-lg-8">
+    <div class="hstack align-items-center gap-2 m-3">
+      <i class="bi bi-chevron-left" style="font-size: 2rem" (click)="goBack()"></i>
+      <h1>User Settings</h1>
+    </div>
+    
+    <div class="row">
+      <div class="mb-3 col-lg">
+        <label for="txtOldUsername" class="form-label">Old Username</label>
+        <input type="email" class="form-control" id="txtOldUsername">
+      </div>
+      <div class="mb-3 col-lg">
+        <label for="txtOldPass" class="form-label">Old Password</label>
+        <input type="email" class="form-control" id="txtOldPass">
+      </div>
+    </div>
+    <div class="row">
+      <div class="mb-3 col-lg">
+        <label for="txtNewUsername" class="form-label">New Username</label>
+        <input type="email" class="form-control" id="txtNewUsername">
+      </div>
+      <div class="mb-3 col-lg">
+        <label for="txtNewPass" class="form-label">New Password</label>
+        <input type="email" class="form-control" id="txtNewPass">
+      </div>
+    </div>
+    <div class="row">
+      <div class="mb-3 col-lg">
+        <label for="txtConfirmUsername" class="form-label">Confirm New Username</label>
+        <input type="email" class="form-control" id="txtNewUsername">
+      </div>
+      <div class="mb-3 col-lg">
+        <label for="txtConfirmPass" class="form-label">Confirm New Password</label>
+        <input type="email" class="form-control" id="txtNewPass">
+      </div>
+    </div>
+    
+    <div class="modal-footer gap-2">
+      <button class="btn btn-secondary" (click)="goBack()">Cancel</button>
+      <button class="btn btn-success">Save Changes</button>
+    </div>
+  </div>
+</main>

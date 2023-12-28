@@ -1,0 +1,22 @@
+main{
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  padding: 3rem;
+}
+.main-card{
+  margin-left: 10%;
+}
+.bi{
+  cursor: pointer;
+}
+h1{
+  margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .main-card{
+    margin-left: 0;
+  }
+
+}

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 import { current_account_credentials } from 'src/data/currentaccount';
 
@@ -9,7 +8,7 @@ import { current_account_credentials } from 'src/data/currentaccount';
   styleUrls: ['./prescriptions.component.scss']
 })
 export class PrescriptionsComponent implements OnInit{
-  constructor(private location: Location, private titleService: Title) {}
+  constructor(private titleService: Title) {}
   currentAccount:string ='';
   ngOnInit(): void {
     //replace the dummy var with a proper db query when the backend is finished
@@ -20,9 +19,5 @@ export class PrescriptionsComponent implements OnInit{
     else if(this.currentAccount==='patient'){
       this.titleService.setTitle('My Prescriptions');
     }
-  }
-
-  goBack(){
-    this.location.back();
   }
 }

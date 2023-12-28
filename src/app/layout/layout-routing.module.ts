@@ -35,6 +35,11 @@ const routes: Routes = [
         loadChildren: ()=> import('./accounts-management/profile/profile.module').then(mod=>mod.ProfileModule)
       },
       {
+        path:'user-settings',
+        title:'User Settings',
+        loadChildren: ()=> import('./accounts-management/user-settings/user-settings.module').then(mod=>mod.UserSettingsModule)
+      },
+      {
         path:'settings/admin',
         title:'Admin Settings',
         loadChildren: () => import('./accounts-management/admin/admin-settings/admin-settings.module').then(mod=>mod.AdminSettingsModule)

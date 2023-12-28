@@ -12,7 +12,7 @@
             <i class="bi bi-file-person-fill"></i>
             View My Profile
         </a>
-        <a *ngIf="accountLoggedIn==='doctor'||'patient'">
+        <a *ngIf="accountLoggedIn==='doctor'||'patient'" [routerLink]="['user-settings']">
           <i class="bi bi-person-fill-gear"></i>
           Account Settings
         </a>
