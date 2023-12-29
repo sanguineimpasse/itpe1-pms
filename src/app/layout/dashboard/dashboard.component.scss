@@ -141,6 +141,19 @@ ngb-carousel{
   border-radius: 8px;
   box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
 }
+.carousel-caption{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-caption h3, .carousel-caption p{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: fit-content;
+  padding: 0.2rem;
+  border-radius: 4px;
+}
 .img-wrapper{
   width: 18rem;
   height: 20rem;
