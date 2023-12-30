@@ -190,6 +190,7 @@
           [interval]="0"
           [keyboard]="false"
           [showNavigationIndicators]="true"
+          [wrap]="false"
         >
           <ng-template ngbSlide>
             <div class="img-wrapper">
@@ -241,7 +242,7 @@
           <p>SCHEDULED CHECKUP #</p>
         </div>
         <button class="btn btn-secondary me-2" [routerLink]="['/appointments']">View all</button>
-        <button class="btn btn-success ">Book an Appointment</button>
+        <button class="btn btn-success " [routerLink]="['/appointments']">Book an Appointment</button>
       </div>
 
     </div><!--row-->

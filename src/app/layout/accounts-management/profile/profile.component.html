@@ -4,9 +4,9 @@
       <div class="hstack mb-2">
         <h1>{{capitalize(userType)}} Profile</h1>
         <div class="mx-auto"></div>
-        <button class="btn btn-secondary " *ngIf="currentUser==='admin'&&editMode==false" (click)="btnEdit()">Edit</button>
-        <button class="btn btn-danger me-2" *ngIf="currentUser==='admin'&&editMode==true" (click)="btnEdit()">Discard Changes</button>
-        <button class="btn btn-success" *ngIf="currentUser==='admin'&&editMode==true" (click)="btnEdit()">Save Changes</button>
+        <button class="btn btn-secondary " *ngIf="allowEdit&&editMode==false" (click)="btnEdit()">Edit</button>
+        <button class="btn btn-danger me-2" *ngIf="allowEdit&&editMode" (click)="btnEdit()">Discard Changes</button>
+        <button class="btn btn-success" *ngIf="allowEdit&&editMode" (click)="btnEdit()">Save Changes</button>
       </div>
       
       <div class="row">
@@ -103,6 +103,11 @@
                   <option value="undecided">Prefer not to say</option>>
                 </select>
               </div>
+
+              <div class="mb-3">
+                <label class="form-label">Birth Date</label>
+                <input class="form-control " type="date" id="bDate" disabled>
+              </div>
   
               <div class="row mb-3">
                 <div class="col-lg">
@@ -128,7 +133,7 @@
               <div class="mb-3">
                 <label class="form-label" for="maritalStatus">Marital Status:</label>
                 <select class="form-control" id="maritalStatus" name="maritalStatus" disabled>
-                  <option value="">- - -</option>
+                  <option value="" disabled selected>- Select Status -</option>
                   <option value="single">Single</option>
                   <option value="married">Married</option>
                   <option value="divorced">Divorced</option>

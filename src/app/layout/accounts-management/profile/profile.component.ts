@@ -13,6 +13,7 @@ export class ProfileComponent implements OnInit{
   byWho:string = '';
   userType:string = '';
   userID:string = '';
+  allowEdit:boolean = false;
   editMode:boolean = false;
 
   ngOnInit(): void {
@@ -38,6 +39,10 @@ export class ProfileComponent implements OnInit{
       default:{
         this.router.navigate(['notfound']);
       }
+    }
+    if(this.currentUser==='admin'||this.userID==='me'){
+      this.allowEdit = true;
+      console.log('Edit allowed');
     }
     //add a check that checks if the user exists
     
