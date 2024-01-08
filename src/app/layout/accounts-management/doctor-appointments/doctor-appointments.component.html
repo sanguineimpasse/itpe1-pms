@@ -110,7 +110,7 @@
 
 <main *ngIf="currentAccount==='patient'">
 
-  <div class="container-fluid p-4">
+  <div class="patientAppointment container-fluid p-4">
 
     <div class="row">
 
@@ -131,22 +131,49 @@
             <th>Date</th>
             <th>Time</th>
             <th>Status</th>
+            <th></th>
           </tr>
         </thead>
 
         <tbody>
+
           <tr>
             <td>Ayuquoh nah</td>
             <td>December 31, 2023</td>
             <td>11:59 PM</td>
-            <td>Pending</td>
+            <td>
+              <!-- place -->
+              <p class="pending"><i class="bi bi-clock-history"></i> Pending</p>
+              <!-- <p class="done"><i class="bi bi-check2-circle"></i> Done</p> -->
+              <!-- <p class="cancelled"><i class="bi bi-x-circle"></i> Cancelled</p> -->
+
+            </td>
+            <th class="d-flex gap-1 justify-content-end">
+              <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#detailsModal">View Details</button>
+              <button type="button" class="btn btn-sm btn-warning">Archive</button>
+            </th>
           </tr> 
         </tbody>
 
       </table>
+
+      <!-- Modals -->
+      <div class="modal fade" id="detailsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Schedule Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Heya there :DD</p>
+            </div>
+          </div>
+        </div>
+      </div>
       
       
     </div><!--main row-->
-    
+
   </div><!--main container-->
 </main>

@@ -1,0 +1,14 @@
+.patientAppointment{
+    .pending{
+        color: darkorange;
+        font-weight: 700;
+    }
+    .done{
+        color: green;
+        font-weight: 700;
+    }
+    .cancelled{
+        color: red;
+        font-weight: 700;
+    }
+}
