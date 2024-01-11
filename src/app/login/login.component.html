@@ -4,11 +4,11 @@
     <div class="main-container">
         <div class="image"></div>
         <div class="form-container">
-            <form action="" method="">
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
                 <h1>MediWISE</h1>
-                <p style="text-align: center;">Welcome back!</p>
-                <input type="text" name="txt" class="box" placeholder="Email">
-                <input type="password" name="password" class="box" placeholder="Password">
+                <p style="text-align: center;">Welcome!</p>
+                <input type="text" name="txt" class="box" placeholder="Email" [(ngModel)]="login.email">
+                <input type="password" name="password" class="box" placeholder="Password" [(ngModel)]="login.password">
                 <button type="submit">Login</button>
             </form>
             <div class="footer">

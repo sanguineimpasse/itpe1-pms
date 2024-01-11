@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScreenSizeModule } from './components/debug/screen-size/screen-size.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     NgbModule,
     AppRoutingModule,
-    ScreenSizeModule
+    ScreenSizeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

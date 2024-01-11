@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClientService } from '../services/http-client.service';
 
 @Component({
   selector: 'app-registration',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private HttpClientService: HttpClientService) {}
 
   goLogin(){
     this.router.navigate(['/login']);
@@ -25,10 +26,10 @@ export class RegistrationComponent {
     confPass:''
   };
 
+  //FORM SUBMISSION
   onSubmit(formData:Object){
     this.submitForm(formData);
   }
-
   generateUserCode(len:number):string{
     const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let result = '';
@@ -40,7 +41,6 @@ export class RegistrationComponent {
     }
     return result;
   }
-
   submitForm(formData:any){
     if(formData.password !== formData.confPass) return console.error(`Passwords did not match (${formData.password}!=${formData.confPass})`);
     if(formData.role === '') return alert('Please choose your account type');
@@ -48,8 +48,14 @@ export class RegistrationComponent {
 
     formData.userCode = this.generateUserCode(6);
     console.log('formData:\n' + JSON.stringify(formData));
+    
+    this.HttpClientService.createUser(formData).subscribe((response) => {
+      
+      console.log('Data sent successfully!');
+    });
   }
 
+  //VISUAL STUFF
   bgColor = {'background-color':'rgba(204, 214, 204, 0.669)'};
   formImage = {'background-image':'url(../../assets/images/cdc-uN8TV9Pw2ik-unsplash.jpg)'};
   attributionDoctor:boolean = false;

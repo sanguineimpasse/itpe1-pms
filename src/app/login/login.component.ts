@@ -12,4 +12,14 @@ export class LoginComponent {
     goRegister() {
         this.router.navigate(['/register']);
     }
+
+    login = 
+    {
+      email:'',
+      password:''
+    }
+
+    onSubmit(formData:Object){
+      
+    }
 }
