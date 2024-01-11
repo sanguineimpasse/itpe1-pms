@@ -7,7 +7,7 @@
             <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
                 <h1>MediWISE</h1>
                 <p style="text-align: center;">Welcome!</p>
-                <input type="text" name="txt" class="box" placeholder="Email" [(ngModel)]="login.email">
+                <input type="text" name="email" class="box" placeholder="Email" [(ngModel)]="login.email">
                 <input type="password" name="password" class="box" placeholder="Password" [(ngModel)]="login.password">
                 <button type="submit">Login</button>
             </form>

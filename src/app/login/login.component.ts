@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { CrudService } from '../services/crud/crud.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-    constructor(private router: Router) {}
+    constructor(private router: Router, private CrudService: CrudService) {}
 
     goRegister() {
         this.router.navigate(['/register']);
@@ -19,7 +19,11 @@ export class LoginComponent {
       password:''
     }
 
-    onSubmit(formData:Object){
-      
+    onSubmit(formData:object){
+      console.log(typeof formData)
+      this.CrudService.login(formData).subscribe((response) => {
+
+        console.log(JSON.stringify(response));
+      });
     }
 }
