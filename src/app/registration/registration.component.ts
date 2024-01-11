@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClientService } from '../services/http-client.service';
+import { CrudService } from '../services/crud/crud.service';
 
 @Component({
   selector: 'app-registration',
@@ -8,7 +8,7 @@ import { HttpClientService } from '../services/http-client.service';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent {
-  constructor(private router: Router, private HttpClientService: HttpClientService) {}
+  constructor(private router: Router, private CrudService: CrudService) {}
 
   goLogin(){
     this.router.navigate(['/login']);
@@ -49,7 +49,7 @@ export class RegistrationComponent {
     formData.userCode = this.generateUserCode(6);
     console.log('formData:\n' + JSON.stringify(formData));
     
-    this.HttpClientService.createUser(formData).subscribe((response) => {
+    this.CrudService.createUser(formData).subscribe((response) => {
       
       console.log('Data sent successfully!');
     });

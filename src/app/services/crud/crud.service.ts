@@ -6,8 +6,9 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class HttpClientService {
-  private apiUrl = environment.apiUrl; // Replace with your API endpoint
+export class CrudService {
+
+  private _apiUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 
@@ -19,16 +20,16 @@ export class HttpClientService {
   };
 
   getData(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/data`);
+    return this.http.get<any>(`${this._apiUrl}/data`);
   }
 
   postData(data: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/data`, data);
+    return this.http.post<any>(`${this._apiUrl}/data`, data);
   }
 
   createUser(data: any): Observable<any> {
     return this.http
-    .post<any>(`${this.apiUrl}/create/user`, data, this.httpOptions)
+    .post<any>(`${this._apiUrl}/create/user`, data, this.httpOptions)
     .pipe(retry(0), catchError(this.handleError));
   }
 
