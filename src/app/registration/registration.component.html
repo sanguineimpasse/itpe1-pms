@@ -1,9 +1,9 @@
 <main>
     <div class="background"></div>
-    <div class="color-filter"></div>
+    <div class="color-filter" [ngStyle]="bgColor"></div>
     <div class="form-card-container">
-        <div class="image" id="containerImage">
-            <div class="attribution" id="doctorAttribution">
+        <div class="image" id="containerImage" [ngStyle]="formImage">
+            <div class="attribution" *ngIf="attributionDoctor">
                 Photo by 
                 <a href="https://unsplash.com/@ashkfor121?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
                     Ashkan Forouzani
@@ -13,7 +13,7 @@
                     Unsplash
                 </a>
             </div>
-            <div class="attribution" id="patientAttribution">
+            <div class="attribution" *ngIf="!attributionDoctor">
                 Photo by 
                 <a href="https://unsplash.com/@cdc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
                     CDC
@@ -27,76 +27,51 @@
         
         <div class="form-container">
             <!--form for patient-->
-            <form action="" method="" id="patientForm" class="form-column-gap">
+            <form #patientRegForm="ngForm" (ngSubmit)="onSubmit(patientRegForm.value)" class="form-column-gap">
                 <h1>MediWISE</h1>
-                <p class="message">Please use your real name, account verification after creation will ask for your valid ID. </p>
+                <p class="message">Account Creation</p>
                 <div class="account-row form-column-gap">
-                    <label for="">I am a</label>
-                    <div class="buttons-container form-rows-gap">
+                    <label>I am a</label>
+                    <div class="hstack gap-2">
+                      <input type="radio" class="btn-check" name="role" id="chkPatient" autocomplete="off" value="patient" [(ngModel)]="user.role" (click)="toggleRole('patient')">
+                      <label class="btn btn-sm btn-outline-success" for="chkPatient">Patient</label>
+
+                      <input type="radio" class="btn-check" name="role" id="chkDoctor" autocomplete="off" value="doctor" [(ngModel)]="user.role" (click)="toggleRole('doctor')">
+                      <label class="btn btn-sm btn-outline-primary" for="chkDoctor">Doctor</label>
+                    </div>
+                      <!--
                         <button type="button" class="selector-patient">Patient</button>
-                        <button type="button" class="selector-doctor disabled" (click)="selectDoctor()">Doctor</button>
-                    </div>
+                        <button type="button" class="selector-doctor disabled">Doctor</button>
+                      -->
                 </div>
         
                 <div class="name-row form-column-gap">
                     <label for="firstname">Name</label>
                     <div class="name-rows form-rows-gap">
-                        <input type="text" name="firstname" id="" placeholder="First Name" required>
-                        <input type="text" name="lastname" placeholder="Last Name" required>
+                        <input type="text" name="firstname" id="" placeholder="First Name" [(ngModel)]="user.firstname" required #firstname="ngModel" pattern="^[^0-9]+$">
+                        <input type="text" name="lastname" placeholder="Last Name" [(ngModel)]="user.lastname" required #lastname="ngModel" pattern="^[^0-9]+$">
                     </div>
                 </div>
 
                 <div class="contact-row form-column-gap">
-                  <label for="">Email (optional):</label>
-                  <input type="text" name="email" class="box" placeholder="Email" required>
+                  <label for="">Email</label>
+                  <input type="text" name="email" class="box" placeholder="Email" [(ngModel)]="user.email" #email="ngModel" required>
                 </div>
 
                 <div class="password-row form-column-gap">
                     <label for="">Password</label>
                     <div class="password-input form-rows-gap">
-                        <input type="password" name="password" placeholder="Enter Password" required>
-                        <input type="password" name="confirm" placeholder="Confirm Password" required>
-                    </div>
-                </div>
-        
-                <button type="submit" form="form1" value="Submit">Create Account</button>
-                <p>Already have an account? <span><a class="login" (click)="goLogin()">Login.</a></span></p>
-            </form>
-
-            <!--form for doctor-->
-            <form action="" method="" id="doctorForm" name="docForm" class="form-column-gap">
-                <h1>MediWISE</h1>
-                <p class="message">Please use your real name, account verification after creation will ask for your valid ID. </p>
-                <div class="account-row form-column-gap">
-                    <label for="">I am a</label>
-                    <div class="buttons-container form-rows-gap">
-                        <button type="button" class="selector-patient disabled" (click)="selectPatient()">Patient</button>
-                        <button type="button" class="selector-doctor">Doctor</button>
-                    </div>
-                </div>
-        
-                <div class="name-row form-column-gap">
-                    <label for="firstname">Name</label>
-                    <div class="name-rows form-rows-gap">
-                        <input type="text" name="firstname" id="" placeholder="First Name" required>
-                        <input type="text" name="lastname" placeholder="Last Name" required>
+                        <input type="password" name="password" placeholder="Enter Password" [(ngModel)]="user.password" required #password="ngModel">
+                        <input type="password" name="confPass" placeholder="Confirm Password" [(ngModel)]="user.confPass" required #confPass="ngModel">
                     </div>
                 </div>
 
-                <div class="contact-row form-column-gap">
-                  <label for="">Email (optional):</label>
-                  <input type="text" name="email" class="box" placeholder="Email" required>
-                </div>
-
-                <div class="password-row form-column-gap">
-                    <label for="">Password</label>
-                    <div class="password-input form-rows-gap">
-                        <input type="password" name="password" placeholder="Enter Password" required>
-                        <input type="password" name="confirm" placeholder="Confirm Password" required>
-                    </div>
+                <div class="alert alert-info vstack p-3 gap-2 my-1" role="alert" 
+                  *ngIf="firstname.invalid||lastname.invalid||email.invalid||password.invalid||confPass.invalid">
+                  You must fill up all the fields.
                 </div>
         
-                <button type="submit" form="form1" value="Submit">Create Account</button>
+                <button type="submit" value="Submit" [disabled]="patientRegForm.invalid" class="my-1">Create Account</button>
                 <p>Already have an account? <span><a class="login" (click)="goLogin()">Login.</a></span></p>
             </form>
         </div>

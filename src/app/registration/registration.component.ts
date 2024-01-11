@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2 } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,43 +7,65 @@ import { Router } from '@angular/router';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent {
-  constructor(private router: Router, private el: ElementRef, private renderer: Renderer2) {}
-  
-  isDoctor: boolean = false;
-
-  selectPatient(){
-    this.isDoctor = false;
-    this.changeForm();
-  }
-  selectDoctor(){
-    this.isDoctor = true;
-    this.changeForm();
-  }
-
-  changeForm(){
-    const patientForm = this.el.nativeElement.querySelector('#patientForm');
-    const doctorForm = this.el.nativeElement.querySelector('#doctorForm');
-    const containerImage = this.el.nativeElement.querySelector('#containerImage');
-    const doctorAttribution = this.el.nativeElement.querySelector('#doctorAttribution');
-    const patientAttribution = this.el.nativeElement.querySelector('#patientAttribution');
-    if(this.isDoctor==true){
-      this.renderer.setStyle(patientForm, 'display', 'none');
-      this.renderer.setStyle(doctorForm, 'display', 'flex');
-      this.renderer.setStyle(doctorAttribution, 'display', 'flex');
-      this.renderer.setStyle(patientAttribution, 'display', 'none');
-      this.renderer.setStyle(containerImage, 'background-image', 'url(../../assets/images/ashkan-forouzani-l-NIPb-9Njg-unsplash.jpg)');
-      this.renderer.setStyle(containerImage, 'background-position', 'cover');
-    }else if(this.isDoctor==false){
-      this.renderer.setStyle(doctorForm, 'display', 'none');
-      this.renderer.setStyle(patientForm, 'display', 'flex');
-      this.renderer.setStyle(doctorAttribution, 'display', 'none');
-      this.renderer.setStyle(patientAttribution, 'display', 'flex');
-      this.renderer.setStyle(containerImage, 'background-image', 'url(../../assets/images/cdc-uN8TV9Pw2ik-unsplash.jpg)');
-      this.renderer.setStyle(containerImage, 'background-position', '40% 50%');
-    }
-  }
+  constructor(private router: Router) {}
 
   goLogin(){
     this.router.navigate(['/login']);
+  }
+
+  //User Model
+  user = 
+  {
+    role:'',
+    userCode:'',
+    firstname:'',
+    lastname:'',
+    email:'',
+    password:'',
+    confPass:''
+  };
+
+  onSubmit(formData:Object){
+    this.submitForm(formData);
+  }
+
+  generateUserCode(len:number):string{
+    const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let result = '';
+    const charactersLength = characters.length;
+
+    for (let i = 0; i < len; i++) {
+      const randomIndex = Math.floor(Math.random() * charactersLength);
+      result += characters.charAt(randomIndex);
+    }
+    return result;
+  }
+
+  submitForm(formData:any){
+    if(formData.password !== formData.confPass) return console.error(`Passwords did not match (${formData.password}!=${formData.confPass})`);
+    if(formData.role === '') return alert('Please choose your account type');
+    if(formData.password.length <= 8) return alert('Please enter a password that has more than 8 characters');
+
+    formData.userCode = this.generateUserCode(6);
+    console.log('formData:\n' + JSON.stringify(formData));
+  }
+
+  bgColor = {'background-color':'rgba(204, 214, 204, 0.669)'};
+  formImage = {'background-image':'url(../../assets/images/cdc-uN8TV9Pw2ik-unsplash.jpg)'};
+  attributionDoctor:boolean = false;
+  toggleRole(input:string){
+    this.bgColorChange(input);
+  }
+  bgColorChange(condition:string){
+    if(condition==='patient'){
+      this.bgColor = {'background-color':'rgba(204, 241, 214, 0.669)'};
+      this.formImage = {'background-image':'url(../../assets/images/cdc-uN8TV9Pw2ik-unsplash.jpg)'};
+      this.attributionDoctor = false;
+    }
+    else if(condition==='doctor'){
+      this.bgColor = {'background-color':'rgba(182, 211, 238, 0.669)'};
+      this.formImage = {'background-image':'url(../../assets/images/ashkan-forouzani-l-NIPb-9Njg-unsplash.jpg)'};
+      this.attributionDoctor = true;
+    }
   }
 }

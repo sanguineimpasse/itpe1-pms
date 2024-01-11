@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RegistrationComponent } from './registration.component';
 import { RegistrationRoutingModule } from './registration-routing.module';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -9,7 +11,9 @@ import { RegistrationRoutingModule } from './registration-routing.module';
     RegistrationComponent
   ],
   imports: [
-    RegistrationRoutingModule
+    CommonModule,
+    RegistrationRoutingModule,
+    FormsModule
   ]
 })
 export class RegistrationModule { }

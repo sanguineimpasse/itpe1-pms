@@ -10,6 +10,7 @@ main{
     display: flex;
     background-color: black;
     justify-content: center;
+    overflow-y: auto;
 }
 .background{
     width: 100%;
@@ -23,11 +24,21 @@ main{
     background-clip: content-box;
 }
 .color-filter{
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    position: absolute;
-    background-color: rgba(204, 241, 214, 0.669);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  background-color: rgba(182, 211, 238, 0.669);
+  animation: fade 1s;
+  @keyframes fade {
+    0% { 
+        opacity: 0;
+    }
+    100% { 
+        opacity: 1;
+        
+    }
+  }
 }
 
 
@@ -43,17 +54,33 @@ main{
     height: 85vh;
     overflow: hidden;
     box-sizing: border-box;
-
+    animation: fade 1s;
+    @keyframes fade {
+      0% { 
+          opacity: 0;
+      }
+      100% { 
+          opacity: 1;
+          
+      }
+    }
 
     .image{
         width: 50%;
         background-image: url(../../assets/images/cdc-uN8TV9Pw2ik-unsplash.jpg);
         background-size: cover;
         background-position: 40% 50%;
-
-        #doctorAttribution{
-            display: none;
+        animation: fade 1s;
+        @keyframes fade {
+          0% { 
+              opacity: 0;
+          }
+          100% { 
+              opacity: 1;
+              
+          }
         }
+
         .attribution{
             align-self: flex-end;
             margin: 1rem;
@@ -139,14 +166,22 @@ main{
                 outline: 3px solid #75ffa1;   
             }
             .message{  
-                font-style: italic;
+                text-align: center;
                 line-height: 1.4rem;
+                margin-bottom: 0;
             }
             button{
                 cursor: pointer;
                 color: white;
                 background-color: #5ECD81;
                 border: 0;
+            }
+            button:disabled{
+              background-color: #b2c4b8;
+            }
+            button:disabled:hover{
+              background-color: #b2c4b8;
+              cursor:default;
             }
             button:hover{
                 background-color: #60e189;               
@@ -158,6 +193,9 @@ main{
                 flex-direction: column;
                 button{
                     color:black;
+                }
+                label{
+                  margin: 0;
                 }
                 .buttons-container{
                     flex-direction: row;
@@ -265,7 +303,7 @@ main{
         padding: 0;
         align-items: flex-start;
     }
-    .container{
+    .form-card-container{
         width: 100%;
         height: 100vh;
         margin: 0;
