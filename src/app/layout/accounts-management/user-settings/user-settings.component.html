@@ -4,35 +4,38 @@
       <i class="bi bi-chevron-left" style="font-size: 2rem" (click)="goBack()"></i>
       <h1>User Settings</h1>
     </div>
-    
+
     <div class="row">
       <div class="mb-3 col-lg">
-        <label for="txtOldUsername" class="form-label">Old Username</label>
-        <input type="email" class="form-control" id="txtOldUsername">
-      </div>
-      <div class="mb-3 col-lg">
-        <label for="txtOldPass" class="form-label">Old Password</label>
-        <input type="email" class="form-control" id="txtOldPass">
+        <label for="txtEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="txtEmail">
       </div>
     </div>
     <div class="row">
       <div class="mb-3 col-lg">
-        <label for="txtNewUsername" class="form-label">New Username</label>
-        <input type="email" class="form-control" id="txtNewUsername">
-      </div>
-      <div class="mb-3 col-lg">
-        <label for="txtNewPass" class="form-label">New Password</label>
-        <input type="email" class="form-control" id="txtNewPass">
+        <label for="txtUsername" class="form-label">Username</label>
+        <input type="text" class="form-control" id="txtUsername">
       </div>
     </div>
     <div class="row">
-      <div class="mb-3 col-lg">
-        <label for="txtConfirmUsername" class="form-label">Confirm New Username</label>
-        <input type="email" class="form-control" id="txtNewUsername">
+      <div class="mb-3 col-lg" [attr.disabled]="IsTextBoxDisabled?'true':null">
+        <label for="txtPasswd" class="form-label">Password</label>
+        <input type="text" class="form-control" id="txtPasswd" [attr.disabled]="IsTextBoxDisabled?'true':null">
       </div>
+    </div>
+    <div class="row" *ngIf="!boolChangePass">
       <div class="mb-3 col-lg">
-        <label for="txtConfirmPass" class="form-label">Confirm New Password</label>
-        <input type="email" class="form-control" id="txtNewPass">
+        <button class="btn btn-sm btn-primary" (click)="changePass()">
+          Change Password
+        </button>
+      </div>
+    </div>
+    <div *ngIf="boolChangePass">
+      <div class="row">
+        <div class="mb-3 col-lg">
+          <label for="txtConfirmPass" class="form-label">Confirm New Password</label>
+          <input type="text" class="form-control" id="txtNewPass">
+        </div>
       </div>
     </div>
     
