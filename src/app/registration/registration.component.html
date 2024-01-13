@@ -2,7 +2,12 @@
     <div class="background"></div>
     <div class="color-filter" [ngStyle]="bgColor"></div>
     <div class="form-card-container">
-        <div class="image" id="containerImage" [ngStyle]="formImage">
+        <div class="loading-container" [hidden]="loading"> <!--this doesn't actually show up (yet. i might fix it (someday) ) because the container will load right away even when the image is still loading-->
+          <div class="spinner-grow text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>          
+        </div>
+        <div class="image" id="containerImage" [ngStyle]="formImage" (load)="onLoad()">
             <div class="attribution" *ngIf="attributionDoctor">
                 Photo by 
                 <a href="https://unsplash.com/@ashkfor121?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
@@ -27,7 +32,7 @@
         
         <div class="form-container">
             <!--form for patient-->
-            <form #patientRegForm="ngForm" (ngSubmit)="onSubmit(patientRegForm.value)" class="form-column-gap">
+            <form #regForm="ngForm" (ngSubmit)="onSubmit(regForm.value)" class="form-column-gap">
                 <h1>MediWISE</h1>
                 <p class="message">Account Creation</p>
                 <div class="account-row form-column-gap">
@@ -55,7 +60,7 @@
 
                 <div class="contact-row form-column-gap">
                   <label for="">Email</label>
-                  <input type="text" name="email" class="box" placeholder="Email" [(ngModel)]="user.email" #email="ngModel" required>
+                  <input type="email" name="email" class="box" placeholder="Email" [(ngModel)]="user.email" #email="ngModel" required>
                 </div>
 
                 <div class="password-row form-column-gap">
@@ -66,16 +71,36 @@
                     </div>
                 </div>
 
-                <div class="alert alert-info vstack p-3 gap-2 my-1" role="alert" 
-                  *ngIf="firstname.invalid||lastname.invalid||email.invalid||password.invalid||confPass.invalid">
-                  You must fill up all the fields.
+                <div [class]="alertColor" role="alert">                  
+                  <p [textContent]="conditionText"></p>
                 </div>
-        
-                <button type="submit" value="Submit" [disabled]="patientRegForm.invalid" class="my-1">Create Account</button>
+                
+                <button type="submit" value="Submit" class="my-1" [disabled]="regForm.invalid">Create Account</button>
                 <p>Already have an account? <span><a class="login" (click)="goLogin()">Login.</a></span></p>
             </form>
         </div>
     </div>
+    <div class="success-container" *ngIf="showSuccess">
 
-    
+      <div class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Account creation success</h5>
+            </div>
+            <div class="modal-body">
+              
+              <p>You have successfully created your account. <br><br> You can edit your profile now or you can do it later.</p>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" [routerLink]="['/profile/patient/me']">Proceed to profile</button>
+              <button type="button" class="btn btn-success" [routerLink]="['/dashboard']">Proceed to home</button>
+            </div>
+          </div>
+        </div>
+      </div>      
+
+    </div>
+        
 </main>

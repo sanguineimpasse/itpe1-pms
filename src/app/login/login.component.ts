@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CrudService } from '../services/crud/crud.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +11,7 @@ export class LoginComponent {
     constructor(private router: Router, private CrudService: CrudService) {}
 
     goRegister() {
-        this.router.navigate(['/register']);
+      this.router.navigate(['/register']);
     }
 
     login = 
@@ -21,9 +22,11 @@ export class LoginComponent {
 
     onSubmit(formData:object){
       console.log(typeof formData)
-      this.CrudService.login(formData).subscribe((response) => {
-
-        console.log(JSON.stringify(response));
+      this.CrudService.login(formData).subscribe((res) => {
+        if(res.valid){
+          this.router.navigate(['/dashboard']);
+        }
+        console.log(JSON.stringify(res));
       });
     }
 }

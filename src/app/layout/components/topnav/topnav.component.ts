@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { current_account_credentials } from 'src/data/currentaccount';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-topnav',
@@ -7,6 +8,7 @@ import { current_account_credentials } from 'src/data/currentaccount';
   styleUrls: ['./topnav.component.scss']
 })
 export class TopnavComponent implements OnInit{
+  constructor(private router: Router){}
   accountLoggedIn = current_account_credentials.accountType;
   accountName= `${current_account_credentials.lastName}, ${current_account_credentials.firstName}`
 
@@ -45,5 +47,9 @@ export class TopnavComponent implements OnInit{
       this.hideDropdown = true;
       this.styleDisplay = 'none';
     }
+  }
+
+  logOut(){
+    this.router.navigate(['/login']);
   }
 }

@@ -19,7 +19,7 @@
         <a *ngIf="accountLoggedIn==='admin'" [routerLink]="['settings/admin']" >
           Account Settings
         </a>
-        <a >
+        <a (click)="logOut()">
           Log-out
         </a>
       </div>

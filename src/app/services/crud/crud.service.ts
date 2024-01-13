@@ -39,6 +39,12 @@ export class CrudService {
     .pipe(retry(1), catchError(this.handleError));
   }
 
+  checkUserCode(data:any): Observable<any>{
+    return this.http
+    .post<any>(`${this._apiUrl}/verify/usercode`, data, this.httpOptions)
+    .pipe(retry(0), catchError(this.handleError));
+  }
+
   // Error handling
   handleError(error: any) {
     let errorMessage = '';

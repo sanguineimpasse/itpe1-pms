@@ -4,6 +4,9 @@ div{
 a:link{
   text-decoration: none;
 }
+.alert p{
+  margin: 0;
+}
 main{
     width: 100vw;
     height: 100vh;
@@ -12,6 +15,7 @@ main{
     justify-content: center;
     overflow-y: auto;
 }
+
 .background{
     width: 100%;
     height: 100%;
@@ -20,7 +24,7 @@ main{
     background-image: url(../../assets/images/chuttersnap-rEEvBPZf4CQ-unsplash.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    filter: grayscale(100%) blur(4px) contrast(50%);
+    filter: grayscale(100%) contrast(50%);
     background-clip: content-box;
 }
 .color-filter{
@@ -29,6 +33,7 @@ main{
   z-index: 1;
   position: absolute;
   background-color: rgba(182, 211, 238, 0.669);
+  backdrop-filter: blur(4px);
   animation: fade 1s;
   @keyframes fade {
     0% { 
@@ -40,7 +45,6 @@ main{
     }
   }
 }
-
 
 .form-card-container{
     margin: 3.2rem;
@@ -55,17 +59,21 @@ main{
     overflow: hidden;
     box-sizing: border-box;
     animation: fade 1s;
-    @keyframes fade {
-      0% { 
-          opacity: 0;
-      }
-      100% { 
-          opacity: 1;
-          
+    
+
+    .loading-container{
+      width: 50%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      #loading{
+        
       }
     }
 
     .image{
+
         width: 50%;
         background-image: url(../../assets/images/cdc-uN8TV9Pw2ik-unsplash.jpg);
         background-size: cover;
@@ -236,11 +244,7 @@ main{
                 width: 100%;
                 flex-direction: column;
             }
-            .birthday-row{
-
-            }
             .contact-row{
-                
                 label{
                     margin-bottom: 0;
                 }
@@ -265,9 +269,37 @@ main{
                 cursor: pointer;
             }
             
+            .submit-blocker{
+              background-color: black;
+              width: 100%;
+              height: 100%;
+              display: flex;
+            }
         }
     }
 }
+.success-container{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  z-index: 20;
+  animation: fade 0.3s;
+  backdrop-filter: blur(4px) grayscale(75%);
+  .modal{
+    display: block;
+  }
+}
+
+@keyframes fade {
+  0% { 
+      opacity: 0;
+  }
+  100% { 
+      opacity: 1;
+  }
+}
+
 @media screen and (max-height:800px){
     form{
         font-size: 0.8rem;
