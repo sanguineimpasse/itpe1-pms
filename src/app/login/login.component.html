@@ -4,15 +4,20 @@
     <div class="main-container">
         <div class="image"></div>
         <div class="form-container">
-            <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit(email.value, password.value)">
                 <h1>MediWISE</h1>
                 <p style="text-align: center;">Welcome!</p>
-                <input type="text" name="email" class="box" placeholder="Email" [(ngModel)]="login.email">
-                <input type="password" name="password" class="box" placeholder="Password" [(ngModel)]="login.password">
-                <button type="submit">Login</button>
+                <input type="email" name="email" class="box" placeholder="Email" [(ngModel)]="login.email" #email="ngModel" required>
+                <input type="password" name="password" class="box" placeholder="Password" [(ngModel)]="login.password" #password="ngModel" required>
+
+                <div class="alert alert-danger vstack p-3 gap-2 my-1" *ngIf="showAlert">
+                  The password or email you entered is incorrect.
+                </div>
+
+                <button type="submit" [disabled]="loginForm.invalid">Login</button>
             </form>
             <div class="footer">
-                <p>Don't have an account? <span><a class="sign-up" (click)="goRegister()">Sign up!</a></span></p>
+                <p>Don't have an account? <span><a class="sign-up" (click)="goRegister()">Sign up.</a></span></p>
             </div>
         </div>
     </div>

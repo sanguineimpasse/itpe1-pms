@@ -45,6 +45,10 @@ const routes: Routes = [
         loadChildren: () => import('./accounts-management/admin/admin-settings/admin-settings.module').then(mod=>mod.AdminSettingsModule)
       },
       {
+        path:'settings',
+        redirectTo:'settings/admin'
+      },
+      {
         path:'debug',
         title:'Debug :D',
         loadChildren: () => import('./debug/debug.module').then(mod=>mod.DebugModule)

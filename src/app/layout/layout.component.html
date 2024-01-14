@@ -1,4 +1,4 @@
-<div class="vertical-container">
+<div class="vertical-container" *ngIf="authService.isLoggedIn$ | async">
     <div class="topnav-container">
         <app-topnav></app-topnav>
     </div>
@@ -11,5 +11,16 @@
             <app-screen></app-screen>
         </div>
     </div>
+</div>
+
+<div class="invalidcontainer" *ngIf="!(authService.isLoggedIn$ | async)" [routerLink]="['/login']">
+  <div class="container d-flex justify-content-center align-content-center flex-column my-3">
+    <h1 class="text-center align-center">Invalid Session.</h1>
+    <img 
+      [src]="'https://t4.ftcdn.net/jpg/01/71/94/81/360_F_171948175_umuO3nDm0ZcZmAGJ5Cb47G4nb66EMyC7.jpg'" 
+      style="width: 50%; align-self: center;" 
+      alt="Image from Adobe Stock Photo"
+    >
+  </div>
 </div>
 

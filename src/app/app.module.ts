@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ScreenSizeModule } from './components/debug/screen-size/screen-size.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
+
 
 @NgModule({
   declarations: [
@@ -16,9 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     AppRoutingModule,
     ScreenSizeModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ JwtHelperService,{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS } ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

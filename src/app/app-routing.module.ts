@@ -3,18 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
     {
-        path:'',
-        loadChildren: () => import('./layout/layout.module').then(mod=>mod.LayoutModule)
+      path:'',
+      loadChildren: () => import('./layout/layout.module').then(mod=>mod.LayoutModule)
     },
     {
-        path:'login',
-        title:'Login',
-        loadChildren: () => import('./login/login.module').then(mod=>mod.LoginModule)
+      path:'login',
+      title:'Login',
+      loadChildren: () => import('./login/login.module').then(mod=>mod.LoginModule)
     },
     {
-        path:'register',
-        title:'Register',
-        loadChildren: () => import('./registration/registration.module').then(mod=>mod.RegistrationModule)
+      path:'register',
+      title:'Register',
+      loadChildren: () => import('./registration/registration.module').then(mod=>mod.RegistrationModule)
     },
     {
       path:'welcome',
@@ -22,14 +22,14 @@ const routes: Routes = [
       loadChildren: () => import('./visitor-home/visitor-home.module').then(mod=>mod.VisitorHomeModule)
     },
     {
-        path:'nopage',
-        title:'Page Not Found',
-        loadChildren: () => import('./not-found/not-found.module').then(mod=>mod.NotFoundModule)
+      path:'nopage',
+      title:'Page Not Found',
+      loadChildren: () => import('./not-found/not-found.module').then(mod=>mod.NotFoundModule)
     },
     { 
-        path: '**', 
-        redirectTo:'nopage',
-        pathMatch:'full'
+      path: '**', 
+      redirectTo:'nopage',
+      pathMatch:'full'
     }
 ];
 

@@ -29,6 +29,7 @@ export class RegistrationComponent {
   //FORM SUBMISSION
   conditionText:string='You must fill up all the fields first before you can proceed.'
   generatedCode:string = '';
+  showAlert:boolean = true;
   onSubmit(formData:Object){
     this.submitForm(formData);
   }
@@ -62,7 +63,12 @@ export class RegistrationComponent {
     this.CrudService.createUser(formData).subscribe((res) => {
       if(res.message==='success'){
         console.log('Data sent successfully!');
+        this.showAlert = false;
         this.showSuccess = true;
+      }
+      else if(this.errorOutput(res)==='emailNoUnique'){
+        this.changeAlertColor('danger');
+        this.conditionText = 'This email is already in use.';
       }
       else if(this.errorOutput(res)==='userCodeRepeat'){
         this.submitForm(formData);
@@ -161,7 +167,7 @@ export class RegistrationComponent {
     console.error('Error: ' + this.errMSG);
     switch(this.errMSG){
       case '\"email must be unique\"':{
-        return 'This email is already registered.';
+        return 'emailNoUnique';
       }
       case'\"userCode must be unique\"':{
         return 'userCodeRepeat';
