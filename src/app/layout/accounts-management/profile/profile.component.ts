@@ -37,9 +37,12 @@ export class ProfileComponent implements OnInit{
         break;
       }
       default:{
-        this.router.navigate(['notfound']);
+        this.router.navigate(['/not-found']);
       }
     }
+
+    //run api and check if user exists
+
     if(this.currentUser==='admin'||this.userID==='me'){
       this.allowEdit = true;
       console.log('Edit allowed');

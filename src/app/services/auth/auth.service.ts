@@ -15,6 +15,10 @@ export class AuthService {
     const token = localStorage.getItem('sessiontoken');
     
     if(!(this.jwtHelper.isTokenExpired(token))) this._isLoggedIn$.next(!!token); //change loggedIn to true if token still not expired
+    if(this.jwtHelper.isTokenExpired(token)){
+      this.logout();
+      this._isLoggedIn$.next(false);
+    }
   }
 
   login(email:string, password:string){
@@ -22,6 +26,7 @@ export class AuthService {
     .pipe(
       tap((res:any) => { 
         this.saveSession(res);
+        this.router.navigate(['/']);
       })
     );
   }
@@ -31,9 +36,8 @@ export class AuthService {
       localStorage.setItem('sessiontoken', res.token);
       //console.log('Saved to local storage!\ntoken: ' + res.token);
       this._isLoggedIn$.next(true);
-      return;
     }
-    if(res.message==='incorrect password') console.error(res.message);
+    else if(res.message==='incorrect password') console.error(res.message);
     else if (res.message==='user not found') console.error(res.message);
   }
 
@@ -44,7 +48,8 @@ export class AuthService {
   }
 
   logout(){
-    localStorage.removeItem('sessiontoken');
+    localStorage.clear();
+    this._isLoggedIn$.next(false);
     this.router.navigate(['/login']);
     // console.log(this.authService.isLoggedIn());
     // if(!this.authService.isLoggedIn()) this.router.navigate(['welcome']);

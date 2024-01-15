@@ -1,6 +1,12 @@
 div{
 	display: flex;
 }
+.hide{
+  display: none;
+}
+.alert{
+  animation: slideFromBottom 0.3s;
+}
 main{
     width: 100vw;
     height: 100vh;
@@ -49,8 +55,11 @@ main{
     }
     .form-container{
         width: 50%;
-        padding: 9rem 2rem;
+        padding: 2rem 2rem;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
         form{
             display: flex;
             flex-direction: column;
@@ -78,13 +87,14 @@ main{
                 margin-bottom: 0.4rem;
             }
             button{
-                cursor: pointer;
-                color: white;
-                background-color: #5ECD81;
-                border: 0;
+              cursor: pointer;
+              color: white;
+              background-color: #5ECD81;
+              border: 0;
+              transition: background-color 0.15s;
             }
             button:hover{
-                background-color: #60e189;               
+                background-color: #60e189; 
             }
             button:disabled{
               background-color: #b2c4b8;
@@ -135,6 +145,24 @@ main{
   100% { 
       opacity: 1;
   }
+}
+@keyframes slideFromBottom {
+  0% { 
+      opacity: 0;
+      transform: translateY(10%);
+  }
+  100% { 
+      opacity: 1;
+      transform: translateY(0%); 
+  }
+}
+@keyframes buttonFade{
+  0% { 
+    background-color: #5ECD81;
+  }
+  100% { 
+    background-color: #60e189; 
+  }              
 }
 
 @media screen and (max-width:801px){

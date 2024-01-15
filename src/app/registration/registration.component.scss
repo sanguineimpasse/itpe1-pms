@@ -34,16 +34,6 @@ main{
   position: absolute;
   background-color: rgba(182, 211, 238, 0.669);
   backdrop-filter: blur(4px);
-  animation: fade 1s;
-  @keyframes fade {
-    0% { 
-        opacity: 0;
-    }
-    100% { 
-        opacity: 1;
-        
-    }
-  }
 }
 
 .form-card-container{
@@ -192,7 +182,8 @@ main{
               cursor:default;
             }
             button:hover{
-                background-color: #60e189;               
+                background-color: #60e189;
+                transition: background-color 0.15s;               
             }
             .account-row,.name-row,.birthday-row,.contact-row{
                 flex-direction: column;

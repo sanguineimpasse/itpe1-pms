@@ -20,7 +20,9 @@ import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
     ScreenSizeModule,
     HttpClientModule,
   ],
-  providers: [ JwtHelperService,{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS } ],
+  providers: [ 
+    JwtHelperService,{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS } 
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
