@@ -4,20 +4,21 @@
       
       <button class="user-button">
         <div class="dropdown-toggler-mobile" (click)="showDropdown()"></div>
-        <h6 class="username mx-4">{{accountName}}</h6>
+        <h6 class="username mx-4">{{accountFullName}}</h6>
         <i class="bi bi-person me-3"></i>
       </button>
       <div class="dropdown-content" [style.display]="styleDisplay">
-        <a [routerLink]="['/profile',accountLoggedIn,'me']">
+        <a *ngIf="accountLoggedIn!=='admin'" [routerLink]="['/profile',accountLoggedIn,'me']" >
             <i class="bi bi-file-person-fill"></i>
             View My Profile
         </a>
-        <a *ngIf="accountLoggedIn==='doctor'||'patient'" [routerLink]="['user-settings']">
+        <a *ngIf="accountLoggedIn!=='admin'" [routerLink]="['user-settings']">
           <i class="bi bi-person-fill-gear"></i>
           Account Settings
         </a>
         <a *ngIf="accountLoggedIn==='admin'" [routerLink]="['settings/admin']" >
-          Account Settings
+          <i class="bi bi-person-fill-gear"></i>
+          Admin Settings
         </a>
         <a (click)="logOut()">
           Log-out

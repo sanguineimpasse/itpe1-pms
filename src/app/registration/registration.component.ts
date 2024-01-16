@@ -55,14 +55,13 @@ export class RegistrationComponent {
       return console.error('No account type chosen.');
     } 
 
-    this.generatedCode =  this.generateUserCode(6);
+    this.generatedCode =  this.userCodeGen();
     
     formData.userCode = this.generatedCode;
-    console.log('(formData) The inputs were:\n' + JSON.stringify(formData));
-    
+    //console.log('(formData) The inputs were:\n' + JSON.stringify(formData));
     this.CrudService.createUser(formData).subscribe((res) => {
       if(res.message==='success'){
-        console.log('Data sent successfully!');
+        //console.log('Data sent successfully!');
         this.showAlert = false;
         this.showSuccess = true;
       }
@@ -126,16 +125,16 @@ export class RegistrationComponent {
   userCodeGen(){
     this.testCode = this.generateUserCode(6);
     this.toJSON = {userCode : this.testCode};
-    console.log(this.toJSON);
+    //console.log(this.toJSON);
     this.CrudService.checkUserCode(this.toJSON).subscribe((res) => {
-      console.log(res.message);
+      console.log('check User Code: ' + res.message);
       if(res.message==='already-exists'){
-        console.log('User code already exists in the database. Regenerating...');
+        console.error('User code already exists in the database. Regenerating...');
         this.userCodeGen();
       }
     });
 
-    console.log('the final userCode was: ' + this.testCode);
+    //console.log('the final userCode was: ' + this.testCode);
     return this.testCode;
   }
 

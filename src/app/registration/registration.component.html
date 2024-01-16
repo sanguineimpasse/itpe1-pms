@@ -53,8 +53,8 @@
                 <div class="name-row form-column-gap">
                     <label for="firstname">Name</label>
                     <div class="name-rows form-rows-gap">
-                        <input type="text" name="firstname" id="" placeholder="First Name" [(ngModel)]="user.firstname" required #firstname="ngModel" pattern="^[^0-9\s]+$">
-                        <input type="text" name="lastname" placeholder="Last Name" [(ngModel)]="user.lastname" required #lastname="ngModel" pattern="^[^0-9\s]+$">
+                        <input type="text" name="firstname" id="" placeholder="First Name" [(ngModel)]="user.firstname" required #firstname="ngModel" pattern="^[a-zA-Z0-9]+(?:\s[a-zA-Z0-9]+)*$">
+                        <input type="text" name="lastname" placeholder="Last Name" [(ngModel)]="user.lastname" required #lastname="ngModel" pattern="^[a-zA-Z0-9]+(?:\s[a-zA-Z0-9]+)*$">
                     </div>
                 </div>
 

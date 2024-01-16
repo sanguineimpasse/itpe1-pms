@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TokenService } from 'src/app/services/token/token.service';
 import { current_account_credentials } from 'src/data/currentaccount';
 
 @Component({
@@ -8,7 +9,7 @@ import { current_account_credentials } from 'src/data/currentaccount';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit{
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router, private tokenService : TokenService) {}
   currentUser = '';
   byWho:string = '';
   userType:string = '';
@@ -18,15 +19,19 @@ export class ProfileComponent implements OnInit{
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.currentUser = current_account_credentials.accountType;
+      this.currentUser = this.tokenService.getRole();
       this.userType = params['userType'];
       this.userID = params['id'];
+      
       console.log(
         'current user: ' + this.currentUser + '\n' +
         'Display type: '+ this.userType + '\n' +
         'With ID: '+ this.userID + '\n' 
-        );
+      );
     })
+    if(this.userID==='me'){
+      this.userID = this.tokenService.getUserCode();
+    }
     switch(this.userType){
       case 'doctor':{
           
@@ -40,8 +45,6 @@ export class ProfileComponent implements OnInit{
         this.router.navigate(['/not-found']);
       }
     }
-
-    //run api and check if user exists
 
     if(this.currentUser==='admin'||this.userID==='me'){
       this.allowEdit = true;

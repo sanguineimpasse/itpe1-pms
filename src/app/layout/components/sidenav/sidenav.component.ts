@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { current_account_credentials } from 'src/data/currentaccount';
+import { TokenService } from 'src/app/services/token/token.service';
+
 
 @Component({
   selector: 'app-sidenav',
@@ -9,37 +9,7 @@ import { current_account_credentials } from 'src/data/currentaccount';
 })
 
 
-export class SidenavComponent implements OnInit{
-  constructor(private router: Router){}
-  accountLoggedIn = current_account_credentials.accountType;
-
-  isAdmin: boolean = false;
-  isPatient: boolean = false;
-  isDoctor: boolean = false;
-
-  ngOnInit(): void {
-    switch(this.accountLoggedIn){
-      case 'admin':{
-        this.isAdmin = true;
-        break;
-      }
-      case 'patient': {
-        this.isPatient = true;
-        break;
-      }
-      case "doctor": {
-        this.isDoctor = true;
-        break;
-      }
-      default: {
-        console.log('[sidenav](Error)ACCOUNT TYPE NOT FOUND');
-      }
-    }
-
-  }
-
-  goPrescriptions(){
-    const id = 'prescriptions';
-    this.router.navigate(['/accounts',id]);
-  }
+export class SidenavComponent{
+  constructor(private tokenService:TokenService){}
+  accountLoggedIn = this.tokenService.getRole();
 }

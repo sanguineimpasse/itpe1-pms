@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { current_account_credentials } from 'src/data/currentaccount';
 import { Title } from '@angular/platform-browser';
 import { user_list_data } from 'src/data/testlistdata';
+import { TokenService } from 'src/app/services/token/token.service';
 
 @Component({
   selector: 'app-list-accounts',
@@ -10,14 +11,13 @@ import { user_list_data } from 'src/data/testlistdata';
   styleUrls: ['./list-accounts.component.scss']
 })
 export class ListAccountsComponent implements OnInit{
-    constructor(private route: ActivatedRoute, private router: Router, private titleService: Title) {}
+    constructor(private route: ActivatedRoute, private router: Router, private titleService: Title, private tokenService : TokenService) {}
     
-    currentAccount: string = current_account_credentials.accountType;
+    currentAccount: string = this.tokenService.getRole();
     id: string = '?';
     idName: string = '';
     currentMethod: string = '';
     userList = user_list_data.filter(user => user.accountType === this.id);
-    byWhom:string = '';
     ngOnInit(): void {
         this.route.params.subscribe(params => {
             this.id = params['id'];
@@ -54,5 +54,15 @@ export class ListAccountsComponent implements OnInit{
 
     goBack(){
       this.router.navigate(['/dashboard']);
+    }
+
+    deleteID:string = '';
+    setDelete(id:string){
+      this.deleteID = id;
+      console.log('deleteID: ' + this.deleteID);
+    }
+
+    deleteUser(){
+      console.log('user to be deleted(id): ' + this.deleteID);
     }
 }

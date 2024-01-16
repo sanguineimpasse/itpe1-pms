@@ -18,7 +18,7 @@ import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
     NgbModule,
     AppRoutingModule,
     ScreenSizeModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [ 
     JwtHelperService,{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS } 

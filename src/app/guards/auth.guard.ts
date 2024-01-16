@@ -1,11 +1,21 @@
 import { CanActivateFn, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { inject } from '@angular/core';
-//import session (or token)
 
-export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
+export const layoutGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
   const session:boolean = !!localStorage.getItem('sessiontoken');
   const router : Router = inject(Router);
-  const protectedRoutes: string[] = ['','/dashboard'];
+  const protectedRoutes: string[] = [
+    '',
+    '/dashboard',
+    '/accounts/',
+    '/appointments',
+    '/prescriptions',
+    '/profile',
+    '/user-settings',
+    '/settings/admin',
+    '/settings'
+
+  ];
   
   //console.log('session exist: ' + session);
   //console.log('state.url: ' + state.url);

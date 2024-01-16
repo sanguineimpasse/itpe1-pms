@@ -51,9 +51,10 @@
                 <label for="txtSBSP" class="form-label">Subspecialty:</label>
                 <input type="text" id="txtSBSP" class="form-control" placeholder="subspecialty" disabled>
               </div>
+              <button class="btn btn-lg btn-success" *ngIf="currentUser==='patient'">Book an Appointment</button>
             </div>
             
-            <button class="btn btn-lg btn-success" *ngIf="byWho==='by-patient'">Book an Appointment</button>
+            
           </div>
 
           <!--col 2-->

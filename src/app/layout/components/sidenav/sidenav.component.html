@@ -1,5 +1,5 @@
 <!--ADMIN SIDENAV-->
-<nav *ngIf="isAdmin" class="sidenav">
+<nav *ngIf="accountLoggedIn==='admin'" class="sidenav">
     <ul class="sidenav-items">
         <li>
             <a [routerLink]="['dashboard']">
@@ -17,12 +17,6 @@
             <a [routerLink]="['accounts/patient']">
                 <i class="bi bi-person"></i>
                 <p class="mt-3 d-none d-md-block">Show patients</p>
-            </a>
-        </li>
-        <li>
-            <a [routerLink]="['settings/admin']">
-                <i class="bi bi-person-gear"></i>
-                <p class="mt-3 d-none d-md-block">Admin Settings</p>
             </a>
         </li>
 
@@ -58,7 +52,7 @@
 </nav>
 
 <!--DOCTOR SIDENAV-->
-<nav *ngIf="isDoctor" class="sidenav">
+<nav *ngIf="accountLoggedIn==='doctor'" class="sidenav">
     <ul class="sidenav-items">
         <li>
             <a [routerLink]="['dashboard']">
@@ -93,17 +87,11 @@
           </a>
         </li>
         -->
-        <li>
-          <a >
-              <i class="bi bi-person-fill-gear"></i>
-              <p class="mt-3 d-none d-md-block">Account Settings</p>      
-          </a>
-      </li>
     </ul>
 </nav>
 
 <!--PATIENT SIDENAV-->
-<nav *ngIf="isPatient" class="sidenav">
+<nav *ngIf="accountLoggedIn==='patient'" class="sidenav">
     <ul class="sidenav-items">
         <li>
             <a [routerLink]="['dashboard']">

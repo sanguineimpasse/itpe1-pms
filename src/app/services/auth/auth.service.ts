@@ -54,6 +54,7 @@ export class AuthService {
     // console.log(this.authService.isLoggedIn());
     // if(!this.authService.isLoggedIn()) this.router.navigate(['welcome']);
   }
+
   /*
   login(data:any): Observable<any>{
     return this.http

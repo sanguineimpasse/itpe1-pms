@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { authGuard, loggedOutGuard } from './guards/auth.guard';
+import { layoutGuard, loggedOutGuard } from './guards/auth.guard';
 
 const routes: Routes = [
     {
       path:'',
-      canActivate:[authGuard],
+      canActivate:[layoutGuard],
       loadChildren: () => import('./layout/layout.module').then(mod=>mod.LayoutModule),
     },
     {

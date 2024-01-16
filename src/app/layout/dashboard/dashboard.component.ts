@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { TokenService } from 'src/app/services/token/token.service';
 import { current_account_credentials } from 'src/data/currentaccount';
 import { user_list_data } from 'src/data/testlistdata';
 
@@ -10,13 +10,13 @@ import { user_list_data } from 'src/data/testlistdata';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit{
-  constructor(private router: Router) {}
+  constructor(private router: Router, private tokenService:TokenService) {}
   //images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
   //these are just dummy variables, replace with actual queries from the DB
   currentAccountName:string = current_account_credentials.lastName;
   currentAccountFName:string = current_account_credentials.firstName;
-  currentAccount: string = current_account_credentials.accountType;
+  currentAccount: string = this.tokenService.getRole();
 
   //sort the users by dateCreated
   userListData = this.filterUsersByDate(user_list_data, 10);

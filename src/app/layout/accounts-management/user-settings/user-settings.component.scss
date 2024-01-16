@@ -3,6 +3,7 @@ main{
   width: 100%;
   overflow-y: auto;
   padding: 3rem;
+  
 }
 .main-card{
   margin-left: 10%;
@@ -12,6 +13,17 @@ main{
 }
 h1{
   margin: 0;
+}
+
+.submit:disabled{
+  background-color: grey;
+  color: rgb(221, 221, 221);
+  border-color: grey;
+}
+.submit:disabled:hover{
+  background-color: grey;
+  color: rgb(221, 221, 221);
+  border-color: grey;
 }
 
 @media screen and (max-width: 1024px) {

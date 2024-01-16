@@ -42,6 +42,17 @@ export class CrudService {
   login(email:string, password:string): Observable<any>{
     return this.http
     .post<any>(`${this._apiUrl}/login`, {email, password}, this.httpOptions)
+    .pipe(retry(0), catchError(this.handleError));
+  }
+
+  saveUserAccountInfo(token:string, prevEmail:string, newEmail:string, newPassword:string, condition:string): Observable<any>{
+    return this.http
+    .patch<any>(`${this._apiUrl}/patch/useraccount`, {token, prevEmail, newEmail, newPassword, condition}, this.httpOptions)
+    .pipe(retry(0), catchError(this.handleError));
+  }
+
+  getUserProfile(){
+
   }
 
   // Error handling
@@ -52,7 +63,7 @@ export class CrudService {
       errorMessage = error.error.message;
     } else {
       // Get server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message} ${error.status === 0 ? '\n(Perhaps the backend server is not running)' : '' }`;
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message} ${error.status === 0 ? '\n(Perhaps the backend server is not running or crashed)' : '' }`;
     }
     window.alert(errorMessage);
     return throwError(() => {
