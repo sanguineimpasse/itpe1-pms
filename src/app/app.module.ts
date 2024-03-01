@@ -7,6 +7,7 @@ import { ScreenSizeModule } from './components/debug/screen-size/screen-size.mod
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
     HttpClientModule
   ],
   providers: [ 
+    DatePipe,
     JwtHelperService,{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS } 
   ],
   bootstrap: [ AppComponent ]

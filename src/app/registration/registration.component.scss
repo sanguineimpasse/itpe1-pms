@@ -44,12 +44,11 @@ main{
     border-radius: 16px;
     box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.8);
     flex-direction: row;
-    width: 80rem;
-    height: 85vh;
+    width: 80%;
+    height: 85%;
     overflow: hidden;
     box-sizing: border-box;
     animation: fade 0.3s;
-    
 
     .loading-container{
       width: 50%;

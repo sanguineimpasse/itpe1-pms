@@ -51,8 +51,41 @@ export class CrudService {
     .pipe(retry(0), catchError(this.handleError));
   }
 
-  getUserProfile(){
+  getUserList(role:string): Observable<any>{
+    return this.http
+    .post<any>(`${this._apiUrl}/retrieve/users`, { role }, this.httpOptions)
+    .pipe(retry(0), catchError(this.handleError));
+  }
 
+  getUserProfile(userCode:string): Observable<any>{
+    return this.http
+    .post<any>(`${this._apiUrl}/retrieve/by-user-code`, { userCode }, this.httpOptions)
+    .pipe(retry(0), catchError(this.handleError));
+  }
+
+  addTwoFactorAuth(userCode:string){
+    return this.http
+    .post<any>(`${this._apiUrl}/create/2fa`, {userCode }, this.httpOptions)
+    .pipe(retry(0), catchError(this.handleError));
+  }
+
+  verifyFactorAuth(token:string, userCode:string){
+    return this.http
+    .post<any>(`${this._apiUrl}/verify/2fa`, { token, userCode }, this.httpOptions)
+    .pipe(retry(0), catchError(this.handleError));
+  }
+
+  verifyTwoFactorAuthViaEmail(token:string, email:string){
+    return this.http
+    .post<any>(`${this._apiUrl}/verify/2fa/email`, { token, email }, this.httpOptions)
+    .pipe(retry(0), catchError(this.handleError));
+  }
+  
+
+  checkForSecret(email:string){
+    return this.http
+    .post<any>(`${this._apiUrl}/verify/secret`, { email }, this.httpOptions)
+    .pipe(retry(0), catchError(this.handleError));
   }
 
   // Error handling

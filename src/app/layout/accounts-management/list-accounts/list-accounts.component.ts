@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { current_account_credentials } from 'src/data/currentaccount';
 import { Title } from '@angular/platform-browser';
-import { user_list_data } from 'src/data/testlistdata';
 import { TokenService } from 'src/app/services/token/token.service';
+import { CrudService } from 'src/app/services/crud/crud.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-list-accounts',
@@ -11,13 +11,30 @@ import { TokenService } from 'src/app/services/token/token.service';
   styleUrls: ['./list-accounts.component.scss']
 })
 export class ListAccountsComponent implements OnInit{
-    constructor(private route: ActivatedRoute, private router: Router, private titleService: Title, private tokenService : TokenService) {}
+    constructor(
+      private route: ActivatedRoute, 
+      private router: Router, 
+      private titleService: Title, 
+      private tokenService : TokenService,
+      private crudService : CrudService,
+      public datePipe : DatePipe
+    ) {}
     
     currentAccount: string = this.tokenService.getRole();
     id: string = '?';
     idName: string = '';
     currentMethod: string = '';
-    userList = user_list_data.filter(user => user.accountType === this.id);
+
+    userList = [{
+      createdAt: "",
+      email: ""​,​
+      firstname: "",
+      lastname: "",
+      role: "",
+      userCode: "",
+      specialization:''
+    }];
+
     ngOnInit(): void {
         this.route.params.subscribe(params => {
             this.id = params['id'];
@@ -28,12 +45,20 @@ export class ListAccountsComponent implements OnInit{
                 this.titleService.setTitle('Doctor Accounts');
                 this.setUser(this.id);
                 this.idName = 'Doctor';
+                this.crudService.getUserList('doctor').subscribe((res) => {
+                  this.userList = res;
+                  console.log(res);
+                });
                 break;
             }
             case 'patient':{
                 this.titleService.setTitle('Patient Accounts');
                 this.setUser(this.id);
                 this.idName = 'Patient';
+                this.crudService.getUserList('patient').subscribe((res) => {
+                  this.userList = res;
+                  console.log(res);
+                });
                 break;
             }
             default:{
@@ -48,8 +73,7 @@ export class ListAccountsComponent implements OnInit{
 
     //change the display on the tables based on the id
     setUser(id:string){
-      //replace the dummy variable with an actual query from the DB when the backend is finished
-      this.userList = user_list_data.filter(user => user.accountType === id);
+      
     }
 
     goBack(){

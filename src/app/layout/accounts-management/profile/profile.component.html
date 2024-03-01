@@ -32,10 +32,10 @@
             <div class="row">
               <label for="txtName" class="form-label">Name:</label>
               <div class="col-lg mb-3">
-                <input type="text" id="txtFName" class="form-control" placeholder="fname" disabled>
+                <input type="text" id="txtFName" class="form-control" placeholder="{{firstname}}" disabled>
               </div>
               <div class="col-lg mb-3">
-                <input type="text" id="txtLName" class="form-control" placeholder="lname" disabled>
+                <input type="text" id="txtLName" class="form-control" placeholder="{{lastname}}" disabled>
               </div>
             </div>
             <div class="mb-3">
@@ -51,7 +51,7 @@
                 <label for="txtSBSP" class="form-label">Subspecialty:</label>
                 <input type="text" id="txtSBSP" class="form-control" placeholder="subspecialty" disabled>
               </div>
-              <button class="btn btn-lg btn-success" *ngIf="currentUser==='patient'">Book an Appointment</button>
+              <button class="btn btn-success" *ngIf="currentUser==='patient'">Book an Appointment</button>
             </div>
             
             
@@ -65,14 +65,9 @@
                 Add a new schedule
               </button>
               <div class="mb-3">
-                <h3>Clinic Name</h3>
-                <h6>Clinic name, Clinic street, Clinic City, Clinic Province</h6>
-                <h6>Start:Time - End:Time</h6>
-                <h6>Days,Of,The,Week</h6>
-                <button class="btn btn-sm btn-danger" *ngIf="editMode===true">
-                  Remove this Schedule
-                </button>
+                <h3>This doctor has no schedules posted.</h3>
               </div>
+              <!--
               <div class="mb-3">
                 <h3>Clinic Name</h3>
                 <h6>Clinic name, Clinic street, Clinic City, Clinic Province</h6>
@@ -91,6 +86,16 @@
                   Remove this Schedule
                 </button>
               </div>
+              <div class="mb-3">
+                <h3>Clinic Name</h3>
+                <h6>Clinic name, Clinic street, Clinic City, Clinic Province</h6>
+                <h6>Start:Time - End:Time</h6>
+                <h6>Days,Of,The,Week</h6>
+                <button class="btn btn-sm btn-danger" *ngIf="editMode===true">
+                  Remove this Schedule
+                </button>
+              </div>
+              -->
 
             </div>
 

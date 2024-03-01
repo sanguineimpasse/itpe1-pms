@@ -27,7 +27,11 @@ export const layoutGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state:
 export const loggedOutGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
   const session:boolean = !!localStorage.getItem('sessiontoken');
   const router : Router = inject(Router);
-  const protectedRoutes: string[] = ['/login','/register','/welcome'];
+  const protectedRoutes: string[] = [
+    '/login',
+    '/register',
+    '/welcome'
+  ];
   
   //console.log('session exist: ' + session);
   //console.log('state.url: ' + state.url);

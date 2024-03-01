@@ -25,31 +25,53 @@
           <input type="password" class="form-control" name="confPass" placeholder="Confirm" [(ngModel)]="userData.confPass" #confPass="ngModel">
         </div>
       </div>
+      <button type="button" class="btn btn-success my-1" data-bs-toggle="modal" data-bs-target="#twoFAModal">
+        Setup 2-factor authentication
+      </button>
       
-      <div class="modal-footer gap-2">
+      
+      
+      <div class="modal-footer gap-2 my-2">
         <button class="btn btn-secondary" (click)="goBack()">Cancel</button>
         <button type="submit" class="btn btn-success submit" [disabled]="userForm.invalid">Save Changes</button>
       </div>
     </form>
-    
   </div>
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+  <!--2fa modal-->
+  <div class="modal fade" id="twoFAModal" tabindex="-1" aria-labelledby="twoFAModal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Setup 2-factor authentication</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+          <p>Two factor authentication allows you to have additional protection for your account.</p>
+          <img [src]="qrCode" *ngIf="!show2FAButton" class="qr-code">
+          <p *ngIf="!show2FAButton">
+            Scan this this code using 
+            <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2">
+              Google Authenticator
+            </a>
+          </p>
+
+          <form #tokenInput="ngForm" *ngIf="!show2FAButton" (ngSubmit)="verifyToken(data.token)">
+            <div class="input-group mb-3">
+              <input type="text" name="token" class="form-control" placeholder="Verify the code here" [(ngModel)]="data.token" #token="ngModel">
+              <button class="btn btn-outline-success" type="submit">Submit</button>
+            </div> 
+          </form>
+                   
+          <button type="button" class="btn btn-primary" (click)="generateTwoFactor()" *ngIf="show2FAButton"> Generate QR Code</button>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary" [disabled]="disableSubmit" data-bs-dismiss="modal" (click)="goHome()">Done</button>
         </div>
       </div>
     </div>
   </div>
+  
   
 </main>

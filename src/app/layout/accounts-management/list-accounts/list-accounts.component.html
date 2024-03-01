@@ -61,12 +61,12 @@
 
       <tr *ngFor="let data of userList">
         <th scope="row">{{data.userCode}}</th>
-        <td>{{data.userName}}</td>
+        <td>{{data.firstname}} {{data.lastname}}</td>
         <td *ngIf="id==='doctor'">{{data.specialization}}</td>
-        <td *ngIf="currentAccount==='admin'">{{data.dateCreated}}</td>
+        <td *ngIf="currentAccount==='admin'">{{datePipe.transform(data.createdAt, 'yyyy-MM-dd')}}</td>
 
         <td class="d-flex gap-2 end"><!--buttons-->
-          <button class="btn btn-sm btn-secondary" [routerLink]="['/profile',data.accountType,data.userCode]">View Profile</button>
+          <button class="btn btn-sm btn-secondary" [routerLink]="['/profile',data.role,data.userCode]">View Profile</button>
           <div class="hstack gap-2" *ngIf="currentAccount==='admin'">
             <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal" (click)="changeMethod('Edit')">Edit</button>
             <button class="btn btn-sm btn-danger ">

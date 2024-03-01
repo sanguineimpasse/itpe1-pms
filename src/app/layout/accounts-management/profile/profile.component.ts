@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CrudService } from 'src/app/services/crud/crud.service';
 import { TokenService } from 'src/app/services/token/token.service';
 import { current_account_credentials } from 'src/data/currentaccount';
 
@@ -9,13 +10,21 @@ import { current_account_credentials } from 'src/data/currentaccount';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit{
-  constructor(private route: ActivatedRoute, private router: Router, private tokenService : TokenService) {}
+  constructor(
+    private route: ActivatedRoute, 
+    private router: Router, 
+    private tokenService : TokenService,
+    private crudService : CrudService
+  ) {}
   currentUser = '';
   byWho:string = '';
   userType:string = '';
   userID:string = '';
   allowEdit:boolean = false;
   editMode:boolean = false;
+
+  firstname = '';
+  lastname = '';
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -51,7 +60,14 @@ export class ProfileComponent implements OnInit{
       console.log('Edit allowed');
     }
     //add a check that checks if the user exists
-    
+    this.crudService.getUserProfile(this.userID).subscribe((res) => {
+      if(res.message==='nonexistent') return this.router.navigate(['/dashboard']);
+      const fullProfile = res;
+      this.firstname = fullProfile.firstname;
+      this.lastname = fullProfile.lastname;
+      return;
+    });
+
   }
 
   capitalize(x:string){

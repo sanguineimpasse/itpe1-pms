@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef, ViewChild, inject } from '@angular/core';
 import { Location } from '@angular/common';
 import { CrudService } from 'src/app/services/crud/crud.service';
 import { TokenService } from 'src/app/services/token/token.service';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-user-settings',
@@ -10,7 +11,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-settings.component.scss']
 })
 export class UserSettingsComponent {
-  constructor(private location: Location, private router : Router, private crudService : CrudService, private tokenService : TokenService) {}
+  constructor(
+    private location: Location, 
+    private crudService : CrudService, 
+    private tokenService : TokenService,
+    private authService : AuthService,
+    private router : Router
+  ) {}
+
   currentEmail = this.tokenService.getEmail();
   
   userData = 
@@ -20,6 +28,8 @@ export class UserSettingsComponent {
     confPass:''
   };
 
+  showSuccess:boolean = false;
+  
   saveChanges(email:string, password:string, confPass:string){
     console.log(`email: '${email}'\npassword: '${password}'\nconfPass: '${confPass}'`)
     const emptyRegex = /^\s*$/;
@@ -52,8 +62,9 @@ export class UserSettingsComponent {
       const prevEmail = this.tokenService.getEmail();
       this.crudService.saveUserAccountInfo(token, prevEmail, email, password, condition).subscribe((res) => {
         if(res.message==='success'){
-          this.router.navigate(['/dashboard']);
           console.log(res.message);
+          alert('Account settings changed. You need to log in again.');
+          this.authService.logout();
         }
         else{
           console.error(JSON.stringify(res))
@@ -64,8 +75,45 @@ export class UserSettingsComponent {
       return console.error('invalid token');
     }
   }
+
+  data = {
+    token: ''
+  };
+
+  qrCode:string = '';
+  show2FAButton:boolean = true;
+  generateTwoFactor(){
+    const userCode = this.tokenService.getUserCode();
+    this.crudService.addTwoFactorAuth(userCode).subscribe((res) => {
+      console.log(res);
+      this.qrCode = res.qrCode;
+      this.show2FAButton = false;
+    });
+  }
+
+  disableSubmit:boolean = true;
+  verifyToken(token:string){
+    const userCode = this.tokenService.getUserCode();
+    this.crudService.verifyFactorAuth(token, userCode).subscribe((res) => {
+      console.log(res);
+      if(res.message==='token-valid'){
+        this.disableSubmit = false;
+        alert('You have successfully enabled 2-factor authentication.');
+        
+      }
+      
+    });
+  }
   
   goBack(){
     this.location.back();
+  }
+
+  goHome(){
+    this.router.navigate(['/dashboard']);
+  }
+
+  ok(){
+    this.authService.logout();
   }
 }

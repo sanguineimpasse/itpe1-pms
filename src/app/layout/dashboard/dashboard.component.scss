@@ -52,6 +52,8 @@
   .graph{
     background-color: #F9F9F9;
     box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
+    max-height: 55vh;
+
   }
 }
 
@@ -123,11 +125,12 @@
     box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
   }
   .active-prescriptions{
-    background-color: #F9F9F9;
+    background-color: #c4f4d5;
     box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
   }
   .my-doctors{
-    background-color: #F9F9F9;
+    background-color: #7eb7b7;
+    
     box-shadow: 2px 2px 4px rgba(5, 5, 5, 0.6);
   }
   .schedule-checkup{
@@ -327,28 +330,32 @@ ngb-carousel{
 //   }
 
 
-// /*tablet*/
-// @media screen and (max-width:801px){
-//     .Pmain-container{
-//         flex-direction: column;
-//         align-items: center;
-//     }
-//     .Pcol1{
-//         width: auto;
-//         .Phorizontal-container{
-//             align-items: center;
-//             .Pprescription-list-container, .Pdoctor-list-container{
-//                 width: 80%;
-//             }
-//         }
-//     }
-//     .Pcol2{
-//         width: 90%;
-//         margin-left: 0;
-//         display:flex;
+/*tablet*/
+@media screen and (max-width:801px){
+  .graph{
+    max-width: 100%;
+    width: 100%;
+  }
+    .Pmain-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .Pcol1{
+        width: auto;
+        .Phorizontal-container{
+            align-items: center;
+            .Pprescription-list-container, .Pdoctor-list-container{
+                width: 80%;
+            }
+        }
+    }
+    .Pcol2{
+        width: 90%;
+        margin-left: 0;
+        display:flex;
         
-//     }
-// }
+    }
+}
 
 // /*mobile*/
 // @media screen and (max-width:600px){

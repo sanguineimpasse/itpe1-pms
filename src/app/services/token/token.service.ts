@@ -37,6 +37,19 @@ export class TokenService {
     return 'invalid session';
   }
 
+  getSepName(){
+    const token = localStorage.getItem('sessiontoken');
+    var decodedToken:any = null;
+
+    if(!!token){
+      decodedToken = this.jwtHelper.decodeToken(token);
+      //console.log(decodedToken.firstName, decodedToken.lastName)
+      return { firstname: decodedToken.firstname, lastname : decodedToken.lastname};
+    }
+
+    return {firstname: 'fName', lastname:'lName'};
+  }
+
   getEmail(): string{
     const token = localStorage.getItem('sessiontoken');
     var decodedToken:any = null;
